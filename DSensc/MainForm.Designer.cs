@@ -104,6 +104,7 @@
             this.demarrer_btn.TabIndex = 6;
             this.demarrer_btn.Text = "Démarrer le test !";
             this.demarrer_btn.UseVisualStyleBackColor = false;
+            this.demarrer_btn.Click += new System.EventHandler(this.demarrer_btn_Click);
             // 
             // dateDS_txt
             // 

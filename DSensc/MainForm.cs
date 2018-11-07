@@ -16,5 +16,20 @@ namespace DSensc
         {
             InitializeComponent();
         }
+
+        private void demarrer_btn_Click(object sender, EventArgs e)
+        {
+            Questions questionnaire = new Questions();
+            if (questionnaire.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+
+
+
+        }
+
+
+
     }
 }
