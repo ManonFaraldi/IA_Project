@@ -1,1 +1,0 @@
-﻿INSERT into question values (1, 'Qu ''est-ce qu''un degré de liberté en robotique ? ','Un axe sur lequel un élément mécanique peut se déplacer dans un plan','Un droit en robotique','Une température auquel le programme tourne de façon optimal','Une option de robotique','facile','1','false')
