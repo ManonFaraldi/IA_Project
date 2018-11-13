@@ -100,6 +100,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\Dijsktra.png" />
+    <Content Include="Images\FIFO.png" />
+    <Content Include="Images\LIFO.png" />
+    <Content Include="Images\puissance4.png" />
     <Content Include="Questions.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

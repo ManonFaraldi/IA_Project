@@ -1,10 +1,234 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<question num = "1">
-  <enonce>Qu'est-ce qu'un degré de liberté en robotique ? </enonce>
-  <reponseVraie>Un axe sur lequel un élément mécanique peut se déplacer dans un plan</reponseVraie>
-  <reponseFausse1>Un droit en robotique</reponseFausse1>
-  <reponseFausse2>Une température auquel le programme tourne de façon optimale</reponseFausse2>
-  <reponseFausse3>Une option de robotique</reponseFausse3>
-  <nbPoint>1</nbPoint>
-  <image></image>
-</question>
+<questions>
+  <question id = "1">
+    <enonce>Qu'est-ce qu'un degré de liberté en robotique ? </enonce>
+    <reponse1>Un axe sur lequel un élément mécanique peut se déplacer dans un plan</reponse1>
+    <reponse2>Un droit en robotique</reponse2>
+    <reponse3>Une température auquel le programme tourne de façon optimale</reponse3>
+    <reponse4>Une option de robotique</reponse4>
+    <nbPoint>1</nbPoint>
+    <reponseVraie>1</reponseVraie>
+    <image></image>
+  </question>
+
+  <question id = "2">
+    <enonce>Comment sont créés les programmes de prises en compte du placement d'une pince en robotique pour saisir un objet ?</enonce>
+    <reponse1>Comme pour les humains : on commence par se déplacer vers l'objet, on se met ensuite à son niveau et on saisit l'objet</reponse1>
+    <reponse2>En cinématique inverse : on se positionne face à l'objet, on bouge dans le plan pour prendre l'objet, on corrige si nécessaire et on se saisit de l'objet</reponse2>
+    <reponse3>En utilisant des algorithmes d'apprentissage, par essai-erreur jusqu'à ce que le robot apprenne à se saisir de l'objet</reponse3>
+    <reponse4>Avec des algorithmes où le déplacement se fait par à-coups, et où l'ordre d'exécution des déplacement peut changer</reponse4>
+    <nbPoint>1</nbPoint>
+    <reponseVraie>2</reponseVraie>
+    <image></image>
+  </question>
+
+  <question id = "3">
+    <enonce>Qu'est-ce qui compose une commande moteur ? </enonce>
+    <reponse1>Des capteurs, un macrocontroleur, un servo-contrôleur et un moteur</reponse1>
+    <reponse2>Un microprocesseur avec mémoire, des capteurs, de la connectique, un servo-contrôleur</reponse2>
+    <reponse3>Un capteur, un moteur et de la connectique</reponse3>
+    <reponse4>Un microprocesseur, un contrôleur de moteur, de la connectique</reponse4>
+    <nbPoint>1</nbPoint>
+    <reponseVraie>2</reponseVraie>
+    <image></image>
+  </question>
+
+  <question id = "4">
+    <enonce>Qu'est-ce qu'un servo-contrôleur ?</enonce>
+    <reponse1>Il réalise un traitement des informations en mémoire</reponse1>
+    <reponse2>C'est le vrai cerveau puisqu'il est programmable et peut exécuter de nombreux calculs</reponse2>
+    <reponse3>Il réalise les actions et n'est pas autonome contrairement au microprocesseurs</reponse3>
+    <reponse4>Il contrrôle seulement les déplacements du robot.</reponse4>
+    <nbPoint>1</nbPoint>
+    <reponseVraie>3</reponseVraie>
+    <image></image>
+  </question>
+
+  <question id = "5">
+    <enonce>Quels sont les différentes catégories de capteurs ? </enonce>
+    <reponse1>Il en existe autant que d'information que l'on souhaite coder en fonction de la complexité de l'information dont on a besoin (informations proprioceptives, extérioceptives, capteurs passifs, actifs, caméra, LIDAR, puces RFID...)</reponse1>
+    <reponse2>Visuels, sensoriels et GPS</reponse2>
+    <reponse3>Internes au robot et passif</reponse3>
+    <reponse4>Passif, actives, internes et externe au robot, qui peuvent donc envoyer et/ou recevoir des signaux</reponse4>
+    <nbPoint>1</nbPoint>
+    <reponseVraie>1</reponseVraie>
+    <image></image>
+  </question>
+
+  <question id = "6">
+    <enonce>Comment peut-on définir l'Intelligence Artificielle ? </enonce>
+    <reponse1>Il s'agit de la simulation via un ordinateur de l'intelligence des humains, elle peut être spécifique ou spécialisée pour une tâche</reponse1>
+    <reponse2>Il s'agit d'un algorithme permettant de résoudre des jeux de stratégies complexes</reponse2>
+    <reponse3>Il s'agit d'un ensemble de techniques et algorithmes permettant de résoudre des problèmes à l'aide d'un ordinateur</reponse3>
+    <reponse4>Il s'agit d'une technique de résolution de problèmes simples via un graphique dont on suit les branches pour trouver le plus court chemin</reponse4>
+    <nbPoint>1</nbPoint>
+    <reponseVraie>3</reponseVraie>
+    <image></image>
+  </question>
+
+  <question id = "7">
+    <enonce>L’algorithme MinMax est :</enonce>
+    <reponse1>Utilisé en I.A. pour jouer à deux contre un adversaire.</reponse1>
+    <reponse2>Utilisé en I.A. pour trouver le plus court chemin dans un graphe.</reponse2>
+    <reponse3>Utilisé en reconnaissance des formes pour détecter un isomorphisme de graphe</reponse3>
+    <reponse4>Utilisé pour la détection de contours en vision par ordinateur</reponse4>
+    <nbPoint>1</nbPoint>
+    <reponseVraie>2</reponseVraie>
+    <image></image>
+  </question>
+
+  <question id = "8">
+    <enonce>
+      Soit M une matrice d’adjacence de taille NxN remplie avec des « a », des « b » ou éventuellement avec des « 0 » en cas d’absence de relation. On considère le code ci-dessous :
+      int cpt = 0 ;
+      for (int i=0 ; i &lt; n ; i=""
+for="" (int="" j="0" ; j="" &lt; n ; j=""
+x=""
+    </enonce>
+    <reponse1>if ((M[i,j] == "a") || (M[i,j]== "b")) cpt++ ;</reponse1>
+    <reponse2>if ((M[i,j] != "0") &amp;&amp; (M[j,i] != M[i,j])) cpt++ ;</reponse2>
+    <reponse3>Ni a, ni b, il faut d’abord modifier les lignes précédentes.</reponse3>
+    <reponse4>if ((M[i,i] != "0") &amp;&amp; (M[j,j] != M[i,j])) cpt++ ;</reponse4>
+    <nbPoint>3</nbPoint>
+    <reponseVraie>2</reponseVraie>
+    <image></image>
+  </question>
+
+ 
+  <question id = "9">
+    <enonce>Qu'est-ce que l'espace d'état ? </enonce>
+    <reponse1>Il s'agit de l'état dans lequel se trouve un problème lorsque l'on commence à tenter de résoudre ce dernier</reponse1>
+    <reponse2>Il s'agit d'un état dans lequel se trouve un espace de jeu</reponse2>
+    <reponse3>C'est l'espace de jeu sur lequel on applique un algorithme</reponse3>
+    <reponse4>C'est une méthode de résolution de problème qui prend en compte un état initiale et connait l'état final vers lequel il doit se rendre</reponse4>
+    <nbPoint>1</nbPoint>
+    <reponseVraie>1</reponseVraie>
+    <image></image>
+  </question>
+
+  <question id = "10">
+    <enonce>Comment fonctionne une recherche FIFO ? </enonce>
+    <reponse1>On fait une recherche d'une entrée et d'une sortie pour avoir le chemin le moins couteûx même en prenant des risques</reponse1>
+    <reponse2>Il s'agit d'un traitement en profondeur des différentes branches d'un arbre des possibilités</reponse2>
+    <reponse3>C'est une méthode qui vise à corriger des erreurs dans les branches d'un arbre de possibilité affichant uniquement les chemins possibles</reponse3>
+    <reponse4>Il s'agit d'un algorithme de parcours en largeur c'est-à dire ligne par ligne des possibilités</reponse4>
+    <nbPoint>1</nbPoint>
+    <reponseVraie>4</reponseVraie>
+    <image></image>
+  </question>
+
+  <question id = "11">
+    <enonce>A quoi correspond une recherche en LIFO ?</enonce>
+    <reponse1>Il signifie Line Is For Operations</reponse1>
+    <reponse2>Un parcours en largeur d'abord</reponse2>
+    <reponse3>Un parcours en profondeur d'abord</reponse3>
+    <reponse4>Cela correspond à List Identify by Favorite Operations</reponse4>
+    <nbPoint>1</nbPoint>
+    <reponseVraie>3</reponseVraie>
+    <image></image>
+  </question>
+
+  <question id = "12">
+    <enonce>Qu'est-ce qu'un graphique isomorphe ? </enonce>
+    <reponse1>Il s'agit d'un graphique qui a la même forme si on le regarde dans un miroir</reponse1>
+    <reponse2>Il s'agit d'un graphique qui a la même taille et la même forme au niveau des directions entre les noeuds</reponse2>
+    <reponse3>Il s'agit d'un graphique qui à la même structure au niveau des relations entre les noeuds</reponse3>
+    <reponse4>Il s'agit d'un arbre qui suit une forme prédéfinie au départ par l'utilisateur selon une méthode choisie</reponse4>
+    <nbPoint>1</nbPoint>
+    <reponseVraie>3</reponseVraie>
+    <image></image>
+  </question>
+
+  <question id = "13">
+    <enonce>
+      Dans le cas de l'utilisation d'un algorithme alpha-beta pour la résolution d'un jeu de puissance 4, on se trouve dans la configuration suivante :
+      Les colonnes à des lettres notées de A à G de gauche à droite.
+      Quels sont les 4 prochains coups qui doivent être joués pour espérer gagner sachant que vous êtes les jaunes ?
+    </enonce>
+    <reponse1>Rouge-A, Jaune-B, Rouge-A </reponse1>
+    <reponse2>Rouge-C, Jaune-C, Rouge-A, Jaune-A</reponse2>
+    <reponse3>Rouge-A,Jaune-F,Rouge-A</reponse3>
+    <reponse4>Rouge-A,Jaune-A, Rouge-F,Jaune-F</reponse4>
+    <nbPoint>2</nbPoint>
+    <reponseVraie>4</reponseVraie>
+    <image>\Images\puissance4.png</image>
+  </question>
+
+  <question id = "14">
+    <enonce></enonce>
+    <reponse1></reponse1>
+    <reponse2></reponse2>
+    <reponse3></reponse3>
+    <reponse4></reponse4>
+    <nbPoint></nbPoint>
+    <reponseVraie></reponseVraie>
+    <image></image>
+  </question>
+
+  <question id = "15">
+    <enonce></enonce>
+    <reponse1></reponse1>
+    <reponse2></reponse2>
+    <reponse3></reponse3>
+    <reponse4></reponse4>
+    <nbPoint></nbPoint>
+    <reponseVraie></reponseVraie>
+    <image></image>
+  </question>
+  
+  <question id = "16">
+    <enonce></enonce>
+    <reponse1></reponse1>
+    <reponse2></reponse2>
+    <reponse3></reponse3>
+    <reponse4></reponse4>
+    <nbPoint></nbPoint>
+    <reponseVraie></reponseVraie>
+    <image></image>
+  </question>
+
+  <question id = "17">
+    <enonce></enonce>
+    <reponse1></reponse1>
+    <reponse2></reponse2>
+    <reponse3></reponse3>
+    <reponse4></reponse4>
+    <nbPoint></nbPoint>
+    <reponseVraie></reponseVraie>
+    <image></image>
+  </question>
+
+  <question id = "18">
+    <enonce></enonce>
+    <reponse1></reponse1>
+    <reponse2></reponse2>
+    <reponse3></reponse3>
+    <reponse4></reponse4>
+    <nbPoint></nbPoint>
+    <reponseVraie></reponseVraie>
+    <image></image>
+  </question>
+
+  <question id = "19">
+    <enonce></enonce>
+    <reponse1></reponse1>
+    <reponse2></reponse2>
+    <reponse3></reponse3>
+    <reponse4></reponse4>
+    <nbPoint></nbPoint>
+    <reponseVraie></reponseVraie>
+    <image></image>
+  </question>
+
+  <question id = "20">
+    <enonce></enonce>
+    <reponse1></reponse1>
+    <reponse2></reponse2>
+    <reponse3></reponse3>
+    <reponse4></reponse4>
+    <nbPoint></nbPoint>
+    <reponseVraie></reponseVraie>
+    <image></image>
+  </question>
+
+</questions>
