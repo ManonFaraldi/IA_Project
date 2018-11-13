@@ -127,7 +127,7 @@ x=""
     <reponseVraie>3</reponseVraie>
     <image></image>
   </question>
-
+  
   <question id = "12">
     <enonce>Qu'est-ce qu'un graphique isomorphe ? </enonce>
     <reponse1>Il s'agit d'un graphique qui a la même forme si on le regarde dans un miroir</reponse1>
@@ -151,84 +151,189 @@ x=""
     <reponse4>Rouge-A,Jaune-A, Rouge-F,Jaune-F</reponse4>
     <nbPoint>2</nbPoint>
     <reponseVraie>4</reponseVraie>
-    <image>\Images\puissance4.png</image>
+    <image>Images\puissance4.png</image>
   </question>
 
   <question id = "14">
-    <enonce></enonce>
-    <reponse1></reponse1>
-    <reponse2></reponse2>
-    <reponse3></reponse3>
-    <reponse4></reponse4>
-    <nbPoint></nbPoint>
-    <reponseVraie></reponseVraie>
-    <image></image>
+    <enonce>
+      "Arbre de recherche :
+      On souhaite appliqué une stratégie de type FIFO afin d'explorer chacune des pièces suivantes :
+      Lorsqu'une pièce est visitée, elle est notée PV. Tant qu'elle n'est pas visité, cette pièce s'appelle PNV.
+      A quel arbre de recherche correspond l'exploration FIFO de cette maison sachant que l'on souhaite faire le moins d'aller retour possible ?"
+    </enonce>
+    <reponse1>
+      "1) F={} ;  O={PNV1}
+      2) F={PV1} ; O={PNV2, PNV3}
+      3) F = {PV1,PV3} ; O={PV1,PNV4}
+      4) F={PV1,PV3,PV4} ; O={PV3}
+      5)F={PV1,PV3,PV4,PV3}; O={PV1,PV4}
+      6) F ={PV1,PV3,PV4,PV3,PV1}; O={PNV2,PV3}
+      7) F = {PV1,PV3,PV4,PV3,PV1,PV2}; O={}"
+    </reponse1>
+    <reponse2>
+      "1) F={} ;  O={PNV2}
+      2) F={PV2} ; O={PNV1}
+      3) F = {PV2,PV1} ; O={PV2,PNV3}
+      4) F={PV2,PV1,PV3} ; O={PV1,PNV4}
+      5)F={PV2,PV1,PV3,PV4};O= {}"
+    </reponse2>
+    <reponse3>
+      "1) F={} ;  O={PNV1}
+      2) F={PV1} ; O={PNV2, PNV3}
+      3) F = {PV1,PV2} ; O={PV1}
+      4) F={PV1,PV2,PV1} ; O={PV2,PNV3}
+      5)F={PV1,PV2,PV1,PV3}; O={PNV4}
+      6) F={PV1,PV2,PV1,PV3,PV4}; O={}"
+    </reponse3>
+    <reponse4>
+      "1) F={} ;  O={PNV1}
+      2) F={PV1} ; O={PNV2,PNV3}
+      3) F = {PV1,PV2} ; O={PNV3}
+      4) F={PV2,PV1,PV3} ; O={PNV4}
+      5)F={PV2,PV1,PV3,PV4};O= {}"
+    </reponse4>
+    <nbPoint>2</nbPoint>
+    <reponseVraie>4</reponseVraie>
+    <image>Images\FIFO.png</image>
   </question>
 
   <question id = "15">
-    <enonce></enonce>
-    <reponse1></reponse1>
-    <reponse2></reponse2>
-    <reponse3></reponse3>
-    <reponse4></reponse4>
-    <nbPoint></nbPoint>
-    <reponseVraie></reponseVraie>
-    <image></image>
+    <enonce>
+      "Arbre de recherche :
+      On souhaite appliqué une stratégie de type LIFO afin d'explorer chacune des pièces suivantes :
+      Lorsqu'une pièce est visitée, elle est notée PV. Tant qu'elle n'est pas visité, cette pièce s'appelle PNV.
+      A quel arbre de recherche correspond l'exploration LIFO de cette maison sachant que l'on souhaite faire le moins d'aller retour possible ?"
+    </enonce>
+    <reponse1>
+      "1) F={} ; O = {PNV1}
+      2) F={PV1}; O={PNV2}
+      3)F={PV1,PV2}; O={PNV3}
+      4) F={PV1,PV2,PV3}; O={PNV4,PNV5}
+      5)F={PV1,PV2,PV3,PV4}; O={PV3}
+      6)F={PV1,PV2,PV3,PV4,PV3};O={PV5,PV2,PNV5}
+      7)F={PV1,PV2,PV3,PV4,PV3,PV5};O={}"
+    </reponse1>
+    <reponse2>
+      "1) F={} ;  O={PNV1}
+      2) F={PV1} ; O={PNV2, PNV3}
+      3) F = {PV1,PV3} ; O={PV1,PNV4}
+      4) F={PV1,PV3,PV4} ; O={PV3}
+      5)F={PV1,PV3,PV4,PV3}; O={PV1,PV4}
+      6) F ={PV1,PV3,PV4,PV3,PV1}; O={PNV2,PV3}
+      7) F = {PV1,PV3,PV4,PV3,PV1,PV2}; O={}"
+    </reponse2>
+    <reponse3>
+      "1) F={} ;  O={PNV2}
+      2) F={PV2} ; O={PNV1,PNV3}
+      3) F = {PV2,PV1} ; O={PV2}
+      4) F={PV2,PV1,PV2} ; O={PV1,PNV3}
+      5)F={PV2,PV1,PV2,PV3};O= {PNV4,PNV5}
+      6) F={PV2,PV1,PV2,PV3,PV4}; O={PNV5}
+      7) F={PV2,PV1,PV2,PV3,PV4,PV5}"
+    </reponse3>
+    <reponse4>
+      "1) F={} ;  O={PNV1}
+      2) F={PV1} ; O={PNV2,PNV3}
+      3) F = {PV1,PV2} ; O={PNV5}
+      4) F={PV2,PV1,PV3,PNV5} ; O={PNV3,PNV4}
+      5)F={PV2,PV1,PV3,PV5,PV3};O= {PNV4}
+      6)F={PV2,PV1,PV3,PV5,PV3,PV4};O= {}"
+    </reponse4>
+    <nbPoint>2</nbPoint>
+    <reponseVraie>1</reponseVraie>
+    <image>Images\LIFO.png</image>
   </question>
   
   <question id = "16">
-    <enonce></enonce>
-    <reponse1></reponse1>
-    <reponse2></reponse2>
-    <reponse3></reponse3>
-    <reponse4></reponse4>
-    <nbPoint></nbPoint>
-    <reponseVraie></reponseVraie>
+    <enonce>
+      "On cherche a appliqué l'algorithme A* sur un jeu de taquin. Le but de ce jeu est de placer l'ensemble des chiffres de 1 à 9 dans l'ordre. On travaille sur un tableau 3x3.
+      On utilise le programme suivant :
+      if (posy > 0)
+      {
+      // Successeur en haut
+      // recopie du tableau
+      char[,] tab2 = new char[3, 3];
+      x
+      // MAJ de la position du ?
+      tab2[posx, posy] = tab2[posx, posy-1];
+      tab2[posx, posy-1] = '?';
+      // Ajout à listsucc
+      lsucc.Add(new NodeTaquin(GetStringFromTab(tab2)));
+      }
+      Que doit-on mettre à la place du ""x"" pour que l'algorithme trouve un successeur en haut  ?"
+    </enonce>
+    <reponse1>
+      "for (int i = 1 ; i!=2,i++)
+      {
+      tab2[i] =  tab2[j]
+      }"
+    </reponse1>
+    <reponse2>
+      "for(int j =0; j &#8804; 2;j++)
+      for (int i =0; i &#8804; 2; i++)
+      {
+      tab2[i,j]=tab[j,i]
+      }"
+    </reponse2>
+    <reponse3>
+      "for (int j = 0; j &#8804; 2; j++)
+      for (int i = 0; i &#8804; 2; i++)
+      {
+      tab2[i, j] = tab[i, j];
+      }"
+    </reponse3>
+    <reponse4>
+      "tab2 = ['1','2','3','4','5','6','7','8','?']"
+    </reponse4>
+    <nbPoint>2</nbPoint>
+    <reponseVraie>3</reponseVraie>
     <image></image>
   </question>
 
   <question id = "17">
-    <enonce></enonce>
-    <reponse1></reponse1>
-    <reponse2></reponse2>
-    <reponse3></reponse3>
-    <reponse4></reponse4>
-    <nbPoint></nbPoint>
-    <reponseVraie></reponseVraie>
-    <image></image>
+    <enonce>
+      "Soit le graphique suivant :
+      Quel est le plus court chemin selon l'algorithme de Dijkstra entre B et J en prenant en compte les distances entre les noeuds ? "
+    </enonce>
+    <reponse1>B>C>D>H>J	B>C>D>H>J</reponse1>
+    <reponse2>B>C>H>J</reponse2>
+    <reponse3>B>C>J </reponse3>
+    <reponse4>B>C>D>H>I>J</reponse4>
+    <nbPoint>1</nbPoint>
+    <reponseVraie>1</reponseVraie>
+    <image>Images/Dijsktra</image>
   </question>
 
   <question id = "18">
-    <enonce></enonce>
-    <reponse1></reponse1>
-    <reponse2></reponse2>
-    <reponse3></reponse3>
-    <reponse4></reponse4>
-    <nbPoint></nbPoint>
-    <reponseVraie></reponseVraie>
+    <enonce>Pour une méthode de résolution de problème, que signifie le nombre de variables à affecter ?</enonce>
+    <reponse1>Il s'agit du nombre de variables les moins contraignantes</reponse1>
+    <reponse2>C'est le nombre de variables à affecter en paramètres</reponse2>
+    <reponse3>Il s'agit de l'ensemble des états possibles</reponse3>
+    <reponse4>C'est le nombre d'étapes à réaliser entre l'état intial et l'état final</reponse4>
+    <nbPoint>1</nbPoint>
+    <reponseVraie>1</reponseVraie>
     <image></image>
   </question>
 
   <question id = "19">
-    <enonce></enonce>
-    <reponse1></reponse1>
-    <reponse2></reponse2>
-    <reponse3></reponse3>
-    <reponse4></reponse4>
-    <nbPoint></nbPoint>
-    <reponseVraie></reponseVraie>
+    <enonce>Quelle est la principale difficulté du TALN ?</enonce>
+    <reponse1>Combiner à la fois les ontologies et les méthodes d'apprentissages</reponse1>
+    <reponse2>Maîtriser les systèmes IBM Watson et Jeopardy</reponse2>
+    <reponse3>Analyser des données chiffrées</reponse3>
+    <reponse4>Maîtriser l'algorithme A*</reponse4>
+    <nbPoint>1</nbPoint>
+    <reponseVraie>1</reponseVraie>
     <image></image>
   </question>
-
+  
   <question id = "20">
-    <enonce></enonce>
-    <reponse1></reponse1>
-    <reponse2></reponse2>
-    <reponse3></reponse3>
-    <reponse4></reponse4>
-    <nbPoint></nbPoint>
-    <reponseVraie></reponseVraie>
+    <enonce>Lequel de ces systèmes n'est pas issu du TALN ?</enonce>
+    <reponse1>IBM Watson</reponse1>
+    <reponse2>Keyword Evidence</reponse2>
+    <reponse3>AllenNLP</reponse3>
+    <reponse4>LNLanguage</reponse4>
+    <nbPoint>1</nbPoint>
+    <reponseVraie>4</reponseVraie>
     <image></image>
   </question>
-
 </questions>
