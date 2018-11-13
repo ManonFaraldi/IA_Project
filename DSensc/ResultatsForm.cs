@@ -16,5 +16,10 @@ namespace DSensc
         {
             InitializeComponent();
         }
+
+        private void quitter_btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

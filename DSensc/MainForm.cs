@@ -17,6 +17,12 @@ namespace DSensc
             InitializeComponent();
         }
 
+        public string Nom
+        {
+            get { return nom_txtbox.Text; }
+            set { nom_txtbox.Text = value; }
+        }
+
         private void demarrer_btn_Click(object sender, EventArgs e)
         {
             QuestionForm questionnaire = new QuestionForm();

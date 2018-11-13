@@ -32,6 +32,7 @@
             this.resultats_txt = new System.Windows.Forms.Label();
             this.sur20_txt = new System.Windows.Forms.Label();
             this.appreciaiton_txt = new System.Windows.Forms.Label();
+            this.quitter_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TestIA_txt
@@ -75,12 +76,27 @@
             this.appreciaiton_txt.TabIndex = 11;
             this.appreciaiton_txt.Text = "appréciation";
             // 
+            // quitter_btn
+            // 
+            this.quitter_btn.BackColor = System.Drawing.Color.LimeGreen;
+            this.quitter_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.quitter_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quitter_btn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.quitter_btn.Location = new System.Drawing.Point(195, 192);
+            this.quitter_btn.Name = "quitter_btn";
+            this.quitter_btn.Size = new System.Drawing.Size(82, 43);
+            this.quitter_btn.TabIndex = 15;
+            this.quitter_btn.Text = "Quitter";
+            this.quitter_btn.UseVisualStyleBackColor = false;
+            this.quitter_btn.Click += new System.EventHandler(this.quitter_btn_Click);
+            // 
             // ResultatsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(464, 284);
+            this.Controls.Add(this.quitter_btn);
             this.Controls.Add(this.appreciaiton_txt);
             this.Controls.Add(this.sur20_txt);
             this.Controls.Add(this.resultats_txt);
@@ -98,5 +114,6 @@
         private System.Windows.Forms.Label resultats_txt;
         private System.Windows.Forms.Label sur20_txt;
         private System.Windows.Forms.Label appreciaiton_txt;
+        private System.Windows.Forms.Button quitter_btn;
     }
 }

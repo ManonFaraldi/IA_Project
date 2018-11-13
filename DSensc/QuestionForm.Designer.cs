@@ -40,6 +40,7 @@
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.question_enonce_lbl = new System.Windows.Forms.Label();
             this.numQuestion_lbl = new System.Windows.Forms.Label();
+            this.prenom_txt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -147,7 +148,7 @@
             // 
             // PictureBox
             // 
-            this.PictureBox.Location = new System.Drawing.Point(617, 18);
+            this.PictureBox.Location = new System.Drawing.Point(613, 84);
             this.PictureBox.Name = "PictureBox";
             this.PictureBox.Size = new System.Drawing.Size(291, 246);
             this.PictureBox.TabIndex = 15;
@@ -162,7 +163,6 @@
             this.question_enonce_lbl.Size = new System.Drawing.Size(89, 13);
             this.question_enonce_lbl.TabIndex = 16;
             this.question_enonce_lbl.Text = "question_enonce";
-            this.question_enonce_lbl.Click += new System.EventHandler(this.question_enonce_lbl_Click);
             // 
             // numQuestion_lbl
             // 
@@ -174,12 +174,23 @@
             this.numQuestion_lbl.TabIndex = 17;
             this.numQuestion_lbl.Text = "1";
             // 
+            // prenom_txt
+            // 
+            this.prenom_txt.AutoSize = true;
+            this.prenom_txt.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prenom_txt.Location = new System.Drawing.Point(729, 29);
+            this.prenom_txt.Name = "prenom_txt";
+            this.prenom_txt.Size = new System.Drawing.Size(43, 16);
+            this.prenom_txt.TabIndex = 18;
+            this.prenom_txt.Text = "Prénom";
+            // 
             // QuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(932, 593);
+            this.Controls.Add(this.prenom_txt);
             this.Controls.Add(this.numQuestion_lbl);
             this.Controls.Add(this.question_enonce_lbl);
             this.Controls.Add(this.PictureBox);
@@ -214,5 +225,6 @@
         private System.Windows.Forms.PictureBox PictureBox;
         private System.Windows.Forms.Label question_enonce_lbl;
         private System.Windows.Forms.Label numQuestion_lbl;
+        private System.Windows.Forms.Label prenom_txt;
     }
 }
