@@ -17,9 +17,9 @@ namespace DSensc
             InitializeComponent();
         }
 
+        private void question_enonce_lbl_Click(object sender, EventArgs e)
+        {
 
-
-
-
+        }
     }
 }

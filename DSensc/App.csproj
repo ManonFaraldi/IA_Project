@@ -91,14 +91,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{7c288fcc-b57f-4b50-be7e-b3b78a2948b0}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain\Domain.csproj">
-      <Project>{91ec2704-bf04-416f-8273-7212f5bdd758}</Project>
-      <Name>Domain</Name>
-    </ProjectReference>
+    <Content Include="Questions.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

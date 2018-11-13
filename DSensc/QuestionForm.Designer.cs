@@ -38,6 +38,7 @@
             this.rep4_radiobtn = new System.Windows.Forms.RadioButton();
             this.valider_btn = new System.Windows.Forms.Button();
             this.PictureBox = new System.Windows.Forms.PictureBox();
+            this.question_enonce_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,12 +145,22 @@
             // 
             // PictureBox
             // 
-            this.PictureBox.Enabled = false;
             this.PictureBox.Location = new System.Drawing.Point(617, 18);
             this.PictureBox.Name = "PictureBox";
             this.PictureBox.Size = new System.Drawing.Size(291, 246);
             this.PictureBox.TabIndex = 15;
             this.PictureBox.TabStop = false;
+            this.PictureBox.Visible = false;
+            // 
+            // question_enonce_lbl
+            // 
+            this.question_enonce_lbl.AutoSize = true;
+            this.question_enonce_lbl.Location = new System.Drawing.Point(162, 93);
+            this.question_enonce_lbl.Name = "question_enonce_lbl";
+            this.question_enonce_lbl.Size = new System.Drawing.Size(89, 13);
+            this.question_enonce_lbl.TabIndex = 16;
+            this.question_enonce_lbl.Text = "question_enonce";
+            this.question_enonce_lbl.Click += new System.EventHandler(this.question_enonce_lbl_Click);
             // 
             // QuestionForm
             // 
@@ -157,6 +168,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(932, 593);
+            this.Controls.Add(this.question_enonce_lbl);
             this.Controls.Add(this.PictureBox);
             this.Controls.Add(this.valider_btn);
             this.Controls.Add(this.rep4_radiobtn);
@@ -187,5 +199,6 @@
         private System.Windows.Forms.RadioButton rep4_radiobtn;
         private System.Windows.Forms.Button valider_btn;
         private System.Windows.Forms.PictureBox PictureBox;
+        private System.Windows.Forms.Label question_enonce_lbl;
     }
 }
