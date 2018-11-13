@@ -1,1 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<question num = "1">
+  <enonce>Qu'est-ce qu'un degré de liberté en robotique ? </enonce>
+  <reponseVraie>Un axe sur lequel un élément mécanique peut se déplacer dans un plan</reponseVraie>
+  <reponseFausse1>Un droit en robotique</reponseFausse1>
+  <reponseFausse2>Une température auquel le programme tourne de façon optimale</reponseFausse2>
+  <reponseFausse3>Une option de robotique</reponseFausse3>
+  <nbPoint>1</nbPoint>
+  <image></image>
+</question>
