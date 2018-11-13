@@ -12,6 +12,7 @@ namespace DSensc
 {
     public partial class QuestionForm : Form
     {
+        private int NbQuestion { get; set; }
         public QuestionForm()
         {
             InitializeComponent();
@@ -20,6 +21,25 @@ namespace DSensc
         private void question_enonce_lbl_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void valider_btn_Click(object sender, EventArgs e)
+        {
+            NbQuestion = int.Parse(numQuestion_lbl.Text);
+            NbQuestion++;
+            if (NbQuestion == 21)
+            {
+                ResultatsForm resultatsForm = new ResultatsForm();
+                if (resultatsForm.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+                Form.ActiveForm.Close();
+            }
+            else
+            {               
+                numQuestion_lbl.Text = Convert.ToString(NbQuestion);
+            }
         }
     }
 }

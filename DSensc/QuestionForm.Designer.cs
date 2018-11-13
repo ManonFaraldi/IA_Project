@@ -39,6 +39,7 @@
             this.valider_btn = new System.Windows.Forms.Button();
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.question_enonce_lbl = new System.Windows.Forms.Label();
+            this.numQuestion_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,6 +143,7 @@
             this.valider_btn.TabIndex = 14;
             this.valider_btn.Text = "Valider";
             this.valider_btn.UseVisualStyleBackColor = false;
+            this.valider_btn.Click += new System.EventHandler(this.valider_btn_Click);
             // 
             // PictureBox
             // 
@@ -162,12 +164,23 @@
             this.question_enonce_lbl.Text = "question_enonce";
             this.question_enonce_lbl.Click += new System.EventHandler(this.question_enonce_lbl_Click);
             // 
+            // numQuestion_lbl
+            // 
+            this.numQuestion_lbl.AutoSize = true;
+            this.numQuestion_lbl.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numQuestion_lbl.Location = new System.Drawing.Point(111, 84);
+            this.numQuestion_lbl.Name = "numQuestion_lbl";
+            this.numQuestion_lbl.Size = new System.Drawing.Size(19, 23);
+            this.numQuestion_lbl.TabIndex = 17;
+            this.numQuestion_lbl.Text = "1";
+            // 
             // QuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(932, 593);
+            this.Controls.Add(this.numQuestion_lbl);
             this.Controls.Add(this.question_enonce_lbl);
             this.Controls.Add(this.PictureBox);
             this.Controls.Add(this.valider_btn);
@@ -200,5 +213,6 @@
         private System.Windows.Forms.Button valider_btn;
         private System.Windows.Forms.PictureBox PictureBox;
         private System.Windows.Forms.Label question_enonce_lbl;
+        private System.Windows.Forms.Label numQuestion_lbl;
     }
 }

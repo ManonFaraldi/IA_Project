@@ -61,6 +61,12 @@
     <Compile Include="QuestionForm.Designer.cs">
       <DependentUpon>QuestionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResultatsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultatsForm.Designer.cs">
+      <DependentUpon>ResultatsForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +82,9 @@
     </Compile>
     <EmbeddedResource Include="QuestionForm.resx">
       <DependentUpon>QuestionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultatsForm.resx">
+      <DependentUpon>ResultatsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
