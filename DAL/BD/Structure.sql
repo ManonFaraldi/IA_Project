@@ -10,5 +10,6 @@ CREATE table question (
 	question_difficulte varchar(10) not null,
 	question_nbPoints integer(2) not null,
 	question_image boolean null
+	-- Mettre le chemin pour trouver une image dans la BDD  !!!!!
 	
 );

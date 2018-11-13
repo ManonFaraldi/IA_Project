@@ -19,7 +19,7 @@ namespace DSensc
 
         private void demarrer_btn_Click(object sender, EventArgs e)
         {
-            Questions questionnaire = new Questions();
+            QuestionForm questionnaire = new QuestionForm();
             if (questionnaire.ShowDialog() == DialogResult.OK)
             {
 
