@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DSensc.Properties {
+namespace App.Properties {
     using System;
     
     

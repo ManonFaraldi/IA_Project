@@ -1,4 +1,4 @@
-﻿namespace DSensc
+﻿namespace App
 {
     partial class ResultatsForm
     {
