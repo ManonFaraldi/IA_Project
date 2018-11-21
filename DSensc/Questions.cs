@@ -6,51 +6,59 @@ using System.Threading.Tasks;
 
 namespace App
 {
-    class Questions
+    public class Questions
     {
-        //attributs
-        public string enonce { get; set; }
-        public string reponse1 { get; set; }
-        public string reponse2 { get; set; }
-        public string reponse3 { get; set; }
-        public string reponse4 { get; set; }
-        public int nbPoint { get; set;}
-        public int reponseVraie { get; set; }
-        public string image { get; set; }
+        //propriétés
+        public string Enonce { get; set; }
+        public string Reponse1 { get; set; }
+        public string Reponse2 { get; set; }
+        public string Reponse3 { get; set; }
+        public string Reponse4 { get; set; }
+        public int NbPoint { get; set;}
+        public int ReponseVraie { get; set; }
+        public string Image { get; set; }
 
         // constructeur
 
         public Questions()
         {
+            Enonce = "Null";
+            Reponse1 = "Null";
+            Reponse2 = "Null";
+            Reponse3 = "Null";
+            Reponse4 = "Null";
+            NbPoint = 0;
+            ReponseVraie = 1;
+            ReponseVraie = 1;
         }
 
-        public Questions(string _enonce, string _rep1, string _rep2, string _rep3, string _rep4, int _pt, int _repVraie)
+        public Questions(string enonce, string rep1, string rep2, string rep3, string rep4, int pt, int repVraie)
         {
-            enonce = _enonce;
-            reponse1 = _rep1;
-            reponse2 = _rep2;
-            reponse3 = _rep3;
-            reponse4 = _rep4;
-            nbPoint = _pt;
-            reponseVraie = _repVraie;
+            Enonce = enonce;
+            Reponse1 = rep1;
+            Reponse2 = rep2;
+            Reponse3 = rep3;
+            Reponse4 = rep4;
+            NbPoint = pt;
+            ReponseVraie = repVraie;
         }
 
-        public Questions(string _enonce, string _rep1, string _rep2, string _rep3, string _rep4, int _pt, int _repVraie, string _image)
+        public Questions(string enonce, string rep1, string rep2, string rep3, string rep4, int pt, int repVraie, string image) : this(enonce, rep1, rep2, rep3, rep4, pt, repVraie)
         {
-            enonce = _enonce;
-            reponse1 = _rep1;
-            reponse2 = _rep2;
-            reponse3 = _rep3;
-            reponse4 = _rep4;
-            nbPoint = _pt;
-            reponseVraie = _repVraie;
-            image = _image;
+            Image = image;
          }
 
         public override string ToString()
         {
-            return this.enonce + "\n\n" + this.reponse1 + "\n\n" + this.reponse2
-                + "\n\n" + this.reponse3 + "\n\n" + this.reponse4 + "\n\n" + this.reponseVraie;
+            return this.Enonce + "\n\n" + this.Reponse1 + "\n\n" + this.Reponse2
+                + "\n\n" + this.Reponse3 + "\n\n" + this.Reponse4 + "\n\n" + this.ReponseVraie;
         }
+
+        public bool AvecImage()
+        {
+            if (Image == null) return false;
+            return true;
+        }
+
     }
 }

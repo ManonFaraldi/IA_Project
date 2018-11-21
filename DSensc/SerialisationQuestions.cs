@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace App
 {
-    class SerialisationQuestions
+    class SerialisationQuestions // Revoir cours p.11 12/31 ("Gestion données persistantes")
     {
         // Sérialisation et sauvegarde d'un fichier xml
         public static void Save(string filename, List<Questions> questions)

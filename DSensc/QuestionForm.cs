@@ -18,8 +18,9 @@ namespace App
       
         public QuestionForm()
         {
-            this.questions = App.SerialisationQuestions.CreateFromFile("questions.xml");
             InitializeComponent();
+            this.questions = App.SerialisationQuestions.CreateFromFile("questions.xml");
+            
            // prenom_txt.Text = MainForm.ActiveForm.Text.Nom; // AREVOIR !!!!!
         }
 
@@ -39,7 +40,7 @@ namespace App
             {               
                 numQuestion_lbl.Text = Convert.ToString(NbQuestion);
                 TriQuestion(questions);
-                question_enonce_lbl = this.questions.enonce; 
+               // question_enonce_lbl = this.questions.Enonce; // REvoir les using + 2 namespace (IALib & Afficheur --> séparer App et les questions ??)
             }
         }
 
