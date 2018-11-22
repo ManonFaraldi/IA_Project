@@ -28,7 +28,6 @@ namespace App
             QuestionForm questionnaire = new QuestionForm();
             if (questionnaire.ShowDialog() == DialogResult.OK)
             {
-
             }
 
 
