@@ -7,19 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Donnees;
 
 namespace App
 {
     public partial class QuestionForm : Form
     {
-        private int NbQuestion { get; set; }
-
         public List<Questions> questions = new List<Questions>();
+
+        private int NbQuestion { get; set; }   
       
         public QuestionForm()
         {
             InitializeComponent();
-            this.questions = App.SerialisationQuestions.CreateFromFile("questions.xml");
+
+            // Chargement des questions du fichier xml dans Questions
+            this.questions = SerialisationQuestions.CreateFromFile("questions.xml");
             
            // prenom_txt.Text = MainForm.ActiveForm.Text.Nom; // AREVOIR !!!!!
         }
@@ -27,6 +30,7 @@ namespace App
 
         public void valider_btn_Click(object sender, EventArgs e)
         {
+            //Affichage du n° de la question :
             NbQuestion = int.Parse(numQuestion_lbl.Text);
             NbQuestion++;
             if (NbQuestion == 21) // le test est fini
@@ -36,12 +40,20 @@ namespace App
                 {
                 }
             }
-            else //l'affichage continue
+            else //l'affichage continu
             {               
                 numQuestion_lbl.Text = Convert.ToString(NbQuestion);
                 TriQuestion(questions);
-               // question_enonce_lbl = this.questions.Enonce; // REvoir les using + 2 namespace (IALib & Afficheur --> séparer App et les questions ??)
+                // question_enonce_lbl = this.questions.Enonce; // REvoir les using + 2 namespace (IALib & Afficheur --> séparer App et les questions ??)
+
+                //Afficher la question :
+                if (rep1_radiobtn.Checked == 
+
+
+
             }
+
+
         }
 
         public static void TriQuestion<T>(IList<T> list)
@@ -57,7 +69,5 @@ namespace App
                 list[i] = value;
             }
         }
-
-
     }
 }

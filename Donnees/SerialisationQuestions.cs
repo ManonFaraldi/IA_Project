@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace App
+namespace Donnees
 {
-    public class SerialisationQuestions // Revoir cours p.11 12/31 ("Gestion données persistantes")
+    public class SerialisationQuestions
     {
-        // Sérialisation et sauvegarde d'un fichier xml
+        // Sérialisation et sauvegarde d'un objet dans un fichier xml
         public static void Save(string filename, List<Questions> questions)
         {
             XmlSerializer fichier = new XmlSerializer(typeof(List<Questions>));
@@ -21,7 +21,7 @@ namespace App
             }
         }
 
-        // Création d'un fichier xml par désérialisation
+        // Création d'un objet à partir d'un fichier xml par désérialisation 
         public static List<Questions> CreateFromFile(string filename)
         {
             XmlSerializer fichier = new XmlSerializer(typeof(List<Questions>));
