@@ -22,7 +22,7 @@ namespace App
             InitializeComponent();
 
             // Chargement des questions du fichier xml dans Questions
-            this.questions = SerialisationQuestions.CreateFromFile("questions.xml");
+            questions = SerialisationQuestions.CreateFromFile("..\\..\\..\\Donnees\\Questions.xml");
             
            // prenom_txt.Text = MainForm.ActiveForm.Text.Nom; // AREVOIR !!!!!
         }
@@ -47,8 +47,17 @@ namespace App
                 // question_enonce_lbl = this.questions.Enonce; // REvoir les using + 2 namespace (IALib & Afficheur --> séparer App et les questions ??)
 
                 //Afficher la question :
-                if (rep1_radiobtn.Checked == 
-
+                if ((rep1_radiobtn.Checked == false) && (rep2_radiobtn.Checked == false) && (rep3_radiobtn.Checked == false) && (rep4_radiobtn.Checked == false))
+                {
+                    MessageBox.Show("Veuillez cocher une réponse", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    foreach (Questions q in questions)
+                    {
+                        question_enonce_lbl.Text = Convert.ToString(q.Enonce); // Revoir les using + 2 namespace (IALib & Afficheur --> séparer App et les questions ??)
+                    }
+                }
 
 
             }
