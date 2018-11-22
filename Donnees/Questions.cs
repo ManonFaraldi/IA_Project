@@ -22,14 +22,6 @@ namespace App
 
         public Questions()
         {
-            Enonce = "Null";
-            Reponse1 = "Null";
-            Reponse2 = "Null";
-            Reponse3 = "Null";
-            Reponse4 = "Null";
-            NbPoint = 0;
-            ReponseVraie = 1;
-            ReponseVraie = 1;
         }
 
         public Questions(string enonce, string rep1, string rep2, string rep3, string rep4, int pt, int repVraie)

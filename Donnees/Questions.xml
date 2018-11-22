@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfQuestions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Questions Id = "1">
+    <Enonce>Qu'est-ce qu'un degré de liberté en robotique ? </Enonce>
+    <Reponse1>Un axe sur lequel un élément mécanique peut se déplacer dans un plan</Reponse1>
+    <Reponse2>Un droit en robotique</Reponse2>
+    <Reponse3>Une température auquel le programme tourne de façon optimale</Reponse3>
+    <Reponse4>Une option de robotique</Reponse4>
+    <NbPoint>1</NbPoint>
+    <ReponseVraie>1</ReponseVraie>
+    <Image></Image>
+  </Questions>
+
+  <Questions Id = "2">
+    <Enonce>Comment sont créés les programmes de prises en compte du placement d'une pince en robotique pour saisir un objet ?</Enonce>
+    <Reponse1>Comme pour les humains : on commence par se déplacer vers l'objet, on se met ensuite à son niveau et on saisit l'objet</Reponse1>
+    <Reponse2>En cinématique inverse : on se positionne face à l'objet, on bouge dans le plan pour prendre l'objet, on corrige si nécessaire et on se saisit de l'objet</Reponse2>
+    <Reponse3>En utilisant des algorithmes d'apprentissage, par essai-erreur jusqu'à ce que le robot apprenne à se saisir de l'objet</Reponse3>
+    <Reponse4>Avec des algorithmes où le déplacement se fait par à-coups, et où l'ordre d'exécution des déplacement peut changer</Reponse4>
+    <NbPoint>1</NbPoint>
+    <ReponseVraie>2</ReponseVraie>
+    <Image></Image>
+  </Questions>
+
+  <Questions Id = "3">
+    <Enonce>Qu'est-ce qui compose une commande moteur ? </Enonce>
+    <Reponse1>Des capteurs, un macrocontroleur, un servo-contrôleur et un moteur</Reponse1>
+    <Reponse2>Un microprocesseur avec mémoire, des capteurs, de la connectique, un servo-contrôleur</Reponse2>
+    <Reponse3>Un capteur, un moteur et de la connectique</Reponse3>
+    <Reponse4>Un microprocesseur, un contrôleur de moteur, de la connectique</Reponse4>
+    <NbPoint>1</NbPoint>
+    <ReponseVraie>2</ReponseVraie>
+    <Image></Image>
+  </Questions>
+
+  <Questions Id = "4">
+    <Enonce>Qu'est-ce qu'un servo-contrôleur ?</Enonce>
+    <Reponse1>Il réalise un traitement des informations en mémoire</Reponse1>
+    <Reponse2>C'est le vrai cerveau puisqu'il est programmable et peut exécuter de nombreux calculs</Reponse2>
+    <Reponse3>Il réalise les actions et n'est pas autonome contrairement au microprocesseurs</Reponse3>
+    <Reponse4>Il contrrôle seulement les déplacements du robot.</Reponse4>
+    <NbPoint>1</NbPoint>
+    <ReponseVraie>3</ReponseVraie>
+    <Image></Image>
+  </Questions>
+
+  <Questions Id = "5">
+    <Enonce>Quels sont les différentes catégories de capteurs ? </Enonce>
+    <Reponse1>Il en existe autant que d'information que l'on souhaite coder en fonction de la complexité de l'information dont on a besoin (informations proprioceptives, extérioceptives, capteurs passifs, actifs, caméra, LIDAR, puces RFID...)</Reponse1>
+    <Reponse2>Visuels, sensoriels et GPS</Reponse2>
+    <Reponse3>Internes au robot et passif</Reponse3>
+    <Reponse4>Passif, actives, internes et externe au robot, qui peuvent donc envoyer et/ou recevoir des signaux</Reponse4>
+    <NbPoint>1</NbPoint>
+    <ReponseVraie>1</ReponseVraie>
+    <Image></Image>
+  </Questions>
+
+  <Questions Id = "6">
+    <Enonce>Comment peut-on définir l'Intelligence Artificielle ? </Enonce>
+    <Reponse1>Il s'agit de la simulation via un ordinateur de l'intelligence des humains, elle peut être spécifique ou spécialisée pour une tâche</Reponse1>
+    <Reponse2>Il s'agit d'un algorithme permettant de résoudre des jeux de stratégies complexes</Reponse2>
+    <Reponse3>Il s'agit d'un ensemble de techniques et algorithmes permettant de résoudre des problèmes à l'aide d'un ordinateur</Reponse3>
+    <Reponse4>Il s'agit d'une technique de résolution de problèmes simples via un graphique dont on suit les branches pour trouver le plus court chemin</Reponse4>
+    <NbPoint>1</NbPoint>
+    <ReponseVraie>3</ReponseVraie>
+    <Image></Image>
+  </Questions>
+
+  <Questions Id = "7">
+    <Enonce>L’algorithme MinMax est :</Enonce>
+    <Reponse1>Utilisé en I.A. pour jouer à deux contre un adversaire.</Reponse1>
+    <Reponse2>Utilisé en I.A. pour trouver le plus court chemin dans un graphe.</Reponse2>
+    <Reponse3>Utilisé en reconnaissance des formes pour détecter un isomorphisme de graphe</Reponse3>
+    <Reponse4>Utilisé pour la détection de contours en vision par ordinateur</Reponse4>
+    <NbPoint>1</NbPoint>
+    <ReponseVraie>2</ReponseVraie>
+    <Image></Image>
+  </Questions>
+
+  <Questions Id = "8">
+    <Enonce>
+      Soit M une matrice d’adjacence de taille NxN remplie avec des « a », des « b » ou éventuellement avec des « 0 » en cas d’absence de relation. On considère le code ci-dessous :
+      int cpt = 0 ;
+      for (int i=0 ; i &lt; n ; i=""
+for="" (int="" j="0" ; j="" &lt; n ; j=""
+x=""
+    </Enonce>
+    <Reponse1>if ((M[i,j] == "a") || (M[i,j]== "b")) cpt++ ;</Reponse1>
+    <Reponse2>if ((M[i,j] != "0") &amp;&amp; (M[j,i] != M[i,j])) cpt++ ;</Reponse2>
+    <Reponse3>Ni a, ni b, il faut d’abord modifier les lignes précédentes.</Reponse3>
+    <Reponse4>if ((M[i,i] != "0") &amp;&amp; (M[j,j] != M[i,j])) cpt++ ;</Reponse4>
+    <NbPoint>3</NbPoint>
+    <ReponseVraie>2</ReponseVraie>
+    <Image></Image>
+  </Questions>
+
+
+  <Questions Id = "9">
+    <Enonce>Qu'est-ce que l'espace d'état ? </Enonce>
+    <Reponse1>Il s'agit de l'état dans lequel se trouve un problème lorsque l'on commence à tenter de résoudre ce dernier</Reponse1>
+    <Reponse2>Il s'agit d'un état dans lequel se trouve un espace de jeu</Reponse2>
+    <Reponse3>C'est l'espace de jeu sur lequel on applique un algorithme</Reponse3>
+    <Reponse4>C'est une méthode de résolution de problème qui prend en compte un état initiale et connait l'état final vers lequel il doit se rendre</Reponse4>
+    <NbPoint>1</NbPoint>
+    <ReponseVraie>1</ReponseVraie>
+    <Image></Image>
+  </Questions>
+
+  <Questions Id = "10">
+    <Enonce>Comment fonctionne une recherche FIFO ? </Enonce>
+    <Reponse1>On fait une recherche d'une entrée et d'une sortie pour avoir le chemin le moins couteûx même en prenant des risques</Reponse1>
+    <Reponse2>Il s'agit d'un traitement en profondeur des différentes branches d'un arbre des possibilités</Reponse2>
+    <Reponse3>C'est une méthode qui vise à corriger des erreurs dans les branches d'un arbre de possibilité affichant uniquement les chemins possibles</Reponse3>
+    <Reponse4>Il s'agit d'un algorithme de parcours en largeur c'est-à dire ligne par ligne des possibilités</Reponse4>
+    <NbPoint>1</NbPoint>
+    <ReponseVraie>4</ReponseVraie>
+    <Image></Image>
+  </Questions>
+
+  <Questions Id = "11">
+    <Enonce>A quoi correspond une recherche en LIFO ?</Enonce>
+    <Reponse1>Il signifie Line Is For Operations</Reponse1>
+    <Reponse2>Un parcours en largeur d'abord</Reponse2>
+    <Reponse3>Un parcours en profondeur d'abord</Reponse3>
+    <Reponse4>Cela correspond à List Identify by Favorite Operations</Reponse4>
+    <NbPoint>1</NbPoint>
+    <ReponseVraie>3</ReponseVraie>
+    <Image></Image>
+  </Questions>
+
+  <Questions Id = "12">
+    <Enonce>Qu'est-ce qu'un graphique isomorphe ? </Enonce>
+    <Reponse1>Il s'agit d'un graphique qui a la même forme si on le regarde dans un miroir</Reponse1>
+    <Reponse2>Il s'agit d'un graphique qui a la même taille et la même forme au niveau des directions entre les noeuds</Reponse2>
+    <Reponse3>Il s'agit d'un graphique qui à la même structure au niveau des relations entre les noeuds</Reponse3>
+    <Reponse4>Il s'agit d'un arbre qui suit une forme prédéfinie au départ par l'utilisateur selon une méthode choisie</Reponse4>
+    <NbPoint>1</NbPoint>
+    <ReponseVraie>3</ReponseVraie>
+    <Image></Image>
+  </Questions>
+
+  <Questions Id = "13">
+    <Enonce>
+      Dans le cas de l'utilisation d'un algorithme alpha-beta pour la résolution d'un jeu de puissance 4, on se trouve dans la configuration suivante :
+      Les colonnes à des lettres notées de A à G de gauche à droite.
+      Quels sont les 4 prochains coups qui doivent être joués pour espérer gagner sachant que vous êtes les jaunes ?
+    </Enonce>
+    <Reponse1>Rouge-A, Jaune-B, Rouge-A </Reponse1>
+    <Reponse2>Rouge-C, Jaune-C, Rouge-A, Jaune-A</Reponse2>
+    <Reponse3>Rouge-A,Jaune-F,Rouge-A</Reponse3>
+    <Reponse4>Rouge-A,Jaune-A, Rouge-F,Jaune-F</Reponse4>
+    <NbPoint>2</NbPoint>
+    <ReponseVraie>4</ReponseVraie>
+    <Image>Images\puissance4.png</Image>
+  </Questions>
+
+  <Questions Id = "14">
+    <Enonce>
+      "Arbre de recherche :
+      On souhaite appliqué une stratégie de type FIFO afin d'explorer chacune des pièces suivantes :
+      Lorsqu'une pièce est visitée, elle est notée PV. Tant qu'elle n'est pas visité, cette pièce s'appelle PNV.
+      A quel arbre de recherche correspond l'exploration FIFO de cette maison sachant que l'on souhaite faire le moins d'aller retour possible ?"
+    </Enonce>
+    <Reponse1>
+      "1) F={} ;  O={PNV1}
+      2) F={PV1} ; O={PNV2, PNV3}
+      3) F = {PV1,PV3} ; O={PV1,PNV4}
+      4) F={PV1,PV3,PV4} ; O={PV3}
+      5)F={PV1,PV3,PV4,PV3}; O={PV1,PV4}
+      6) F ={PV1,PV3,PV4,PV3,PV1}; O={PNV2,PV3}
+      7) F = {PV1,PV3,PV4,PV3,PV1,PV2}; O={}"
+    </Reponse1>
+    <Reponse2>
+      "1) F={} ;  O={PNV2}
+      2) F={PV2} ; O={PNV1}
+      3) F = {PV2,PV1} ; O={PV2,PNV3}
+      4) F={PV2,PV1,PV3} ; O={PV1,PNV4}
+      5)F={PV2,PV1,PV3,PV4};O= {}"
+    </Reponse2>
+    <Reponse3>
+      "1) F={} ;  O={PNV1}
+      2) F={PV1} ; O={PNV2, PNV3}
+      3) F = {PV1,PV2} ; O={PV1}
+      4) F={PV1,PV2,PV1} ; O={PV2,PNV3}
+      5)F={PV1,PV2,PV1,PV3}; O={PNV4}
+      6) F={PV1,PV2,PV1,PV3,PV4}; O={}"
+    </Reponse3>
+    <Reponse4>
+      "1) F={} ;  O={PNV1}
+      2) F={PV1} ; O={PNV2,PNV3}
+      3) F = {PV1,PV2} ; O={PNV3}
+      4) F={PV2,PV1,PV3} ; O={PNV4}
+      5)F={PV2,PV1,PV3,PV4};O= {}"
+    </Reponse4>
+    <NbPoint>2</NbPoint>
+    <ReponseVraie>4</ReponseVraie>
+    <Image>Images\FIFO.png</Image>
+  </Questions>
+
+  <Questions Id = "15">
+    <Enonce>
+      "Arbre de recherche :
+      On souhaite appliqué une stratégie de type LIFO afin d'explorer chacune des pièces suivantes :
+      Lorsqu'une pièce est visitée, elle est notée PV. Tant qu'elle n'est pas visité, cette pièce s'appelle PNV.
+      A quel arbre de recherche correspond l'exploration LIFO de cette maison sachant que l'on souhaite faire le moins d'aller retour possible ?"
+    </Enonce>
+    <Reponse1>
+      "1) F={} ; O = {PNV1}
+      2) F={PV1}; O={PNV2}
+      3)F={PV1,PV2}; O={PNV3}
+      4) F={PV1,PV2,PV3}; O={PNV4,PNV5}
+      5)F={PV1,PV2,PV3,PV4}; O={PV3}
+      6)F={PV1,PV2,PV3,PV4,PV3};O={PV5,PV2,PNV5}
+      7)F={PV1,PV2,PV3,PV4,PV3,PV5};O={}"
+    </Reponse1>
+    <Reponse2>
+      "1) F={} ;  O={PNV1}
+      2) F={PV1} ; O={PNV2, PNV3}
+      3) F = {PV1,PV3} ; O={PV1,PNV4}
+      4) F={PV1,PV3,PV4} ; O={PV3}
+      5)F={PV1,PV3,PV4,PV3}; O={PV1,PV4}
+      6) F ={PV1,PV3,PV4,PV3,PV1}; O={PNV2,PV3}
+      7) F = {PV1,PV3,PV4,PV3,PV1,PV2}; O={}"
+    </Reponse2>
+    <Reponse3>
+      "1) F={} ;  O={PNV2}
+      2) F={PV2} ; O={PNV1,PNV3}
+      3) F = {PV2,PV1} ; O={PV2}
+      4) F={PV2,PV1,PV2} ; O={PV1,PNV3}
+      5)F={PV2,PV1,PV2,PV3};O= {PNV4,PNV5}
+      6) F={PV2,PV1,PV2,PV3,PV4}; O={PNV5}
+      7) F={PV2,PV1,PV2,PV3,PV4,PV5}"
+    </Reponse3>
+    <Reponse4>
+      "1) F={} ;  O={PNV1}
+      2) F={PV1} ; O={PNV2,PNV3}
+      3) F = {PV1,PV2} ; O={PNV5}
+      4) F={PV2,PV1,PV3,PNV5} ; O={PNV3,PNV4}
+      5)F={PV2,PV1,PV3,PV5,PV3};O= {PNV4}
+      6)F={PV2,PV1,PV3,PV5,PV3,PV4};O= {}"
+    </Reponse4>
+    <NbPoint>2</NbPoint>
+    <ReponseVraie>1</ReponseVraie>
+    <Image>Images\LIFO.png</Image>
+  </Questions>
+
+  <Questions Id = "16">
+    <Enonce>
+      "On cherche a appliqué l'algorithme A* sur un jeu de taquin. Le but de ce jeu est de placer l'ensemble des chiffres de 1 à 9 dans l'ordre. On travaille sur un tableau 3x3.
+      On utilise le programme suivant :
+      if (posy > 0)
+      {
+      // Successeur en haut
+      // recopie du tableau
+      char[,] tab2 = new char[3, 3];
+      x
+      // MAJ de la position du ?
+      tab2[posx, posy] = tab2[posx, posy-1];
+      tab2[posx, posy-1] = '?';
+      // Ajout à listsucc
+      lsucc.Add(new NodeTaquin(GetStringFromTab(tab2)));
+      }
+      Que doit-on mettre à la place du ""x"" pour que l'algorithme trouve un successeur en haut  ?"
+    </Enonce>
+    <Reponse1>
+      "for (int i = 1 ; i!=2,i++)
+      {
+      tab2[i] =  tab2[j]
+      }"
+    </Reponse1>
+    <Reponse2>
+      "for(int j =0; j &#8804; 2;j++)
+      for (int i =0; i &#8804; 2; i++)
+      {
+      tab2[i,j]=tab[j,i]
+      }"
+    </Reponse2>
+    <Reponse3>
+      "for (int j = 0; j &#8804; 2; j++)
+      for (int i = 0; i &#8804; 2; i++)
+      {
+      tab2[i, j] = tab[i, j];
+      }"
+    </Reponse3>
+    <Reponse4>
+      "tab2 = ['1','2','3','4','5','6','7','8','?']"
+    </Reponse4>
+    <NbPoint>2</NbPoint>
+    <ReponseVraie>3</ReponseVraie>
+    <Image></Image>
+  </Questions>
+
+  <Questions Id = "17">
+    <Enonce>
+      "Soit le graphique suivant :
+      Quel est le plus court chemin selon l'algorithme de Dijkstra entre B et J en prenant en compte les distances entre les noeuds ? "
+    </Enonce>
+    <Reponse1>B>C>D>H>J	B>C>D>H>J</Reponse1>
+    <Reponse2>B>C>H>J</Reponse2>
+    <Reponse3>B>C>J </Reponse3>
+    <Reponse4>B>C>D>H>I>J</Reponse4>
+    <NbPoint>1</NbPoint>
+    <ReponseVraie>1</ReponseVraie>
+    <Image>Images/Dijsktra</Image>
+  </Questions>
+
+  <Questions Id = "18">
+    <Enonce>Pour une méthode de résolution de problème, que signifie le nombre de variables à affecter ?</Enonce>
+    <Reponse1>Il s'agit du nombre de variables les moins contraignantes</Reponse1>
+    <Reponse2>C'est le nombre de variables à affecter en paramètres</Reponse2>
+    <Reponse3>Il s'agit de l'ensemble des états possibles</Reponse3>
+    <Reponse4>C'est le nombre d'étapes à réaliser entre l'état intial et l'état final</Reponse4>
+    <NbPoint>1</NbPoint>
+    <ReponseVraie>1</ReponseVraie>
+    <Image></Image>
+  </Questions>
+
+  <Questions Id = "19">
+    <Enonce>Quelle est la principale difficulté du TALN ?</Enonce>
+    <Reponse1>Combiner à la fois les ontologies et les méthodes d'apprentissages</Reponse1>
+    <Reponse2>Maîtriser les systèmes IBM Watson et Jeopardy</Reponse2>
+    <Reponse3>Analyser des données chiffrées</Reponse3>
+    <Reponse4>Maîtriser l'algorithme A*</Reponse4>
+    <NbPoint>1</NbPoint>
+    <ReponseVraie>1</ReponseVraie>
+    <Image></Image>
+  </Questions>
+
+  <Questions Id = "20">
+    <Enonce>Lequel de ces systèmes n'est pas issu du TALN ?</Enonce>
+    <Reponse1>IBM Watson</Reponse1>
+    <Reponse2>Keyword Evidence</Reponse2>
+    <Reponse3>AllenNLP</Reponse3>
+    <Reponse4>LNLanguage</Reponse4>
+    <NbPoint>1</NbPoint>
+    <ReponseVraie>4</ReponseVraie>
+    <Image></Image>
+  </Questions>
+
+
+  </ArrayOfQuestions>

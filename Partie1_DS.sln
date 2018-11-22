@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "DSensc\App.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{ED796641-D3D3-4607-9B94-3BE45F9C2E53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Donnees", "Donnees\Donnees.csproj", "{8286A4C8-405C-4ECB-AB29-E344546DFA73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{ED796641-D3D3-4607-9B94-3BE45F9C2E53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED796641-D3D3-4607-9B94-3BE45F9C2E53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED796641-D3D3-4607-9B94-3BE45F9C2E53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8286A4C8-405C-4ECB-AB29-E344546DFA73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8286A4C8-405C-4ECB-AB29-E344546DFA73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8286A4C8-405C-4ECB-AB29-E344546DFA73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8286A4C8-405C-4ECB-AB29-E344546DFA73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
