@@ -170,9 +170,9 @@
             this.numQuestion_lbl.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numQuestion_lbl.Location = new System.Drawing.Point(111, 84);
             this.numQuestion_lbl.Name = "numQuestion_lbl";
-            this.numQuestion_lbl.Size = new System.Drawing.Size(19, 23);
+            this.numQuestion_lbl.Size = new System.Drawing.Size(30, 23);
             this.numQuestion_lbl.TabIndex = 17;
-            this.numQuestion_lbl.Text = "1";
+            this.numQuestion_lbl.Text = "N°";
             // 
             // prenom_txt
             // 
