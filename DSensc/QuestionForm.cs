@@ -100,6 +100,7 @@ namespace App
                 valider_btn.Hide();
                 suivant_btn.Show();
                 VraiFaux(NbQuestion);
+                //CalcNote(NbQuestion);
                 note_lbl.Text = Convert.ToString(Note);
             }
         }
@@ -139,8 +140,7 @@ namespace App
                 }
                 else
                 {
-                    Total += questions[numQuestion].NbPoint;
-                    Note = ((Note + questions[numQuestion].NbPoint) * 20) / Total;
+                    CalcNote(numQuestion);
                 }
             }
             else if(questions[numQuestion].ReponseVraie == 2)
@@ -153,8 +153,7 @@ namespace App
                 }
                 else
                 {
-                    Total += questions[numQuestion].NbPoint;
-                    Note = ((Note + questions[numQuestion].NbPoint) * 20) / Total;
+                    CalcNote(numQuestion);
                 }
             }
             else if (questions[numQuestion].ReponseVraie == 3)
@@ -167,8 +166,7 @@ namespace App
                 }
                 else
                 {
-                    Total += questions[numQuestion].NbPoint;
-                    Note = ((Note + questions[numQuestion].NbPoint) * 20) / Total;
+                    CalcNote(numQuestion);
                 }
             }
             else
@@ -181,8 +179,7 @@ namespace App
                 }
                 else
                 {
-                    Total += questions[numQuestion].NbPoint;
-                    Note = ((Note + questions[numQuestion].NbPoint) * 20) / Total;
+                    CalcNote(numQuestion);
                 }
             }
         }
@@ -207,7 +204,7 @@ namespace App
             return btnFalse;
         }
 
-        //Calcul la note de l'utilisateur :
+        //Calcul la note de l'utilisateur quand la réponse est correcte :
         public void CalcNote(int numQuestion)
         {
             //int note;
@@ -219,6 +216,7 @@ namespace App
             else
             {
                 Note = ((Note + questions[numQuestion].NbPoint) * 20) / (20 + questions[numQuestion].NbPoint - 1);
+                Note = Math.Round(Note,1);
             }
             //return Note;
         }

@@ -223,7 +223,7 @@
             this.note_lbl.AutoSize = true;
             this.note_lbl.Font = new System.Drawing.Font("Gill Sans MT", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.note_lbl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.note_lbl.Location = new System.Drawing.Point(724, 21);
+            this.note_lbl.Location = new System.Drawing.Point(749, 23);
             this.note_lbl.Name = "note_lbl";
             this.note_lbl.Size = new System.Drawing.Size(37, 38);
             this.note_lbl.TabIndex = 20;
