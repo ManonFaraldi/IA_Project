@@ -16,16 +16,19 @@ namespace App
         public List<Questions> questions;
 
         private int NbQuestion { get; set; }   
-        private int NumRep { get; set; } //à enlever !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         private RadioButton RadioBtnFalse { get; set; } //Réponse fausse sélectionnée
+        private double Note { get; set; } //Note /20
+        private int Total { get; set; }//Nb. total de points des questions répondues
+
 
         public QuestionForm()
         {
             InitializeComponent();
             questions = new List<Questions>();
 
-            //Cacher le form d'inscription :
+            //Cacher les forms et panels :
             MainForm.ActiveForm.Hide();
+            resultats_panel.Visible = false;
 
             // Chargement des questions du fichier xml dans Questions
             questions = SerialisationQuestions.CreateFromFile("..\\..\\..\\Donnees\\Questions.xml");
@@ -33,49 +36,31 @@ namespace App
             // Trier les questions dans le désordre :
             TriQuestion(questions);
 
+            //Affichage de la 1ère question :
+            Note = 0;
+            Total = 0;
             NbQuestion = 0;
-            numQuestion_lbl.Text = Convert.ToString(NbQuestion + 1);
+            numQuestion_lbl.Text = Convert.ToString(NbQuestion + 1) + "/20 :";
             question_enonce_lbl.Text = questions[NbQuestion].Enonce;
             rep1_radiobtn.Text = questions[NbQuestion].Reponse1;
             rep2_radiobtn.Text = questions[NbQuestion].Reponse2;
             rep3_radiobtn.Text = questions[NbQuestion].Reponse3;
             rep4_radiobtn.Text = questions[NbQuestion].Reponse4;
-            valider_btn.Hide();
-            //VraiFaux(NbQuestion); à enlever !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            suivant_btn.Hide();
         }
+        
+        
+         
 
-        //Affichage de la bonne et mauvaise réponse  :
+        //Passer à la question suivante :
         public void suivant_btn_Click(object sender, EventArgs e)
         {
-            //Vérifier qu'une réponse est cochée :
-            if ((rep1_radiobtn.Checked == false) && (rep2_radiobtn.Checked == false) && (rep3_radiobtn.Checked == false) && (rep4_radiobtn.Checked == false))
-            {
-                MessageBox.Show("Veuillez cocher une réponse", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                NbQuestion++;
+            suivant_btn.Hide();
+            valider_btn.Show();
+            
+            NbQuestion++;
 
-                if (NbQuestion == 20) //le test est fini
-                {
-                    ResultatsForm resultatsForm = new ResultatsForm();
-                    if (resultatsForm.ShowDialog() == DialogResult.OK)
-                    {
-                    }
-                }
-                else //affichage du n° et texte de la question :
-                {                 
-                    numQuestion_lbl.Text = Convert.ToString(NbQuestion + 1);
-                    question_enonce_lbl.Text = questions[NbQuestion].Enonce;
-                    rep1_radiobtn.Text = questions[NbQuestion].Reponse1;
-                    rep2_radiobtn.Text = questions[NbQuestion].Reponse2;
-                    rep3_radiobtn.Text = questions[NbQuestion].Reponse3;
-                    rep4_radiobtn.Text = questions[NbQuestion].Reponse4;
-                    VraiFaux(NbQuestion);
-                }
-            }
-
-            //Décocher toutes les réponses pour la prochaine question :
+            //Décocher toutes les réponses :
             rep1_radiobtn.Checked = false;
             rep2_radiobtn.Checked = false;
             rep3_radiobtn.Checked = false;
@@ -85,13 +70,43 @@ namespace App
             rep2_radiobtn.BackColor = Color.AliceBlue;
             rep3_radiobtn.BackColor = Color.AliceBlue;
             rep4_radiobtn.BackColor = Color.AliceBlue;
-                     
+
+            if (NbQuestion == 20) //le test est fini
+            {
+                resultats_panel.Visible = true;
+            }
+            else //affichage du n° et texte de la question :
+            {                 
+                numQuestion_lbl.Text = Convert.ToString(NbQuestion + 1) +"/20 :";
+                question_enonce_lbl.Text = questions[NbQuestion].Enonce;
+                rep1_radiobtn.Text = questions[NbQuestion].Reponse1;
+                rep2_radiobtn.Text = questions[NbQuestion].Reponse2;
+                rep3_radiobtn.Text = questions[NbQuestion].Reponse3;
+                rep4_radiobtn.Text = questions[NbQuestion].Reponse4;
+            }                             
         }
 
-        //Passer à la question suivante :
+        //Affichage de la bonne et mauvaise réponse  en couleurs :
         private void valider_btn_Click(object sender, EventArgs e)
         {
+            //Vérifier qu'une réponse est cochée :
+            if ((rep1_radiobtn.Checked == false) && (rep2_radiobtn.Checked == false) && (rep3_radiobtn.Checked == false) && (rep4_radiobtn.Checked == false))
+            {
+                MessageBox.Show("Veuillez cocher une réponse", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            //Afficher les réponses en couleur :
+            else
+            {
+                valider_btn.Hide();
+                suivant_btn.Show();
+                VraiFaux(NbQuestion);
+                note_lbl.Text = Convert.ToString(Note);
+            }
+        }
 
+        private void quitter_btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
 
@@ -111,16 +126,21 @@ namespace App
             }
         }
 
-        //Affiche en vert la bonne réponse et en rouge la mauvaise réponse à la question posée :
+        //Affiche en vert la bonne réponse et en rouge la mauvaise réponse à la question posée + MAJ de la note
         public void VraiFaux(int numQuestion)
         {
             if (questions[numQuestion].ReponseVraie == 1)
-            {
+            {              
                 rep1_radiobtn.BackColor = Color.Green;
                 if (rep1_radiobtn.Checked == false)
                 {
                     RadioBtnFalse = CheckedFalse(rep2_radiobtn, rep3_radiobtn, rep4_radiobtn);
                     RadioBtnFalse.BackColor = Color.Red;
+                }
+                else
+                {
+                    Total += questions[numQuestion].NbPoint;
+                    Note = ((Note + questions[numQuestion].NbPoint) * 20) / Total;
                 }
             }
             else if(questions[numQuestion].ReponseVraie == 2)
@@ -131,6 +151,11 @@ namespace App
                     RadioBtnFalse = CheckedFalse(rep1_radiobtn, rep3_radiobtn, rep4_radiobtn);
                     RadioBtnFalse.BackColor = Color.Red;
                 }
+                else
+                {
+                    Total += questions[numQuestion].NbPoint;
+                    Note = ((Note + questions[numQuestion].NbPoint) * 20) / Total;
+                }
             }
             else if (questions[numQuestion].ReponseVraie == 3)
             {
@@ -140,14 +165,24 @@ namespace App
                     RadioBtnFalse = CheckedFalse(rep1_radiobtn, rep2_radiobtn, rep4_radiobtn);
                     RadioBtnFalse.BackColor = Color.Red;
                 }
+                else
+                {
+                    Total += questions[numQuestion].NbPoint;
+                    Note = ((Note + questions[numQuestion].NbPoint) * 20) / Total;
+                }
             }
-            else if (questions[numQuestion].ReponseVraie == 4) // OK avec un else ??????????????????????????????????????????????????????????????????????????????????????????
+            else
             {
                 rep4_radiobtn.BackColor = Color.Green;
                 if (rep4_radiobtn.Checked == false)
                 {
                     RadioBtnFalse = CheckedFalse(rep1_radiobtn, rep2_radiobtn, rep3_radiobtn);
                     RadioBtnFalse.BackColor = Color.Red;
+                }
+                else
+                {
+                    Total += questions[numQuestion].NbPoint;
+                    Note = ((Note + questions[numQuestion].NbPoint) * 20) / Total;
                 }
             }
         }
@@ -171,6 +206,25 @@ namespace App
             }
             return btnFalse;
         }
+
+        //Calcul la note de l'utilisateur :
+        public void CalcNote(int numQuestion)
+        {
+            //int note;
+
+            if (questions[numQuestion].NbPoint == 1)
+            {
+                Note += 1;
+            }
+            else
+            {
+                Note = ((Note + questions[numQuestion].NbPoint) * 20) / (20 + questions[numQuestion].NbPoint - 1);
+            }
+            //return Note;
+        }
+
+
+
 
 
     }

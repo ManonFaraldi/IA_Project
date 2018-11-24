@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Donnees;
 
 namespace App
 {
@@ -19,6 +20,7 @@ namespace App
 
         private void quitter_btn_Click(object sender, EventArgs e)
         {
+            
             Application.Exit();
         }
     }

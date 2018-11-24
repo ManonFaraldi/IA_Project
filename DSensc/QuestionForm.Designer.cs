@@ -42,7 +42,16 @@
             this.numQuestion_lbl = new System.Windows.Forms.Label();
             this.prenom_txt = new System.Windows.Forms.Label();
             this.suivant_btn = new System.Windows.Forms.Button();
+            this.sur20_lbl = new System.Windows.Forms.Label();
+            this.note_lbl = new System.Windows.Forms.Label();
+            this.resultats_panel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.quitter_btn = new System.Windows.Forms.Button();
+            this.appreciaiton_txt = new System.Windows.Forms.Label();
+            this.sur20Final_lbl = new System.Windows.Forms.Label();
+            this.noteFinale_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+            this.resultats_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // TestIA_txt
@@ -50,7 +59,7 @@
             this.TestIA_txt.AutoSize = true;
             this.TestIA_txt.Cursor = System.Windows.Forms.Cursors.Default;
             this.TestIA_txt.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestIA_txt.Location = new System.Drawing.Point(237, 18);
+            this.TestIA_txt.Location = new System.Drawing.Point(361, 17);
             this.TestIA_txt.Name = "TestIA_txt";
             this.TestIA_txt.Size = new System.Drawing.Size(145, 42);
             this.TestIA_txt.TabIndex = 5;
@@ -85,9 +94,8 @@
             this.deuxPoints_txt.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deuxPoints_txt.Location = new System.Drawing.Point(138, 84);
             this.deuxPoints_txt.Name = "deuxPoints_txt";
-            this.deuxPoints_txt.Size = new System.Drawing.Size(14, 23);
+            this.deuxPoints_txt.Size = new System.Drawing.Size(0, 23);
             this.deuxPoints_txt.TabIndex = 9;
-            this.deuxPoints_txt.Text = ":";
             // 
             // rep1_radiobtn
             // 
@@ -139,7 +147,7 @@
             this.valider_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.valider_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valider_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.valider_btn.Location = new System.Drawing.Point(356, 515);
+            this.valider_btn.Location = new System.Drawing.Point(414, 517);
             this.valider_btn.Name = "valider_btn";
             this.valider_btn.Size = new System.Drawing.Size(82, 43);
             this.valider_btn.TabIndex = 14;
@@ -149,7 +157,7 @@
             // 
             // PictureBox
             // 
-            this.PictureBox.Location = new System.Drawing.Point(506, 75);
+            this.PictureBox.Location = new System.Drawing.Point(564, 139);
             this.PictureBox.Name = "PictureBox";
             this.PictureBox.Size = new System.Drawing.Size(291, 246);
             this.PictureBox.TabIndex = 15;
@@ -159,7 +167,7 @@
             // question_enonce_lbl
             // 
             this.question_enonce_lbl.AutoSize = true;
-            this.question_enonce_lbl.Location = new System.Drawing.Point(162, 93);
+            this.question_enonce_lbl.Location = new System.Drawing.Point(167, 91);
             this.question_enonce_lbl.Name = "question_enonce_lbl";
             this.question_enonce_lbl.Size = new System.Drawing.Size(89, 13);
             this.question_enonce_lbl.TabIndex = 16;
@@ -179,7 +187,7 @@
             // 
             this.prenom_txt.AutoSize = true;
             this.prenom_txt.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prenom_txt.Location = new System.Drawing.Point(729, 29);
+            this.prenom_txt.Location = new System.Drawing.Point(112, 34);
             this.prenom_txt.Name = "prenom_txt";
             this.prenom_txt.Size = new System.Drawing.Size(43, 16);
             this.prenom_txt.TabIndex = 18;
@@ -191,7 +199,7 @@
             this.suivant_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.suivant_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.suivant_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.suivant_btn.Location = new System.Drawing.Point(444, 515);
+            this.suivant_btn.Location = new System.Drawing.Point(414, 517);
             this.suivant_btn.Name = "suivant_btn";
             this.suivant_btn.Size = new System.Drawing.Size(82, 43);
             this.suivant_btn.TabIndex = 19;
@@ -199,12 +207,105 @@
             this.suivant_btn.UseVisualStyleBackColor = false;
             this.suivant_btn.Click += new System.EventHandler(this.suivant_btn_Click);
             // 
+            // sur20_lbl
+            // 
+            this.sur20_lbl.AutoSize = true;
+            this.sur20_lbl.Font = new System.Drawing.Font("Gill Sans MT", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sur20_lbl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.sur20_lbl.Location = new System.Drawing.Point(792, 24);
+            this.sur20_lbl.Name = "sur20_lbl";
+            this.sur20_lbl.Size = new System.Drawing.Size(63, 38);
+            this.sur20_lbl.TabIndex = 21;
+            this.sur20_lbl.Text = "/ 20";
+            // 
+            // note_lbl
+            // 
+            this.note_lbl.AutoSize = true;
+            this.note_lbl.Font = new System.Drawing.Font("Gill Sans MT", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.note_lbl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.note_lbl.Location = new System.Drawing.Point(724, 21);
+            this.note_lbl.Name = "note_lbl";
+            this.note_lbl.Size = new System.Drawing.Size(37, 38);
+            this.note_lbl.TabIndex = 20;
+            this.note_lbl.Text = "??";
+            // 
+            // resultats_panel
+            // 
+            this.resultats_panel.Controls.Add(this.quitter_btn);
+            this.resultats_panel.Controls.Add(this.appreciaiton_txt);
+            this.resultats_panel.Controls.Add(this.sur20Final_lbl);
+            this.resultats_panel.Controls.Add(this.noteFinale_lbl);
+            this.resultats_panel.Controls.Add(this.label1);
+            this.resultats_panel.Location = new System.Drawing.Point(61, 225);
+            this.resultats_panel.Name = "resultats_panel";
+            this.resultats_panel.Size = new System.Drawing.Size(931, 595);
+            this.resultats_panel.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label1.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(392, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 42);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Test IA";
+            // 
+            // quitter_btn
+            // 
+            this.quitter_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.quitter_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quitter_btn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.quitter_btn.Location = new System.Drawing.Point(424, 357);
+            this.quitter_btn.Name = "quitter_btn";
+            this.quitter_btn.Size = new System.Drawing.Size(82, 43);
+            this.quitter_btn.TabIndex = 19;
+            this.quitter_btn.Text = "Quitter";
+            this.quitter_btn.Click += new System.EventHandler(this.quitter_btn_Click);
+            // 
+            // appreciaiton_txt
+            // 
+            this.appreciaiton_txt.AutoSize = true;
+            this.appreciaiton_txt.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appreciaiton_txt.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.appreciaiton_txt.Location = new System.Drawing.Point(410, 254);
+            this.appreciaiton_txt.Name = "appreciaiton_txt";
+            this.appreciaiton_txt.Size = new System.Drawing.Size(104, 23);
+            this.appreciaiton_txt.TabIndex = 18;
+            this.appreciaiton_txt.Text = "appréciation";
+            // 
+            // sur20Final_lbl
+            // 
+            this.sur20Final_lbl.AutoSize = true;
+            this.sur20Final_lbl.Font = new System.Drawing.Font("Gill Sans MT", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sur20Final_lbl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.sur20Final_lbl.Location = new System.Drawing.Point(451, 199);
+            this.sur20Final_lbl.Name = "sur20Final_lbl";
+            this.sur20Final_lbl.Size = new System.Drawing.Size(63, 38);
+            this.sur20Final_lbl.TabIndex = 17;
+            this.sur20Final_lbl.Text = "/ 20";
+            // 
+            // noteFinale_lbl
+            // 
+            this.noteFinale_lbl.AutoSize = true;
+            this.noteFinale_lbl.Font = new System.Drawing.Font("Gill Sans MT", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noteFinale_lbl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.noteFinale_lbl.Location = new System.Drawing.Point(423, 199);
+            this.noteFinale_lbl.Name = "noteFinale_lbl";
+            this.noteFinale_lbl.Size = new System.Drawing.Size(37, 38);
+            this.noteFinale_lbl.TabIndex = 16;
+            this.noteFinale_lbl.Text = "??";
+            // 
             // QuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(932, 593);
+            this.Controls.Add(this.resultats_panel);
+            this.Controls.Add(this.sur20_lbl);
+            this.Controls.Add(this.note_lbl);
             this.Controls.Add(this.suivant_btn);
             this.Controls.Add(this.prenom_txt);
             this.Controls.Add(this.numQuestion_lbl);
@@ -222,6 +323,8 @@
             this.Name = "QuestionForm";
             this.Text = "Test IA";
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
+            this.resultats_panel.ResumeLayout(false);
+            this.resultats_panel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,5 +346,13 @@
         private System.Windows.Forms.Label numQuestion_lbl;
         private System.Windows.Forms.Label prenom_txt;
         private System.Windows.Forms.Button suivant_btn;
+        private System.Windows.Forms.Label sur20_lbl;
+        private System.Windows.Forms.Label note_lbl;
+        private System.Windows.Forms.Panel resultats_panel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button quitter_btn;
+        private System.Windows.Forms.Label appreciaiton_txt;
+        private System.Windows.Forms.Label sur20Final_lbl;
+        private System.Windows.Forms.Label noteFinale_lbl;
     }
 }
