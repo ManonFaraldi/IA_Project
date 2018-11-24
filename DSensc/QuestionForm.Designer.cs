@@ -91,7 +91,7 @@
             // rep1_radiobtn
             // 
             this.rep1_radiobtn.AutoSize = true;
-            this.rep1_radiobtn.Location = new System.Drawing.Point(113, 131);
+            this.rep1_radiobtn.Location = new System.Drawing.Point(115, 165);
             this.rep1_radiobtn.Name = "rep1_radiobtn";
             this.rep1_radiobtn.Size = new System.Drawing.Size(85, 17);
             this.rep1_radiobtn.TabIndex = 10;
@@ -102,7 +102,7 @@
             // rep2_radiobtn
             // 
             this.rep2_radiobtn.AutoSize = true;
-            this.rep2_radiobtn.Location = new System.Drawing.Point(113, 175);
+            this.rep2_radiobtn.Location = new System.Drawing.Point(115, 255);
             this.rep2_radiobtn.Name = "rep2_radiobtn";
             this.rep2_radiobtn.Size = new System.Drawing.Size(85, 17);
             this.rep2_radiobtn.TabIndex = 11;
@@ -113,7 +113,7 @@
             // rep3_radiobtn
             // 
             this.rep3_radiobtn.AutoSize = true;
-            this.rep3_radiobtn.Location = new System.Drawing.Point(113, 218);
+            this.rep3_radiobtn.Location = new System.Drawing.Point(115, 337);
             this.rep3_radiobtn.Name = "rep3_radiobtn";
             this.rep3_radiobtn.Size = new System.Drawing.Size(85, 17);
             this.rep3_radiobtn.TabIndex = 12;
@@ -124,7 +124,7 @@
             // rep4_radiobtn
             // 
             this.rep4_radiobtn.AutoSize = true;
-            this.rep4_radiobtn.Location = new System.Drawing.Point(113, 263);
+            this.rep4_radiobtn.Location = new System.Drawing.Point(115, 426);
             this.rep4_radiobtn.Name = "rep4_radiobtn";
             this.rep4_radiobtn.Size = new System.Drawing.Size(85, 17);
             this.rep4_radiobtn.TabIndex = 13;
