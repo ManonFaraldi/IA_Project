@@ -41,6 +41,7 @@
             this.question_enonce_lbl = new System.Windows.Forms.Label();
             this.numQuestion_lbl = new System.Windows.Forms.Label();
             this.prenom_txt = new System.Windows.Forms.Label();
+            this.suivant_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,7 +139,7 @@
             this.valider_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.valider_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valider_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.valider_btn.Location = new System.Drawing.Point(436, 515);
+            this.valider_btn.Location = new System.Drawing.Point(356, 515);
             this.valider_btn.Name = "valider_btn";
             this.valider_btn.Size = new System.Drawing.Size(82, 43);
             this.valider_btn.TabIndex = 14;
@@ -184,12 +185,27 @@
             this.prenom_txt.TabIndex = 18;
             this.prenom_txt.Text = "Prénom";
             // 
+            // suivant_btn
+            // 
+            this.suivant_btn.BackColor = System.Drawing.Color.LimeGreen;
+            this.suivant_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.suivant_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suivant_btn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.suivant_btn.Location = new System.Drawing.Point(444, 515);
+            this.suivant_btn.Name = "suivant_btn";
+            this.suivant_btn.Size = new System.Drawing.Size(82, 43);
+            this.suivant_btn.TabIndex = 19;
+            this.suivant_btn.Text = "Suivant";
+            this.suivant_btn.UseVisualStyleBackColor = false;
+            this.suivant_btn.Click += new System.EventHandler(this.suivant_btn_Click);
+            // 
             // QuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(932, 593);
+            this.Controls.Add(this.suivant_btn);
             this.Controls.Add(this.prenom_txt);
             this.Controls.Add(this.numQuestion_lbl);
             this.Controls.Add(this.question_enonce_lbl);
@@ -226,5 +242,6 @@
         private System.Windows.Forms.Label question_enonce_lbl;
         private System.Windows.Forms.Label numQuestion_lbl;
         private System.Windows.Forms.Label prenom_txt;
+        private System.Windows.Forms.Button suivant_btn;
     }
 }

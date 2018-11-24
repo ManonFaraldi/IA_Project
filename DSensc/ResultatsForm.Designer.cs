@@ -40,6 +40,7 @@
             this.TestIA_txt.AutoSize = true;
             this.TestIA_txt.Cursor = System.Windows.Forms.Cursors.Default;
             this.TestIA_txt.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestIA_txt.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TestIA_txt.Location = new System.Drawing.Point(159, 33);
             this.TestIA_txt.Name = "TestIA_txt";
             this.TestIA_txt.Size = new System.Drawing.Size(145, 42);
@@ -50,6 +51,7 @@
             // 
             this.resultats_txt.AutoSize = true;
             this.resultats_txt.Font = new System.Drawing.Font("Gill Sans MT", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resultats_txt.ForeColor = System.Drawing.SystemColors.ControlText;
             this.resultats_txt.Location = new System.Drawing.Point(188, 91);
             this.resultats_txt.Name = "resultats_txt";
             this.resultats_txt.Size = new System.Drawing.Size(37, 38);
@@ -60,6 +62,7 @@
             // 
             this.sur20_txt.AutoSize = true;
             this.sur20_txt.Font = new System.Drawing.Font("Gill Sans MT", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sur20_txt.ForeColor = System.Drawing.SystemColors.ControlText;
             this.sur20_txt.Location = new System.Drawing.Point(216, 91);
             this.sur20_txt.Name = "sur20_txt";
             this.sur20_txt.Size = new System.Drawing.Size(63, 38);
@@ -70,6 +73,7 @@
             // 
             this.appreciaiton_txt.AutoSize = true;
             this.appreciaiton_txt.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appreciaiton_txt.ForeColor = System.Drawing.SystemColors.ControlText;
             this.appreciaiton_txt.Location = new System.Drawing.Point(175, 146);
             this.appreciaiton_txt.Name = "appreciaiton_txt";
             this.appreciaiton_txt.Size = new System.Drawing.Size(104, 23);
@@ -78,7 +82,6 @@
             // 
             // quitter_btn
             // 
-            this.quitter_btn.ForeColor = System.Drawing.Color.LimeGreen;
             this.quitter_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.quitter_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quitter_btn.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -93,13 +96,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ForeColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(464, 284);
             this.Controls.Add(this.quitter_btn);
             this.Controls.Add(this.appreciaiton_txt);
             this.Controls.Add(this.sur20_txt);
             this.Controls.Add(this.resultats_txt);
             this.Controls.Add(this.TestIA_txt);
+            this.ForeColor = System.Drawing.Color.AliceBlue;
             this.Name = "ResultatsForm";
             this.Text = "Resultats";
             this.ResumeLayout(false);

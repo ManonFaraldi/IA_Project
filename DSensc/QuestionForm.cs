@@ -40,11 +40,12 @@ namespace App
             rep2_radiobtn.Text = questions[NbQuestion].Reponse2;
             rep3_radiobtn.Text = questions[NbQuestion].Reponse3;
             rep4_radiobtn.Text = questions[NbQuestion].Reponse4;
-            VraiFaux(NbQuestion);
+            valider_btn.Hide();
+            //VraiFaux(NbQuestion); à enlever !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         }
 
-
-        public void valider_btn_Click(object sender, EventArgs e)
+        //Affichage de la bonne et mauvaise réponse  :
+        public void suivant_btn_Click(object sender, EventArgs e)
         {
             //Vérifier qu'une réponse est cochée :
             if ((rep1_radiobtn.Checked == false) && (rep2_radiobtn.Checked == false) && (rep3_radiobtn.Checked == false) && (rep4_radiobtn.Checked == false))
@@ -78,8 +79,22 @@ namespace App
             rep1_radiobtn.Checked = false;
             rep2_radiobtn.Checked = false;
             rep3_radiobtn.Checked = false;
-            rep4_radiobtn.Checked = false;         
+            rep4_radiobtn.Checked = false;
+            //Remise à zéro des couleurs des questions :
+            rep1_radiobtn.BackColor = Color.AliceBlue;
+            rep2_radiobtn.BackColor = Color.AliceBlue;
+            rep3_radiobtn.BackColor = Color.AliceBlue;
+            rep4_radiobtn.BackColor = Color.AliceBlue;
+                     
         }
+
+        //Passer à la question suivante :
+        private void valider_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
 
 
         public static void TriQuestion<T>(IList<T> list) //Trier les questions dans un ordre aléatoire
@@ -156,12 +171,6 @@ namespace App
             }
             return btnFalse;
         }
-
-        
-
-
-
-
 
 
     }
