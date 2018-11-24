@@ -74,6 +74,15 @@ namespace App
             if (NbQuestion == 20) //le test est fini
             {
                 resultats_panel.Visible = true;
+                noteFinale_lbl.Text = Convert.ToString(Note);
+                if (Note >= 10)
+                {
+                    appreciation_txt.Text = "Félicitation ! Vous avez réussi le test !";
+                }
+                else
+                {
+                    appreciation_txt.Text = "Désolé, vous avez échoué à ce test !";
+                }
             }
             else //affichage du n° et texte de la question :
             {                 
