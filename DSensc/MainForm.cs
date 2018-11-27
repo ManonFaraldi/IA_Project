@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Donnees;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace App
 {
     public partial class MainForm : Form
-    {
+    {       
         public MainForm()
         {
             InitializeComponent();
@@ -24,18 +26,24 @@ namespace App
             set { nom_txtbox.Text = value; }
         }
 
+        public string Prenom
+        {
+            get { return prenom_txtbox.Text; }
+            set { prenom_txtbox.Text = value; }
+        }
+
+        
         private void demarrer_btn_Click(object sender, EventArgs e)
         {
+            Utilisateur user = new Utilisateur(nom_txtbox.Text, prenom_txtbox.Text);
+            SerialisationUser fileUser = new SerialisationUser();
+            SerialisationUser.Save("fileUser", user);
+            
             QuestionForm questionnaire = new QuestionForm();
             if (questionnaire.ShowDialog() == DialogResult.OK)
             {
             }
 
-
-
-        }
-
-
-
+        }        
     }
 }

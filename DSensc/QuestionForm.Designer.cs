@@ -210,7 +210,7 @@
             this.note_lbl.AutoSize = true;
             this.note_lbl.Font = new System.Drawing.Font("Gill Sans MT", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.note_lbl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.note_lbl.Location = new System.Drawing.Point(749, 23);
+            this.note_lbl.Location = new System.Drawing.Point(749, 24);
             this.note_lbl.Name = "note_lbl";
             this.note_lbl.Size = new System.Drawing.Size(37, 38);
             this.note_lbl.TabIndex = 20;
@@ -303,7 +303,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1074, 646);
-            this.Controls.Add(this.prenom_lbl);
             this.Controls.Add(this.resultats_panel);
             this.Controls.Add(this.sur20_lbl);
             this.Controls.Add(this.note_lbl);
@@ -320,6 +319,7 @@
             this.Controls.Add(this.nom_txt);
             this.Controls.Add(this.TestIA_txt);
             this.Controls.Add(this.PictureBox);
+            this.Controls.Add(this.prenom_lbl);
             this.Name = "QuestionForm";
             this.Text = "Test IA";
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();

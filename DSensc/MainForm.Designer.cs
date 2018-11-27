@@ -108,14 +108,15 @@
             // 
             // dateDS_txt
             // 
+            this.dateDS_txt.AccessibleRole = System.Windows.Forms.AccessibleRole.Clock;
             this.dateDS_txt.AutoSize = true;
             this.dateDS_txt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateDS_txt.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateDS_txt.Location = new System.Drawing.Point(28, 36);
             this.dateDS_txt.Name = "dateDS_txt";
-            this.dateDS_txt.Size = new System.Drawing.Size(50, 16);
+            this.dateDS_txt.Size = new System.Drawing.Size(52, 16);
             this.dateDS_txt.TabIndex = 7;
-            this.dateDS_txt.Text = "05/12/18";
+            this.dateDS_txt.Text = "DateTime\r\n";
             // 
             // MainForm
             // 

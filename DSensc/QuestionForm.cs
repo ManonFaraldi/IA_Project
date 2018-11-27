@@ -14,6 +14,7 @@ namespace App
     public partial class QuestionForm : Form
     {
         public List<Questions> questions;
+        public Utilisateur utilisateur;
 
         private int NbQuestion { get; set; }   
         private RadioButton RadioBtnFalse { get; set; } //Réponse fausse sélectionnée
@@ -26,11 +27,13 @@ namespace App
         {
             InitializeComponent();
             questions = new List<Questions>();
-
-            //Cacher les forms et panels :
-            MainForm.ActiveForm.Hide();
+            utilisateur = new Utilisateur();
+           //Cacher les forms et panels :
+           MainForm.ActiveForm.Hide();
             resultats_panel.Visible = false;
-
+            //Chargement de l'utilisateur du fichier xml dans utilisateur
+            utilisateur = SerialisationUser.CreateFromFile("..\\..\\..\\Donnees\\Utilisateur.xml");
+            prenom_txt = utilisateur.Prenom ;
             // Chargement des questions du fichier xml dans Questions
             questions = SerialisationQuestions.CreateFromFile("..\\..\\..\\Donnees\\Questions.xml");
 
@@ -41,11 +44,10 @@ namespace App
             Note = 0;
             NbPts = 0;
             Total = 0;
-
-            foreach (Questions q in questions)
+            /*foreach (Questions q in questions)
             {
-                Total += q.NbPoint;
-            }
+                Total += q.NbPoint; //exam sur 26 points au total
+            }*/
 
             //Affichage de la 1ère question :
             NbQuestion = 0;            
@@ -55,7 +57,7 @@ namespace App
             rep2_radiobtn.Text = questions[NbQuestion].Reponse2;
             rep3_radiobtn.Text = questions[NbQuestion].Reponse3;
             rep4_radiobtn.Text = questions[NbQuestion].Reponse4;
-            
+            Total += questions[NbQuestion].NbPoint;
             if (questions[NbQuestion].Image != "")
               {
                   string pathImage = "..\\..\\..\\Donnees\\Images\\" +  questions[NbQuestion].Image;
@@ -110,6 +112,7 @@ namespace App
                 rep2_radiobtn.Text = questions[NbQuestion].Reponse2;
                 rep3_radiobtn.Text = questions[NbQuestion].Reponse3;
                 rep4_radiobtn.Text = questions[NbQuestion].Reponse4;
+                Total += questions[NbQuestion].NbPoint; // on met à jour le nombre de points totaux
                 if (questions[NbQuestion].Image != "")
                 {
                     string pathImage = "..\\..\\..\\Donnees\\Images\\" + questions[NbQuestion].Image;
@@ -170,6 +173,7 @@ namespace App
                 {
                     RadioBtnFalse = CheckedFalse(rep2_radiobtn, rep3_radiobtn, rep4_radiobtn);
                     RadioBtnFalse.BackColor = Color.Red;
+                    Note += 0; // On ne gagne pas de points
                 }
                 else
                 {
@@ -183,6 +187,7 @@ namespace App
                 {
                     RadioBtnFalse = CheckedFalse(rep1_radiobtn, rep3_radiobtn, rep4_radiobtn);
                     RadioBtnFalse.BackColor = Color.Red;
+                    Note += 0; // On ne gagne pas de points
                 }
                 else
                 {
@@ -196,6 +201,7 @@ namespace App
                 {
                     RadioBtnFalse = CheckedFalse(rep1_radiobtn, rep2_radiobtn, rep4_radiobtn);
                     RadioBtnFalse.BackColor = Color.Red;
+                    Note += 0; // On ne gagne pas de points
                 }
                 else
                 {
@@ -209,6 +215,7 @@ namespace App
                 {
                     RadioBtnFalse = CheckedFalse(rep1_radiobtn, rep2_radiobtn, rep3_radiobtn);
                     RadioBtnFalse.BackColor = Color.Red;
+                    Note += 0; // On ne gagne pas de points
                 }
                 else
                 {
@@ -241,8 +248,8 @@ namespace App
         public void CalcNote(int numQuestion)
         {
             NbPts += questions[numQuestion].NbPoint;
-            Note = (NbPts * 20) / Total; 
-            Note = Math.Round(Note, 1);       
+            double noteCalc = ((NbPts * 20) / Total); 
+            Note = Math.Round(noteCalc, 1);       
         }
 
     }
