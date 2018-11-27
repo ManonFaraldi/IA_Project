@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.TestIA_txt = new System.Windows.Forms.Label();
-            this.details_btn = new System.Windows.Forms.Button();
             this.nom_txt = new System.Windows.Forms.Label();
             this.deuxPoints_txt = new System.Windows.Forms.Label();
             this.rep1_radiobtn = new System.Windows.Forms.RadioButton();
@@ -50,6 +49,7 @@
             this.sur20Final_lbl = new System.Windows.Forms.Label();
             this.noteFinale_lbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.prenom_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.resultats_panel.SuspendLayout();
             this.SuspendLayout();
@@ -59,24 +59,11 @@
             this.TestIA_txt.AutoSize = true;
             this.TestIA_txt.Cursor = System.Windows.Forms.Cursors.Default;
             this.TestIA_txt.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestIA_txt.Location = new System.Drawing.Point(361, 17);
+            this.TestIA_txt.Location = new System.Drawing.Point(418, 17);
             this.TestIA_txt.Name = "TestIA_txt";
             this.TestIA_txt.Size = new System.Drawing.Size(145, 42);
             this.TestIA_txt.TabIndex = 5;
             this.TestIA_txt.Text = "Test IA";
-            // 
-            // details_btn
-            // 
-            this.details_btn.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.details_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.details_btn.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.details_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.details_btn.Location = new System.Drawing.Point(25, 24);
-            this.details_btn.Name = "details_btn";
-            this.details_btn.Size = new System.Drawing.Size(75, 26);
-            this.details_btn.TabIndex = 7;
-            this.details_btn.Text = "Détails test";
-            this.details_btn.UseVisualStyleBackColor = false;
             // 
             // nom_txt
             // 
@@ -100,7 +87,7 @@
             // rep1_radiobtn
             // 
             this.rep1_radiobtn.AutoSize = true;
-            this.rep1_radiobtn.Location = new System.Drawing.Point(115, 165);
+            this.rep1_radiobtn.Location = new System.Drawing.Point(115, 187);
             this.rep1_radiobtn.Name = "rep1_radiobtn";
             this.rep1_radiobtn.Size = new System.Drawing.Size(85, 17);
             this.rep1_radiobtn.TabIndex = 10;
@@ -111,7 +98,7 @@
             // rep2_radiobtn
             // 
             this.rep2_radiobtn.AutoSize = true;
-            this.rep2_radiobtn.Location = new System.Drawing.Point(115, 255);
+            this.rep2_radiobtn.Location = new System.Drawing.Point(115, 279);
             this.rep2_radiobtn.Name = "rep2_radiobtn";
             this.rep2_radiobtn.Size = new System.Drawing.Size(85, 17);
             this.rep2_radiobtn.TabIndex = 11;
@@ -122,7 +109,7 @@
             // rep3_radiobtn
             // 
             this.rep3_radiobtn.AutoSize = true;
-            this.rep3_radiobtn.Location = new System.Drawing.Point(115, 337);
+            this.rep3_radiobtn.Location = new System.Drawing.Point(115, 371);
             this.rep3_radiobtn.Name = "rep3_radiobtn";
             this.rep3_radiobtn.Size = new System.Drawing.Size(85, 17);
             this.rep3_radiobtn.TabIndex = 12;
@@ -133,7 +120,7 @@
             // rep4_radiobtn
             // 
             this.rep4_radiobtn.AutoSize = true;
-            this.rep4_radiobtn.Location = new System.Drawing.Point(115, 426);
+            this.rep4_radiobtn.Location = new System.Drawing.Point(115, 478);
             this.rep4_radiobtn.Name = "rep4_radiobtn";
             this.rep4_radiobtn.Size = new System.Drawing.Size(85, 17);
             this.rep4_radiobtn.TabIndex = 13;
@@ -147,7 +134,7 @@
             this.valider_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.valider_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valider_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.valider_btn.Location = new System.Drawing.Point(414, 517);
+            this.valider_btn.Location = new System.Drawing.Point(502, 517);
             this.valider_btn.Name = "valider_btn";
             this.valider_btn.Size = new System.Drawing.Size(82, 43);
             this.valider_btn.TabIndex = 14;
@@ -157,17 +144,17 @@
             // 
             // PictureBox
             // 
-            this.PictureBox.Location = new System.Drawing.Point(564, 139);
+            this.PictureBox.Location = new System.Drawing.Point(660, 180);
             this.PictureBox.Name = "PictureBox";
-            this.PictureBox.Size = new System.Drawing.Size(291, 246);
+            this.PictureBox.Size = new System.Drawing.Size(379, 310);
+            this.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox.TabIndex = 15;
             this.PictureBox.TabStop = false;
-            this.PictureBox.Visible = false;
             // 
             // question_enonce_lbl
             // 
             this.question_enonce_lbl.AutoSize = true;
-            this.question_enonce_lbl.Location = new System.Drawing.Point(167, 91);
+            this.question_enonce_lbl.Location = new System.Drawing.Point(178, 85);
             this.question_enonce_lbl.Name = "question_enonce_lbl";
             this.question_enonce_lbl.Size = new System.Drawing.Size(89, 13);
             this.question_enonce_lbl.TabIndex = 16;
@@ -187,7 +174,7 @@
             // 
             this.prenom_txt.AutoSize = true;
             this.prenom_txt.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prenom_txt.Location = new System.Drawing.Point(112, 34);
+            this.prenom_txt.Location = new System.Drawing.Point(127, 34);
             this.prenom_txt.Name = "prenom_txt";
             this.prenom_txt.Size = new System.Drawing.Size(43, 16);
             this.prenom_txt.TabIndex = 18;
@@ -199,7 +186,7 @@
             this.suivant_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.suivant_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.suivant_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.suivant_btn.Location = new System.Drawing.Point(414, 517);
+            this.suivant_btn.Location = new System.Drawing.Point(502, 517);
             this.suivant_btn.Name = "suivant_btn";
             this.suivant_btn.Size = new System.Drawing.Size(82, 43);
             this.suivant_btn.TabIndex = 19;
@@ -236,13 +223,14 @@
             this.resultats_panel.Controls.Add(this.sur20Final_lbl);
             this.resultats_panel.Controls.Add(this.noteFinale_lbl);
             this.resultats_panel.Controls.Add(this.label1);
-            this.resultats_panel.Location = new System.Drawing.Point(61, 225);
+            this.resultats_panel.Location = new System.Drawing.Point(337, 248);
             this.resultats_panel.Name = "resultats_panel";
-            this.resultats_panel.Size = new System.Drawing.Size(931, 595);
+            this.resultats_panel.Size = new System.Drawing.Size(1074, 646);
             this.resultats_panel.TabIndex = 22;
             // 
             // quitter_btn
             // 
+            this.quitter_btn.BackColor = System.Drawing.Color.IndianRed;
             this.quitter_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.quitter_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quitter_btn.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -251,6 +239,7 @@
             this.quitter_btn.Size = new System.Drawing.Size(82, 43);
             this.quitter_btn.TabIndex = 19;
             this.quitter_btn.Text = "Quitter";
+            this.quitter_btn.UseVisualStyleBackColor = false;
             this.quitter_btn.Click += new System.EventHandler(this.quitter_btn_Click);
             // 
             // appreciation_txt
@@ -297,12 +286,23 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Test IA";
             // 
+            // prenom_lbl
+            // 
+            this.prenom_lbl.AutoSize = true;
+            this.prenom_lbl.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prenom_lbl.Location = new System.Drawing.Point(26, 29);
+            this.prenom_lbl.Name = "prenom_lbl";
+            this.prenom_lbl.Size = new System.Drawing.Size(98, 23);
+            this.prenom_lbl.TabIndex = 23;
+            this.prenom_lbl.Text = "Utilisateur :";
+            // 
             // QuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(932, 593);
+            this.ClientSize = new System.Drawing.Size(1074, 646);
+            this.Controls.Add(this.prenom_lbl);
             this.Controls.Add(this.resultats_panel);
             this.Controls.Add(this.sur20_lbl);
             this.Controls.Add(this.note_lbl);
@@ -310,7 +310,6 @@
             this.Controls.Add(this.prenom_txt);
             this.Controls.Add(this.numQuestion_lbl);
             this.Controls.Add(this.question_enonce_lbl);
-            this.Controls.Add(this.PictureBox);
             this.Controls.Add(this.valider_btn);
             this.Controls.Add(this.rep4_radiobtn);
             this.Controls.Add(this.rep3_radiobtn);
@@ -318,8 +317,8 @@
             this.Controls.Add(this.rep1_radiobtn);
             this.Controls.Add(this.deuxPoints_txt);
             this.Controls.Add(this.nom_txt);
-            this.Controls.Add(this.details_btn);
             this.Controls.Add(this.TestIA_txt);
+            this.Controls.Add(this.PictureBox);
             this.Name = "QuestionForm";
             this.Text = "Test IA";
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
@@ -333,7 +332,6 @@
         #endregion
 
         private System.Windows.Forms.Label TestIA_txt;
-        private System.Windows.Forms.Button details_btn;
         private System.Windows.Forms.Label nom_txt;
         private System.Windows.Forms.Label deuxPoints_txt;
         private System.Windows.Forms.RadioButton rep1_radiobtn;
@@ -354,5 +352,6 @@
         private System.Windows.Forms.Label appreciation_txt;
         private System.Windows.Forms.Label sur20Final_lbl;
         private System.Windows.Forms.Label noteFinale_lbl;
+        private System.Windows.Forms.Label prenom_lbl;
     }
 }

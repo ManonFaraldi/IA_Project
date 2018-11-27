@@ -40,7 +40,7 @@ namespace App
             //Mise à jour des points de l'utilisateur :
             Note = 0;
             NbPts = 0;
-            Total = 0; //Ici à faire !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            Total = 0;
 
             foreach (Questions q in questions)
             {
@@ -55,6 +55,15 @@ namespace App
             rep2_radiobtn.Text = questions[NbQuestion].Reponse2;
             rep3_radiobtn.Text = questions[NbQuestion].Reponse3;
             rep4_radiobtn.Text = questions[NbQuestion].Reponse4;
+            
+            if (questions[NbQuestion].Image != "")
+              {
+                  string pathImage = "..\\..\\..\\Donnees\\Images\\" +  questions[NbQuestion].Image;
+                  Image img = Image.FromFile(@pathImage);
+                  PictureBox.Image = img;
+              }
+         
+            
             suivant_btn.Hide();
         }
         
@@ -72,6 +81,8 @@ namespace App
             rep2_radiobtn.Checked = false;
             rep3_radiobtn.Checked = false;
             rep4_radiobtn.Checked = false;
+            PictureBox.Image = null; // nettoyage picturebox
+
             //Remise à zéro des couleurs des questions :
             rep1_radiobtn.BackColor = Color.AliceBlue;
             rep2_radiobtn.BackColor = Color.AliceBlue;
@@ -99,6 +110,12 @@ namespace App
                 rep2_radiobtn.Text = questions[NbQuestion].Reponse2;
                 rep3_radiobtn.Text = questions[NbQuestion].Reponse3;
                 rep4_radiobtn.Text = questions[NbQuestion].Reponse4;
+                if (questions[NbQuestion].Image != "")
+                {
+                    string pathImage = "..\\..\\..\\Donnees\\Images\\" + questions[NbQuestion].Image;
+                    Image img = Image.FromFile(@pathImage);
+                    PictureBox.Image = img;
+                }
             }                             
         }
 
@@ -227,10 +244,6 @@ namespace App
             Note = (NbPts * 20) / Total; 
             Note = Math.Round(Note, 1);       
         }
-
-
-
-
 
     }
 }

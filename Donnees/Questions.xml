@@ -151,7 +151,7 @@ x=""
     <Reponse4>Rouge-A,Jaune-A, Rouge-F,Jaune-F</Reponse4>
     <NbPoint>2</NbPoint>
     <ReponseVraie>4</ReponseVraie>
-    <Image>Images\puissance4.png</Image>
+    <Image>puissance4.png</Image>
   </Questions>
 
   <Questions Id = "14">
@@ -194,7 +194,7 @@ x=""
     </Reponse4>
     <NbPoint>2</NbPoint>
     <ReponseVraie>4</ReponseVraie>
-    <Image>Images\FIFO.png</Image>
+    <Image>FIFO.png</Image>
   </Questions>
 
   <Questions Id = "15">
@@ -241,7 +241,7 @@ x=""
     </Reponse4>
     <NbPoint>2</NbPoint>
     <ReponseVraie>1</ReponseVraie>
-    <Image>Images\LIFO.png</Image>
+    <Image>LIFO.png</Image>
   </Questions>
 
   <Questions Id = "16">
@@ -301,7 +301,7 @@ x=""
     <Reponse4>B>C>D>H>I>J</Reponse4>
     <NbPoint>1</NbPoint>
     <ReponseVraie>1</ReponseVraie>
-    <Image>Images/Dijsktra</Image>
+    <Image>Dijsktra.png</Image>
   </Questions>
 
   <Questions Id = "18">
