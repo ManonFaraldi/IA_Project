@@ -250,8 +250,6 @@ x=""
       On utilise le programme suivant :
       if (posy > 0)
       {
-      // Successeur en haut
-      // recopie du tableau
       char[,] tab2 = new char[3, 3];
       x
       // MAJ de la position du ?
