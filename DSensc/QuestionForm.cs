@@ -18,7 +18,8 @@ namespace App
         private int NbQuestion { get; set; }   
         private RadioButton RadioBtnFalse { get; set; } //Réponse fausse sélectionnée
         private double Note { get; set; } //Note /20
-        private int Total { get; set; }//Nb. total de points des questions répondues
+        private int Total { get; set; } //Nb. total de points pour toutes les questions
+        private int NbPts { get; set; } //Nb. points accumulés pour les q°) répondues jusqu'à présent
 
 
         public QuestionForm()
@@ -36,10 +37,18 @@ namespace App
             // Trier les questions dans le désordre :
             TriQuestion(questions);
 
-            //Affichage de la 1ère question :
+            //Mise à jour des points de l'utilisateur :
             Note = 0;
-            Total = 0;
-            NbQuestion = 0;
+            NbPts = 0;
+            Total = 0; //Ici à faire !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+            foreach (Questions q in questions)
+            {
+                Total += q.NbPoint;
+            }
+
+            //Affichage de la 1ère question :
+            NbQuestion = 0;            
             numQuestion_lbl.Text = Convert.ToString(NbQuestion + 1) + "/20 :";
             question_enonce_lbl.Text = questions[NbQuestion].Enonce;
             rep1_radiobtn.Text = questions[NbQuestion].Reponse1;
@@ -49,9 +58,7 @@ namespace App
             suivant_btn.Hide();
         }
         
-        
-         
-
+             
         //Passer à la question suivante :
         public void suivant_btn_Click(object sender, EventArgs e)
         {
@@ -216,18 +223,9 @@ namespace App
         //Calcul la note de l'utilisateur quand la réponse est correcte :
         public void CalcNote(int numQuestion)
         {
-            //int note;
-
-            if (questions[numQuestion].NbPoint == 1)
-            {
-                Note += 1;
-            }
-            else
-            {
-                Note = ((Note + questions[numQuestion].NbPoint) * 20) / (20 + questions[numQuestion].NbPoint - 1);
-                Note = Math.Round(Note,1);
-            }
-            //return Note;
+            NbPts += questions[numQuestion].NbPoint;
+            Note = (NbPts * 20) / Total; 
+            Note = Math.Round(Note, 1);       
         }
 
 
