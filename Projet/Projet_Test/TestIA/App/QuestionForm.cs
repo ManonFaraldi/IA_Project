@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Donnees;
 
-
 namespace App
 {
     public partial class QuestionForm : Form
@@ -252,7 +251,7 @@ namespace App
             Note = Math.Round(noteCalc, 1);       
         }
 
-        private void AccesDijkstra_btn_Click(object sender, EventArgs e)
+     private void AccesDijkstra_btn_Click(object sender, EventArgs e)
         {
             Dijkstra djikstra = new Dijkstra();
             if (djikstra.ShowDialog() == DialogResult.OK)
@@ -261,12 +260,9 @@ namespace App
             }
         }
 
-        private void QuestionForm_Load(object sender, EventArgs e)
+       private void QuestionForm_Load(object sender, EventArgs e)
         {
             prenom_txt.Text = MainForm.prenomValue;
         }
-
-    
-
     }
 }

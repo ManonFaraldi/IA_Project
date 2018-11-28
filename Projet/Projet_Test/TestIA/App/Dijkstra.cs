@@ -8,13 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Donnees;
-using System.IO;
 
 namespace App
 {
     public partial class Dijkstra : Form
     {
-
         static public double[,] matrice;
         static public int nbnodes = 10;
         static public int numinitial;
@@ -28,7 +26,7 @@ namespace App
             matrice = new double[nbnodes, nbnodes];
             for (int k = 0; k < nbnodes; k++)
                 for (int j = 0; j < nbnodes; j++)
-                    matrice[k, j] = -1;       
+                    matrice[k, j] = -1;
             // Remplissage de la matrice avec les poids de chaque arc (symétrique, car va de parent vers enfant et inversement quand on cherche le + court chemin !)
             matrice[0, 1] = 3; matrice[1, 0] = 3;
             matrice[0, 2] = 5; matrice[2, 0] = 5;
@@ -180,7 +178,7 @@ namespace App
 
             g.GetSearchTree(treeView1);
         }
-        
+
         //Affichage des poids de chaque noeud :
         private void button3_Click(object sender, EventArgs e)
         {
@@ -256,5 +254,7 @@ namespace App
             // Fermeture du StreamReader (obligatoire) 
             monStreamReader.Close();
         }
+    }
+}
     }
 }
