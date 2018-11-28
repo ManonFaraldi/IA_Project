@@ -14,6 +14,7 @@ namespace App
     public partial class QuestionForm : Form
     {
         public List<Questions> questions;
+        public Utilisateur utilisateur;
 
         private int NbQuestion { get; set; }   
         private RadioButton RadioBtnFalse { get; set; } //Réponse fausse sélectionnée
@@ -27,11 +28,18 @@ namespace App
             InitializeComponent();
             questions = new List<Questions>();
 
-           //Cacher les forms et panels :
-           MainForm.ActiveForm.Hide();
+            
+            
+            //Cacher les forms et panels :
+            MainForm.ActiveForm.Hide();
             resultats_panel.Visible = false;
 
-            prenom_txt.Text = MainForm.prenom_txtbox.Text;
+            /*
+            utilisateur = new Utilisateur();
+            //Chargement de l'utilisateur du fichier xml dans utilisateur
+            utilisateur = SerialisationUser.CreateFromFile("..\\..\\..\\Donnees\\Utilisateur.xml");
+            prenom_txt = utilisateur.Prenom ;
+            */
 
             // Chargement des questions du fichier xml dans Questions
             questions = SerialisationQuestions.CreateFromFile("..\\..\\..\\Donnees\\Questions.xml");
@@ -250,6 +258,19 @@ namespace App
             double noteCalc = ((NbPts * 20) / Total); 
             Note = Math.Round(noteCalc, 1);       
         }
+
+        private void AccesDijkstra_btn_Click(object sender, EventArgs e)
+        {
+            Dijkstra djikstra = new Dijkstra();
+            if (djikstra.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
+
+
+
 
     }
 }
