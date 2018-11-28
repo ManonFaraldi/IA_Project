@@ -34,10 +34,12 @@
             this.O_txtBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.valider_btn = new System.Windows.Forms.Button();
             this.suivant_btn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.treeViewFinal_btn = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.treeView2 = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
             // listBoxgraphe
@@ -92,44 +94,45 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "Remplir l\'espace des Ouverts :";
             // 
+            // valider_btn
+            // 
+            this.valider_btn.BackColor = System.Drawing.Color.LimeGreen;
+            this.valider_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.valider_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valider_btn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.valider_btn.Location = new System.Drawing.Point(317, 233);
+            this.valider_btn.Name = "valider_btn";
+            this.valider_btn.Size = new System.Drawing.Size(82, 43);
+            this.valider_btn.TabIndex = 20;
+            this.valider_btn.Text = "Valider";
+            this.valider_btn.UseVisualStyleBackColor = false;
+            // 
             // suivant_btn
             // 
             this.suivant_btn.BackColor = System.Drawing.Color.LimeGreen;
             this.suivant_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.suivant_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.suivant_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.suivant_btn.Location = new System.Drawing.Point(317, 233);
+            this.suivant_btn.Location = new System.Drawing.Point(317, 282);
             this.suivant_btn.Name = "suivant_btn";
             this.suivant_btn.Size = new System.Drawing.Size(82, 43);
-            this.suivant_btn.TabIndex = 20;
-            this.suivant_btn.Text = "Valider";
+            this.suivant_btn.TabIndex = 21;
+            this.suivant_btn.Text = "Suivant";
             this.suivant_btn.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // treeViewFinal_btn
             // 
-            this.button2.BackColor = System.Drawing.Color.LimeGreen;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(317, 282);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 43);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Suivant";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LimeGreen;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(293, 331);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 43);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "TreeView final";
-            this.button1.UseVisualStyleBackColor = false;
+            this.treeViewFinal_btn.BackColor = System.Drawing.Color.LimeGreen;
+            this.treeViewFinal_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.treeViewFinal_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeViewFinal_btn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.treeViewFinal_btn.Location = new System.Drawing.Point(293, 331);
+            this.treeViewFinal_btn.Name = "treeViewFinal_btn";
+            this.treeViewFinal_btn.Size = new System.Drawing.Size(128, 43);
+            this.treeViewFinal_btn.TabIndex = 22;
+            this.treeViewFinal_btn.Text = "TreeView final";
+            this.treeViewFinal_btn.UseVisualStyleBackColor = false;
+            this.treeViewFinal_btn.Click += new System.EventHandler(this.treeViewFinal_btn_Click);
             // 
             // treeView1
             // 
@@ -138,16 +141,33 @@
             this.treeView1.Size = new System.Drawing.Size(215, 238);
             this.treeView1.TabIndex = 23;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(511, 331);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(215, 134);
+            this.listBox1.TabIndex = 24;
+            // 
+            // treeView2
+            // 
+            this.treeView2.Location = new System.Drawing.Point(237, 382);
+            this.treeView2.Name = "treeView2";
+            this.treeView2.Size = new System.Drawing.Size(121, 97);
+            this.treeView2.TabIndex = 26;
+            // 
             // Dijkstra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(779, 491);
+            this.Controls.Add(this.treeView2);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.treeView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.treeViewFinal_btn);
             this.Controls.Add(this.suivant_btn);
+            this.Controls.Add(this.valider_btn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.O_txtBox);
@@ -169,9 +189,11 @@
         private System.Windows.Forms.TextBox O_txtBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button valider_btn;
         private System.Windows.Forms.Button suivant_btn;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button treeViewFinal_btn;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TreeView treeView2;
     }
 }
