@@ -34,10 +34,7 @@ namespace App
 
         
         private void demarrer_btn_Click(object sender, EventArgs e)
-        {
-            Utilisateur user = new Utilisateur(nom_txtbox.Text, prenom_txtbox.Text);
-            SerialisationUser fileUser = new SerialisationUser();
-            SerialisationUser.Save("fileUser", user);
+        { 
             
             QuestionForm questionnaire = new QuestionForm();
             if (questionnaire.ShowDialog() == DialogResult.OK)

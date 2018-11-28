@@ -144,11 +144,11 @@
         private System.Windows.Forms.Label nom_txt;
         private System.Windows.Forms.Label prenom_txt;
         private System.Windows.Forms.TextBox nom_txtbox;
-        private System.Windows.Forms.TextBox prenom_txtbox;
         private System.Windows.Forms.Label TestIA_txt;
         private System.Windows.Forms.Label JMSalotti_txt;
         private System.Windows.Forms.Button demarrer_btn;
         private System.Windows.Forms.Label dateDS_txt;
+        public System.Windows.Forms.TextBox prenom_txtbox;
     }
 }
 
