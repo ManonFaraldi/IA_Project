@@ -299,7 +299,7 @@
             // 
             // AccesDijkstra_btn
             // 
-            this.AccesDijkstra_btn.Location = new System.Drawing.Point(30, 564);
+            this.AccesDijkstra_btn.Location = new System.Drawing.Point(99, 557);
             this.AccesDijkstra_btn.Name = "AccesDijkstra_btn";
             this.AccesDijkstra_btn.Size = new System.Drawing.Size(134, 23);
             this.AccesDijkstra_btn.TabIndex = 24;
