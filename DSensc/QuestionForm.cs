@@ -27,13 +27,20 @@ namespace App
         {
             InitializeComponent();
             questions = new List<Questions>();
-            utilisateur = new Utilisateur();
-           //Cacher les forms et panels :
-           MainForm.ActiveForm.Hide();
+
+            
+            
+            //Cacher les forms et panels :
+            MainForm.ActiveForm.Hide();
             resultats_panel.Visible = false;
+
+            /*
+            utilisateur = new Utilisateur();
             //Chargement de l'utilisateur du fichier xml dans utilisateur
             utilisateur = SerialisationUser.CreateFromFile("..\\..\\..\\Donnees\\Utilisateur.xml");
             prenom_txt = utilisateur.Prenom ;
+            */
+
             // Chargement des questions du fichier xml dans Questions
             questions = SerialisationQuestions.CreateFromFile("..\\..\\..\\Donnees\\Questions.xml");
 
@@ -251,6 +258,19 @@ namespace App
             double noteCalc = ((NbPts * 20) / Total); 
             Note = Math.Round(noteCalc, 1);       
         }
+
+        private void AccesDijkstra_btn_Click(object sender, EventArgs e)
+        {
+            Dijkstra djikstra = new Dijkstra();
+            if (djikstra.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
+
+
+
 
     }
 }

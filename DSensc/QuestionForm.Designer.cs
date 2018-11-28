@@ -50,6 +50,7 @@
             this.noteFinale_lbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.prenom_lbl = new System.Windows.Forms.Label();
+            this.AccesDijkstra_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.resultats_panel.SuspendLayout();
             this.SuspendLayout();
@@ -223,8 +224,7 @@
             this.resultats_panel.Controls.Add(this.sur20Final_lbl);
             this.resultats_panel.Controls.Add(this.noteFinale_lbl);
             this.resultats_panel.Controls.Add(this.label1);
-            this.resultats_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.resultats_panel.Location = new System.Drawing.Point(0, 0);
+            this.resultats_panel.Location = new System.Drawing.Point(553, 116);
             this.resultats_panel.Name = "resultats_panel";
             this.resultats_panel.Size = new System.Drawing.Size(1074, 646);
             this.resultats_panel.TabIndex = 22;
@@ -297,12 +297,23 @@
             this.prenom_lbl.TabIndex = 23;
             this.prenom_lbl.Text = "Utilisateur :";
             // 
+            // AccesDijkstra_btn
+            // 
+            this.AccesDijkstra_btn.Location = new System.Drawing.Point(30, 564);
+            this.AccesDijkstra_btn.Name = "AccesDijkstra_btn";
+            this.AccesDijkstra_btn.Size = new System.Drawing.Size(134, 23);
+            this.AccesDijkstra_btn.TabIndex = 24;
+            this.AccesDijkstra_btn.Text = "Accès Dijkstra";
+            this.AccesDijkstra_btn.UseVisualStyleBackColor = true;
+            this.AccesDijkstra_btn.Click += new System.EventHandler(this.AccesDijkstra_btn_Click);
+            // 
             // QuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1074, 646);
+            this.Controls.Add(this.AccesDijkstra_btn);
             this.Controls.Add(this.resultats_panel);
             this.Controls.Add(this.sur20_lbl);
             this.Controls.Add(this.note_lbl);
@@ -354,5 +365,6 @@
         private System.Windows.Forms.Label sur20Final_lbl;
         private System.Windows.Forms.Label noteFinale_lbl;
         private System.Windows.Forms.Label prenom_lbl;
+        private System.Windows.Forms.Button AccesDijkstra_btn;
     }
 }
