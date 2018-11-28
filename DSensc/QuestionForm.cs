@@ -13,6 +13,7 @@ namespace App
 {
     public partial class QuestionForm : Form
     {
+        
         public List<Questions> questions;
 
         private int NbQuestion { get; set; }   
@@ -21,18 +22,16 @@ namespace App
         private int Total { get; set; } //Nb. total de points pour toutes les questions
         private int NbPts { get; set; } //Nb. points accumulés pour les q°) répondues jusqu'à présent
 
-
-        public QuestionForm()
+        public QuestionForm( MainForm form)
         {
+            
             InitializeComponent();
             questions = new List<Questions>();
-            utilisateur = new Utilisateur();
+            
            //Cacher les forms et panels :
-           MainForm.ActiveForm.Hide();
+            MainForm.ActiveForm.Hide();
             resultats_panel.Visible = false;
-            //Chargement de l'utilisateur du fichier xml dans utilisateur
-            utilisateur = SerialisationUser.CreateFromFile("..\\..\\..\\Donnees\\Utilisateur.xml");
-            prenom_txt = utilisateur.Prenom ;
+            prenom_txt.Text = form.GetPrenomUser();
             // Chargement des questions du fichier xml dans Questions
             questions = SerialisationQuestions.CreateFromFile("..\\..\\..\\Donnees\\Questions.xml");
 

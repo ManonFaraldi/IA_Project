@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Donnees;
-using Dijkstra1;
 using System.IO;
 
 namespace App

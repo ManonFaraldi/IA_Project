@@ -14,7 +14,7 @@ using System.IO;
 namespace App
 {
     public partial class MainForm : Form
-    {       
+    {
         public MainForm()
         {
             InitializeComponent();
@@ -32,15 +32,20 @@ namespace App
             set { prenom_txtbox.Text = value; }
         }
 
-        
-        private void demarrer_btn_Click(object sender, EventArgs e)
-        { 
+
+        public void demarrer_btn_Click(object sender, EventArgs e)
+        {
             
             QuestionForm questionnaire = new QuestionForm();
             if (questionnaire.ShowDialog() == DialogResult.OK)
             {
             }
 
-        }        
+        }
+        public string GetPrenomUser()
+        {
+            string p = prenom_txtbox.Text;
+            return p;
+        }
     }
 }

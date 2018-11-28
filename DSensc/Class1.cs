@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace App
 {
-    public class Node2 : GenericNode 
+    public class Node2 //: GenericNode 
     {
         public int numero;
 
-        // Méthodes abstrates, donc à surcharger obligatoirement avec override dans une classe fille
+       /* // Méthodes abstrates, donc à surcharger obligatoirement avec override dans une classe fille
         public override bool IsEqual(GenericNode N2)
         {
             Node2 N2bis = (Node2)N2;
 
             return numero == N2bis.numero;
-        }
-
+        }*/
+        /*
         public override double GetArcCost(GenericNode N2)
         {
             Node2 N2bis = (Node2)N2;
@@ -44,13 +44,13 @@ namespace App
             }
             return lsucc;
         }
-
-
+        */
+/*
         public override double CalculeHCost()
         {
             return( 0 );
         }
-
+        */
         public override string ToString()
         {
             return Convert.ToString(numero);
