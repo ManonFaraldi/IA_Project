@@ -14,7 +14,6 @@ namespace App
     public partial class QuestionForm : Form
     {
         public List<Questions> questions;
-        public Utilisateur utilisateur;
 
         private int NbQuestion { get; set; }   
         private RadioButton RadioBtnFalse { get; set; } //Réponse fausse sélectionnée
@@ -27,13 +26,13 @@ namespace App
         {
             InitializeComponent();
             questions = new List<Questions>();
-            utilisateur = new Utilisateur();
+
            //Cacher les forms et panels :
            MainForm.ActiveForm.Hide();
             resultats_panel.Visible = false;
-            //Chargement de l'utilisateur du fichier xml dans utilisateur
-            utilisateur = SerialisationUser.CreateFromFile("..\\..\\..\\Donnees\\Utilisateur.xml");
-            prenom_txt = utilisateur.Prenom ;
+
+            prenom_txt.Text = MainForm.prenom_txtbox.Text;
+
             // Chargement des questions du fichier xml dans Questions
             questions = SerialisationQuestions.CreateFromFile("..\\..\\..\\Donnees\\Questions.xml");
 
