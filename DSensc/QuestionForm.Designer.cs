@@ -224,7 +224,8 @@
             this.resultats_panel.Controls.Add(this.sur20Final_lbl);
             this.resultats_panel.Controls.Add(this.noteFinale_lbl);
             this.resultats_panel.Controls.Add(this.label1);
-            this.resultats_panel.Location = new System.Drawing.Point(553, 116);
+            this.resultats_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.resultats_panel.Location = new System.Drawing.Point(0, 0);
             this.resultats_panel.Name = "resultats_panel";
             this.resultats_panel.Size = new System.Drawing.Size(1074, 646);
             this.resultats_panel.TabIndex = 22;

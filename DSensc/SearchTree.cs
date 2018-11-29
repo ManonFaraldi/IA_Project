@@ -184,8 +184,9 @@ namespace App
 
         // Si on veut afficher l'arbre de recherche, il suffit de passer un treeview en paramètres
         // Celui-ci est mis à jour avec les noeuds de la liste des fermés, on ne tient pas compte des ouverts
-        public void GetSearchTree( TreeView TV )
-        {
+        public void GetSearchTree( TreeView TV)
+        { 
+        
             if (L_Fermes == null) return;
             if (L_Fermes.Count == 0) return;
             
