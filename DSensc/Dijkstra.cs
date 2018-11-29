@@ -17,9 +17,9 @@ namespace App
 
         static public double[,] matrice;
         static public int nbnodes = 10;
-        static public int numinitial = 1;
-        static public int numfinal = 5;
-        protected int nbValider; //
+        static public int numinitial = 0;
+        static public int numfinal = 6;
+        protected int nbValider; //Le nb. de clics sur "Valider" correspond au nb. d'étapes où l'on doit écrire les ouverts et les fermés
 
         public Dijkstra()
         {
@@ -110,29 +110,67 @@ namespace App
             // Fermeture du StreamReader (obligatoire) 
             monStreamReader.Close();
 
+            suivant_btn.Hide();
         }
 
 
         //Vérifie les fermés et ouverts de l'utilisateur et affiche correction si nécessaire
         private void valider_btn_Click(object sender, EventArgs e)
         {
-            //IDEM QUE TreeViewFinal_btn :
             SearchTree g = new SearchTree();
             Node2 N0 = new Node2();
             N0.numero = numinitial;
             // Recherche du meilleur chemin à partir de ce noeud initial et final :
             List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
 
+            string fermesUser = F_txtBox.Text;
+            string ouvertsUser = O_txtBox.Text;
+            string afficheFermes = "";
+            string afficheOuverts = "";
+            bool correct;
+            //Comparer la liste des fermés du user avec celui qui est correct :
+            correct = VérifListe(g.ListeFermes, fermesUser, nbValider);
+            if (correct == true)
+            {
+                F_txtBox.ForeColor = Color.Green;
+                correctionFermes_lbl.Hide();
+            }
+            else
+            {
+                F_txtBox.ForeColor = Color.Red;
+                correctionFermes_lbl.Show();
+                correctionFermes_lbl.Text = g.ListeFermes[nbValider];
+                correctionFermes_lbl.ForeColor = Color.Green;
+            }
+            //Comparer la liste des ouverts du user avec celui qui est correct :
+            correct = VérifListe(g.ListeOuverts, ouvertsUser, nbValider);
+            if (correct == true)
+            {
+                O_txtBox.ForeColor = Color.Green;
+                correctionOuverts_lbl.Hide();
+            }
+            else
+            {
+                O_txtBox.ForeColor = Color.Red;
+                correctionOuverts_lbl.Show();
+                correctionOuverts_lbl.Text = g.ListeFermes[nbValider];
+                correctionOuverts_lbl.ForeColor = Color.Green;
+            }
+
+            nbValider++;
+            valider_btn.Hide();
+            suivant_btn.Show();
+
             //##################################################################### à enlever : mais garder pour l'instant pour vérifs ####################################################################
             //Ecrire la liste de tous les fermés à chaque ETAPE :
-            string afficheFermes = "";
+            //string afficheFermes = "";
             for (int i = 0; i < g.ListeFermes.Count(); i++)
             {
                 afficheFermes += g.ListeFermes[i];
             }
             listesFermes_txtBox.Text = afficheFermes;
             //Ecrire la liste de tous les ouverts à chaque ETAPE :
-            string afficheOuverts = "";
+            //string afficheOuverts = "";
             for (int i = 0; i < g.ListeOuverts.Count(); i++)
             {
                 afficheOuverts += g.ListeOuverts[i];
@@ -155,7 +193,18 @@ namespace App
             //##################################################################### à enlever : mais garder pour l'instant pour vérifs ####################################################################
         }
 
+        private void suivant_btn_Click(object sender, EventArgs e)
+        {
+            if ((F_txtBox.ForeColor == Color.Red) || (F_txtBox.Text == ""))
+            {
+                F_txtBox.Text = correctionFermes_lbl.Text;
+            }
+            F_txtBox.ForeColor = Color.Black;
 
+            correctionFermes_lbl.Hide();        
+            suivant_btn.Hide();
+            valider_btn.Show();
+        }
 
 
         //Calcul et affichage de l'arbre avec le meilleur chemin (bouton Valider) :
@@ -256,10 +305,22 @@ namespace App
             monStreamReader.Close();
         }*/
         
+        //Comparer la liste des fermés ou ouverts du user avec la liste correcte générée par le pgrm : ATTENTION, on suppose ici que le user rentre la liste dans le bon ordre, avec tous les bons caractères, sans problème d'espace, ... !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        public bool VérifListe (string[] listeOK, string listeUser, int numEtape)
+        {
+            bool correct = true;
 
-
-
-
+            int i = 0;
+            while ((i < listeOK.Length) && (i < listeUser.Length) && (correct == true))
+            {
+                if (listeUser[i] != listeOK[numEtape][i])
+                {
+                    correct = false;
+                }
+                i++;
+            }
+            return correct;
+        }
 
 
     }

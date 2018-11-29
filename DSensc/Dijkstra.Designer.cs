@@ -126,6 +126,7 @@
             this.suivant_btn.TabIndex = 21;
             this.suivant_btn.Text = "Suivant";
             this.suivant_btn.UseVisualStyleBackColor = false;
+            this.suivant_btn.Click += new System.EventHandler(this.suivant_btn_Click);
             // 
             // treeViewFinal_btn
             // 
@@ -217,7 +218,7 @@
             // 
             // listesOuverts_txtBox
             // 
-            this.listesOuverts_txtBox.Location = new System.Drawing.Point(307, 567);
+            this.listesOuverts_txtBox.Location = new System.Drawing.Point(286, 517);
             this.listesOuverts_txtBox.Multiline = true;
             this.listesOuverts_txtBox.Name = "listesOuverts_txtBox";
             this.listesOuverts_txtBox.Size = new System.Drawing.Size(237, 121);
