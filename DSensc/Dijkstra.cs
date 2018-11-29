@@ -40,7 +40,7 @@ namespace App
 
 
             //Affichage des poids de chaque noeud :
-            StreamReader monStreamReader = new StreamReader("graphe1.txt"); //Grâce à System.IO
+            StreamReader monStreamReader = new StreamReader("..//..//..//Donnees//graphe1.txt"); //Grâce à System.IO
             // Lecture du fichier ("graph1.txt" dans le bin) avec un while, évidemment !
             // 1ère ligne : "nombre de noeuds du graphe
             string ligne = monStreamReader.ReadLine();
@@ -161,7 +161,7 @@ namespace App
         private void treeViewFinal_btn_Click(object sender, EventArgs e)
         {
             numinitial = 0; // Convert.ToInt32(textBox1.Text);
-            numfinal = 0; // Convert.ToInt32(textBox2.Text);
+            numfinal = 6; // Convert.ToInt32(textBox2.Text);
             SearchTree g = new SearchTree();
             Node2 N0 = new Node2();
             N0.numero = numinitial;
@@ -169,7 +169,7 @@ namespace App
             List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
             //Affichage de ce meilleur chemin dans listBox1
             Node2 N1 = N0;
-            for (int i = 1; i < solution.Count; i++)
+            for (int i = 0; i <= solution.Count; i++)
             {
                 Node2 N2 = (Node2)solution[i];
                 listBox1.Items.Add(Convert.ToString(N1.numero)
@@ -185,7 +185,7 @@ namespace App
         private void button3_Click(object sender, EventArgs e)
         {
 
-            StreamReader monStreamReader = new StreamReader("..//..//graphe1.txt"); //Grâce à System.IO
+            StreamReader monStreamReader = new StreamReader("..//..//..//Donnees//graphe1.txt"); //Grâce à System.IO
 
             // Lecture du fichier ("graph1.txt" dans le bin) avec un while, évidemment !
             // 1ère ligne : "nombre de noeuds du graphe

@@ -37,9 +37,9 @@
             this.valider_btn = new System.Windows.Forms.Button();
             this.suivant_btn = new System.Windows.Forms.Button();
             this.treeViewFinal_btn = new System.Windows.Forms.Button();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.treeView2 = new System.Windows.Forms.TreeView();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
             // listBoxgraphe
@@ -134,13 +134,6 @@
             this.treeViewFinal_btn.UseVisualStyleBackColor = false;
             this.treeViewFinal_btn.Click += new System.EventHandler(this.treeViewFinal_btn_Click);
             // 
-            // treeView1
-            // 
-            this.treeView1.Location = new System.Drawing.Point(511, 73);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(215, 238);
-            this.treeView1.TabIndex = 23;
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -155,6 +148,13 @@
             this.treeView2.Name = "treeView2";
             this.treeView2.Size = new System.Drawing.Size(121, 97);
             this.treeView2.TabIndex = 26;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(511, 73);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(215, 238);
+            this.treeView1.TabIndex = 23;
             // 
             // Dijkstra
             // 
@@ -192,8 +192,8 @@
         private System.Windows.Forms.Button valider_btn;
         private System.Windows.Forms.Button suivant_btn;
         private System.Windows.Forms.Button treeViewFinal_btn;
-        private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TreeView treeView2;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }
