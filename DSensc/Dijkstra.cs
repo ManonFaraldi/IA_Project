@@ -177,7 +177,7 @@ namespace App
                      + "   : " + Convert.ToString(matrice[N1.numero, N2.numero]));
                 N1 = N2;
             }
-
+            essaiTreeView_lbl.Text = "OK";
             g.GetSearchTree(treeView1);
         }
         
