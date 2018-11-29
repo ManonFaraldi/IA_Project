@@ -39,7 +39,6 @@
             this.treeViewFinal_btn = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.essaiTreeView_lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBoxgraphe
@@ -149,22 +148,12 @@
             this.listBox1.Size = new System.Drawing.Size(215, 134);
             this.listBox1.TabIndex = 24;
             // 
-            // essaiTreeView_lbl
-            // 
-            this.essaiTreeView_lbl.AutoSize = true;
-            this.essaiTreeView_lbl.Location = new System.Drawing.Point(323, 412);
-            this.essaiTreeView_lbl.Name = "essaiTreeView_lbl";
-            this.essaiTreeView_lbl.Size = new System.Drawing.Size(80, 13);
-            this.essaiTreeView_lbl.TabIndex = 25;
-            this.essaiTreeView_lbl.Text = "Essai TreeView";
-            // 
             // Dijkstra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(779, 491);
-            this.Controls.Add(this.essaiTreeView_lbl);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.treeViewFinal_btn);
@@ -196,6 +185,5 @@
         private System.Windows.Forms.Button treeViewFinal_btn;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label essaiTreeView_lbl;
     }
 }
