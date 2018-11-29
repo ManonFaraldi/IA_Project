@@ -29,7 +29,7 @@ namespace App
             for (int k = 0; k < nbnodes; k++)
                 for (int j = 0; j < nbnodes; j++)
                     matrice[k, j] = -1;       
-            // Remplissage de la matrice avec les poids de chaque arc (symétrique, car va de parent vers enfant et inversement quand on cherche le + court chemin !)
+            // Remplissage de la matrice avec les poids de chaque arc (symétrique, car va de parent vers enfant et inversement quand on cherche le + court chemin !) : idem (voir si peut pas l'intégrer avec la partie suivante "Affichage des poids de chaque noeud"
             matrice[0, 1] = 3; matrice[1, 0] = 3;
             matrice[0, 2] = 5; matrice[2, 0] = 5;
             matrice[0, 3] = 7; matrice[3, 0] = 7;
@@ -109,59 +109,13 @@ namespace App
             // Fermeture du StreamReader (obligatoire) 
             monStreamReader.Close();
 
-
-
-
-
         }
-        /*
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // Initialisation de la matrice :
-            matrice = new double[nbnodes, nbnodes];
-            for (int i = 0; i < nbnodes; i++)
-                for (int j = 0; j < nbnodes; j++)
-                    matrice[i, j] = -1;
-
-            // Remplissage de la matrice avec les poids de chaque arc (symétrique, car va de parent vers enfant et inversement quand on cherche le + court chemin !)
-            matrice[0, 1] = 3; matrice[1, 0] = 3;
-            matrice[0, 2] = 5; matrice[2, 0] = 5;
-            matrice[0, 3] = 7; matrice[3, 0] = 7;
-            matrice[1, 4] = 8; matrice[4, 1] = 8;
-            matrice[2, 4] = 3; matrice[4, 2] = 3;
-            matrice[4, 5] = 7; matrice[5, 4] = 7;
-            matrice[5, 6] = 4; matrice[6, 5] = 4;
-        }
-
-        //Calcul et affichage de l'arbre avec le meilleur chemin (bouton A*) :
-        private void button2_Click(object sender, EventArgs e)
-        {
-            numinitial = 0; // Convert.ToInt32(textBox1.Text);
-            numfinal = 0; // Convert.ToInt32(textBox2.Text);
-            SearchTree g = new SearchTree();
-            Node2 N0 = new Node2();
-            N0.numero = numinitial;
-            // Recherche du meilleur chemin à partir de ce noeud initial et final :
-            List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
-            //Affichage de ce meilleur chemin dans listBox1
-            Node2 N1 = N0;
-            for (int i = 1; i < solution.Count; i++)
-            {
-                Node2 N2 = (Node2)solution[i];
-                listBox1.Items.Add(Convert.ToString(N1.numero)
-                     + "--->" + Convert.ToString(N2.numero)
-                     + "   : " + Convert.ToString(matrice[N1.numero, N2.numero]));
-                N1 = N2;
-            }
-
-            g.GetSearchTree(treeView1);
-        }*/
 
         //Calcul et affichage de l'arbre avec le meilleur chemin (bouton Valider) :
         private void treeViewFinal_btn_Click(object sender, EventArgs e)
         {
-            numinitial = 0; // Convert.ToInt32(textBox1.Text);
-            numfinal = 6; // Convert.ToInt32(textBox2.Text);
+            numinitial = 1; // Convert.ToInt32(textBox1.Text);
+            numfinal = 5; // Convert.ToInt32(textBox2.Text);
             SearchTree g = new SearchTree();
             Node2 N0 = new Node2();
             N0.numero = numinitial;
@@ -255,5 +209,57 @@ namespace App
             // Fermeture du StreamReader (obligatoire) 
             monStreamReader.Close();
         }
+        
+
+        //Vérifie les fermés et ouverts de l'utilisateur et affiche correction si nécessaire
+        private void valider_btn_Click(object sender, EventArgs e)
+        {
+            //IDEM QUE TreeViewFinal_btn :
+            numinitial = 1; // Convert.ToInt32(textBox1.Text);
+            numfinal = 5; // Convert.ToInt32(textBox2.Text);
+            SearchTree g = new SearchTree();
+            Node2 N0 = new Node2();
+            N0.numero = numinitial;
+            // Recherche du meilleur chemin à partir de ce noeud initial et final :
+            List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
+
+            //Ecrire la liste de tous les fermés à chaque ETAPE :
+            string afficheFermes = "";
+            for (int i = 0; i < g.ListeFermes.Count(); i++)
+            {
+                afficheFermes += g.ListeFermes[i];
+            }
+            listesFermes_txtBox.Text = afficheFermes;
+            //Ecrire la liste de tous les ouverts à chaque ETAPE :
+            string afficheOuverts = "";
+            for (int i = 0; i < g.ListeOuverts.Count(); i++)
+            {
+                afficheOuverts += g.ListeOuverts[i];
+            }
+            listesOuverts_txtBox.Text = afficheOuverts;
+
+
+
+
+            //Ecrire la liste de tous les ouverts et les fermés à la FIN (après résolution du A*) : à enlever !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            string afficheFermesFinal ="";
+            for (int i = 0; i < g.L_Fermes.Count; i++)
+            {
+                afficheFermesFinal += Convert.ToString(g.L_Fermes[i]);
+            }
+            listFermesFinal_txtBox.Text = afficheFermesFinal;
+            string afficheOuvertsFinal ="";
+            for (int i = 0; i < g.L_Ouverts.Count; i++)
+            {
+                afficheOuvertsFinal += Convert.ToString(g.L_Ouverts[i]);
+            }
+            listOuvertsFinal_txtBox.Text = afficheOuvertsFinal;
+
+
+        }
+
+
+
+
     }
 }

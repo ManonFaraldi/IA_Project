@@ -39,12 +39,19 @@
             this.treeViewFinal_btn = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.enonce_lbl = new System.Windows.Forms.Label();
+            this.correctionFermes_lbl = new System.Windows.Forms.Label();
+            this.correctionOuverts_lbl = new System.Windows.Forms.Label();
+            this.listFermesFinal_txtBox = new System.Windows.Forms.TextBox();
+            this.listOuvertsFinal_txtBox = new System.Windows.Forms.TextBox();
+            this.listesFermes_txtBox = new System.Windows.Forms.TextBox();
+            this.listesOuverts_txtBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // listBoxgraphe
             // 
             this.listBoxgraphe.FormattingEnabled = true;
-            this.listBoxgraphe.Location = new System.Drawing.Point(22, 73);
+            this.listBoxgraphe.Location = new System.Drawing.Point(22, 110);
             this.listBoxgraphe.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxgraphe.Name = "listBoxgraphe";
             this.listBoxgraphe.Size = new System.Drawing.Size(182, 238);
@@ -63,14 +70,14 @@
             // 
             // F_txtBox
             // 
-            this.F_txtBox.Location = new System.Drawing.Point(255, 103);
+            this.F_txtBox.Location = new System.Drawing.Point(254, 140);
             this.F_txtBox.Name = "F_txtBox";
             this.F_txtBox.Size = new System.Drawing.Size(204, 20);
             this.F_txtBox.TabIndex = 12;
             // 
             // O_txtBox
             // 
-            this.O_txtBox.Location = new System.Drawing.Point(255, 167);
+            this.O_txtBox.Location = new System.Drawing.Point(255, 218);
             this.O_txtBox.Name = "O_txtBox";
             this.O_txtBox.Size = new System.Drawing.Size(204, 20);
             this.O_txtBox.TabIndex = 13;
@@ -78,7 +85,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(252, 87);
+            this.label1.Location = new System.Drawing.Point(252, 124);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 13);
             this.label1.TabIndex = 14;
@@ -87,7 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(253, 150);
+            this.label2.Location = new System.Drawing.Point(253, 201);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 13);
             this.label2.TabIndex = 15;
@@ -99,12 +106,13 @@
             this.valider_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.valider_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valider_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.valider_btn.Location = new System.Drawing.Point(317, 233);
+            this.valider_btn.Location = new System.Drawing.Point(310, 302);
             this.valider_btn.Name = "valider_btn";
             this.valider_btn.Size = new System.Drawing.Size(82, 43);
             this.valider_btn.TabIndex = 20;
             this.valider_btn.Text = "Valider";
             this.valider_btn.UseVisualStyleBackColor = false;
+            this.valider_btn.Click += new System.EventHandler(this.valider_btn_Click);
             // 
             // suivant_btn
             // 
@@ -112,7 +120,7 @@
             this.suivant_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.suivant_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.suivant_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.suivant_btn.Location = new System.Drawing.Point(317, 282);
+            this.suivant_btn.Location = new System.Drawing.Point(310, 351);
             this.suivant_btn.Name = "suivant_btn";
             this.suivant_btn.Size = new System.Drawing.Size(82, 43);
             this.suivant_btn.TabIndex = 21;
@@ -125,7 +133,7 @@
             this.treeViewFinal_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.treeViewFinal_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeViewFinal_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.treeViewFinal_btn.Location = new System.Drawing.Point(293, 331);
+            this.treeViewFinal_btn.Location = new System.Drawing.Point(286, 400);
             this.treeViewFinal_btn.Name = "treeViewFinal_btn";
             this.treeViewFinal_btn.Size = new System.Drawing.Size(128, 43);
             this.treeViewFinal_btn.TabIndex = 22;
@@ -135,7 +143,7 @@
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(511, 73);
+            this.treeView1.Location = new System.Drawing.Point(511, 110);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(215, 238);
             this.treeView1.TabIndex = 23;
@@ -143,17 +151,92 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(511, 331);
+            this.listBox1.Location = new System.Drawing.Point(511, 368);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(215, 134);
             this.listBox1.TabIndex = 24;
+            // 
+            // enonce_lbl
+            // 
+            this.enonce_lbl.AutoSize = true;
+            this.enonce_lbl.BackColor = System.Drawing.Color.Turquoise;
+            this.enonce_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enonce_lbl.ForeColor = System.Drawing.Color.Red;
+            this.enonce_lbl.Location = new System.Drawing.Point(24, 65);
+            this.enonce_lbl.Name = "enonce_lbl";
+            this.enonce_lbl.Size = new System.Drawing.Size(282, 25);
+            this.enonce_lbl.TabIndex = 25;
+            this.enonce_lbl.Text = "Enoncé !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+            // 
+            // correctionFermes_lbl
+            // 
+            this.correctionFermes_lbl.AutoSize = true;
+            this.correctionFermes_lbl.ForeColor = System.Drawing.Color.Red;
+            this.correctionFermes_lbl.Location = new System.Drawing.Point(254, 165);
+            this.correctionFermes_lbl.Name = "correctionFermes_lbl";
+            this.correctionFermes_lbl.Size = new System.Drawing.Size(109, 13);
+            this.correctionFermes_lbl.TabIndex = 26;
+            this.correctionFermes_lbl.Text = "Correction des fermés";
+            // 
+            // correctionOuverts_lbl
+            // 
+            this.correctionOuverts_lbl.AutoSize = true;
+            this.correctionOuverts_lbl.ForeColor = System.Drawing.Color.Red;
+            this.correctionOuverts_lbl.Location = new System.Drawing.Point(253, 243);
+            this.correctionOuverts_lbl.Name = "correctionOuverts_lbl";
+            this.correctionOuverts_lbl.Size = new System.Drawing.Size(113, 13);
+            this.correctionOuverts_lbl.TabIndex = 27;
+            this.correctionOuverts_lbl.Text = "Correction des ouverts";
+            // 
+            // listFermesFinal_txtBox
+            // 
+            this.listFermesFinal_txtBox.Location = new System.Drawing.Point(22, 353);
+            this.listFermesFinal_txtBox.Multiline = true;
+            this.listFermesFinal_txtBox.Name = "listFermesFinal_txtBox";
+            this.listFermesFinal_txtBox.Size = new System.Drawing.Size(237, 24);
+            this.listFermesFinal_txtBox.TabIndex = 28;
+            this.listFermesFinal_txtBox.Text = "Liste de tous les fermés à la fin";
+            // 
+            // listOuvertsFinal_txtBox
+            // 
+            this.listOuvertsFinal_txtBox.Location = new System.Drawing.Point(22, 383);
+            this.listOuvertsFinal_txtBox.Multiline = true;
+            this.listOuvertsFinal_txtBox.Name = "listOuvertsFinal_txtBox";
+            this.listOuvertsFinal_txtBox.Size = new System.Drawing.Size(237, 23);
+            this.listOuvertsFinal_txtBox.TabIndex = 29;
+            this.listOuvertsFinal_txtBox.Text = "Liste de tous les ouverts à la fin";
+            // 
+            // listesFermes_txtBox
+            // 
+            this.listesFermes_txtBox.Location = new System.Drawing.Point(22, 419);
+            this.listesFermes_txtBox.Multiline = true;
+            this.listesFermes_txtBox.Name = "listesFermes_txtBox";
+            this.listesFermes_txtBox.Size = new System.Drawing.Size(237, 294);
+            this.listesFermes_txtBox.TabIndex = 30;
+            this.listesFermes_txtBox.Text = "Liste de tous les fermés à chaque étape de résolution de A*";
+            // 
+            // listesOuverts_txtBox
+            // 
+            this.listesOuverts_txtBox.Location = new System.Drawing.Point(307, 567);
+            this.listesOuverts_txtBox.Multiline = true;
+            this.listesOuverts_txtBox.Name = "listesOuverts_txtBox";
+            this.listesOuverts_txtBox.Size = new System.Drawing.Size(237, 121);
+            this.listesOuverts_txtBox.TabIndex = 31;
+            this.listesOuverts_txtBox.Text = "Liste de tous les ouverts  à chaque étape de résolution de A*";
             // 
             // Dijkstra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(779, 491);
+            this.ClientSize = new System.Drawing.Size(758, 725);
+            this.Controls.Add(this.listesOuverts_txtBox);
+            this.Controls.Add(this.listesFermes_txtBox);
+            this.Controls.Add(this.listOuvertsFinal_txtBox);
+            this.Controls.Add(this.listFermesFinal_txtBox);
+            this.Controls.Add(this.correctionOuverts_lbl);
+            this.Controls.Add(this.correctionFermes_lbl);
+            this.Controls.Add(this.enonce_lbl);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.treeViewFinal_btn);
@@ -166,7 +249,7 @@
             this.Controls.Add(this.TestIA_txt);
             this.Controls.Add(this.listBoxgraphe);
             this.Name = "Dijkstra";
-            this.Text = "Dijkstra";
+            this.Text = " ";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +268,12 @@
         private System.Windows.Forms.Button treeViewFinal_btn;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label enonce_lbl;
+        private System.Windows.Forms.Label correctionFermes_lbl;
+        private System.Windows.Forms.Label correctionOuverts_lbl;
+        private System.Windows.Forms.TextBox listFermesFinal_txtBox;
+        private System.Windows.Forms.TextBox listOuvertsFinal_txtBox;
+        private System.Windows.Forms.TextBox listesFermes_txtBox;
+        private System.Windows.Forms.TextBox listesOuverts_txtBox;
     }
 }

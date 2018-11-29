@@ -10,6 +10,8 @@ namespace App
     {
         public List<GenericNode> L_Ouverts;
         public List<GenericNode> L_Fermes;
+        public string[] ListeOuverts; // Chaque élément du tableau correspond à la liste des fermés à chaque étape de résolution de A*
+        public string[] ListeFermes; // Idem pour les ouverts
 
         //Compter le nb. d'élments dans les ouverts et fermés :
         public int CountInOpenList()
@@ -52,11 +54,14 @@ namespace App
         {
             L_Ouverts = new List<GenericNode>();
             L_Fermes = new List<GenericNode>();
+            ListeOuverts = new string[50]; //Voir si on ne peut pas faire un tableau de la taille exacte du nombre de n°/noeuds !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            ListeFermes = new string[50];
             // Le noeud passé en paramètre est supposé être le noeud initial
             GenericNode N = N0;
             L_Ouverts.Add(N0);
 
             // Tant que le noeud n'est pas terminal et que ouverts n'est pas vide
+            int etapeDij = 0; //(Nb. détapes - 1) de la résolution de A*
             while (L_Ouverts.Count != 0 && N.EndState() == false)
             {
                 // Le meilleur noeud des ouverts est supposé placé en tête de liste
@@ -65,9 +70,18 @@ namespace App
                 L_Fermes.Add(N);
 
 
-                //Ici qu'on enregistre à chaque fois les étapes de recherche de F et O !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
+                //Ici qu'on enregistre à chaque fois les étapes de recherche de F et O !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                //ListeFermes[etapeDij] = Convert.ToString(L_Fermes) +"????";
+                //ListeOuverts[etapeDij] = Convert.ToString(L_Ouverts) + "???";
+                for (int i = 0; i < L_Fermes.Count; i++)
+                {
+                    ListeFermes[etapeDij] += Convert.ToString(L_Fermes[i]);
+                }
+                for (int i=0; i < L_Ouverts.Count; i++)
+                {
+                    ListeOuverts[etapeDij] += Convert.ToString(L_Ouverts[i]);
+                }
+                etapeDij++;
 
 
                 // Il faut trouver les noeuds successeurs de N
@@ -101,7 +115,7 @@ namespace App
                     _LN.Insert(0, N);  // On insère en position 1
                 }
             }
-            return _LN;
+            return _LN; //seulement le n° des noeuds faisant partis du + court chemin
         }
 
         private void MAJSuccesseurs(GenericNode N)
