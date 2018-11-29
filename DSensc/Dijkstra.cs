@@ -169,7 +169,7 @@ namespace App
             List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
             //Affichage de ce meilleur chemin dans listBox1
             Node2 N1 = N0;
-            for (int i = 0; i <= solution.Count; i++)
+            for (int i = 1; i < solution.Count; i++)
             {
                 Node2 N2 = (Node2)solution[i];
                 listBox1.Items.Add(Convert.ToString(N1.numero)
