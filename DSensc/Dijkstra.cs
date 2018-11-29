@@ -40,7 +40,7 @@ namespace App
 
 
             //Affichage des poids de chaque noeud :
-            StreamReader monStreamReader = new StreamReader("graphe1.txt"); //Grâce à System.IO
+            StreamReader monStreamReader = new StreamReader("..//..//..//Donnees//graphe1.txt"); //Grâce à System.IO
             // Lecture du fichier ("graph1.txt" dans le bin) avec un while, évidemment !
             // 1ère ligne : "nombre de noeuds du graphe
             string ligne = monStreamReader.ReadLine();
