@@ -17,8 +17,9 @@ namespace App
 
         static public double[,] matrice;
         static public int nbnodes = 10;
-        static public int numinitial;
-        static public int numfinal;
+        static public int numinitial = 1;
+        static public int numfinal = 5;
+        protected int nbValider; //
 
         public Dijkstra()
         {
@@ -111,11 +112,55 @@ namespace App
 
         }
 
+
+        //Vérifie les fermés et ouverts de l'utilisateur et affiche correction si nécessaire
+        private void valider_btn_Click(object sender, EventArgs e)
+        {
+            //IDEM QUE TreeViewFinal_btn :
+            SearchTree g = new SearchTree();
+            Node2 N0 = new Node2();
+            N0.numero = numinitial;
+            // Recherche du meilleur chemin à partir de ce noeud initial et final :
+            List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
+
+            //##################################################################### à enlever : mais garder pour l'instant pour vérifs ####################################################################
+            //Ecrire la liste de tous les fermés à chaque ETAPE :
+            string afficheFermes = "";
+            for (int i = 0; i < g.ListeFermes.Count(); i++)
+            {
+                afficheFermes += g.ListeFermes[i];
+            }
+            listesFermes_txtBox.Text = afficheFermes;
+            //Ecrire la liste de tous les ouverts à chaque ETAPE :
+            string afficheOuverts = "";
+            for (int i = 0; i < g.ListeOuverts.Count(); i++)
+            {
+                afficheOuverts += g.ListeOuverts[i];
+            }
+            listesOuverts_txtBox.Text = afficheOuverts;
+
+            //Ecrire la liste de tous les ouverts et les fermés à la FIN (après résolution du A*) : à enlever !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            string afficheFermesFinal = "";
+            for (int i = 0; i < g.L_Fermes.Count; i++)
+            {
+                afficheFermesFinal += Convert.ToString(g.L_Fermes[i]);
+            }
+            listFermesFinal_txtBox.Text = afficheFermesFinal;
+            string afficheOuvertsFinal = "";
+            for (int i = 0; i < g.L_Ouverts.Count; i++)
+            {
+                afficheOuvertsFinal += Convert.ToString(g.L_Ouverts[i]);
+            }
+            listOuvertsFinal_txtBox.Text = afficheOuvertsFinal;
+            //##################################################################### à enlever : mais garder pour l'instant pour vérifs ####################################################################
+        }
+
+
+
+
         //Calcul et affichage de l'arbre avec le meilleur chemin (bouton Valider) :
         private void treeViewFinal_btn_Click(object sender, EventArgs e)
         {
-            numinitial = 1; // Convert.ToInt32(textBox1.Text);
-            numfinal = 5; // Convert.ToInt32(textBox2.Text);
             SearchTree g = new SearchTree();
             Node2 N0 = new Node2();
             N0.numero = numinitial;
@@ -134,6 +179,7 @@ namespace App
             g.GetSearchTree(treeView1);
         }
         
+        /*
         //Affichage des poids de chaque noeud :
         private void button3_Click(object sender, EventArgs e)
         {
@@ -208,55 +254,10 @@ namespace App
             }
             // Fermeture du StreamReader (obligatoire) 
             monStreamReader.Close();
-        }
+        }*/
         
 
-        //Vérifie les fermés et ouverts de l'utilisateur et affiche correction si nécessaire
-        private void valider_btn_Click(object sender, EventArgs e)
-        {
-            //IDEM QUE TreeViewFinal_btn :
-            numinitial = 1; // Convert.ToInt32(textBox1.Text);
-            numfinal = 5; // Convert.ToInt32(textBox2.Text);
-            SearchTree g = new SearchTree();
-            Node2 N0 = new Node2();
-            N0.numero = numinitial;
-            // Recherche du meilleur chemin à partir de ce noeud initial et final :
-            List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
 
-            //Ecrire la liste de tous les fermés à chaque ETAPE :
-            string afficheFermes = "";
-            for (int i = 0; i < g.ListeFermes.Count(); i++)
-            {
-                afficheFermes += g.ListeFermes[i];
-            }
-            listesFermes_txtBox.Text = afficheFermes;
-            //Ecrire la liste de tous les ouverts à chaque ETAPE :
-            string afficheOuverts = "";
-            for (int i = 0; i < g.ListeOuverts.Count(); i++)
-            {
-                afficheOuverts += g.ListeOuverts[i];
-            }
-            listesOuverts_txtBox.Text = afficheOuverts;
-
-
-
-
-            //Ecrire la liste de tous les ouverts et les fermés à la FIN (après résolution du A*) : à enlever !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            string afficheFermesFinal ="";
-            for (int i = 0; i < g.L_Fermes.Count; i++)
-            {
-                afficheFermesFinal += Convert.ToString(g.L_Fermes[i]);
-            }
-            listFermesFinal_txtBox.Text = afficheFermesFinal;
-            string afficheOuvertsFinal ="";
-            for (int i = 0; i < g.L_Ouverts.Count; i++)
-            {
-                afficheOuvertsFinal += Convert.ToString(g.L_Ouverts[i]);
-            }
-            listOuvertsFinal_txtBox.Text = afficheOuvertsFinal;
-
-
-        }
 
 
 
