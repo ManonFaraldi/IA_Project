@@ -146,9 +146,6 @@ namespace App
             Application.Exit();
         }
 
-
-
-
         public static void TriQuestion<T>(IList<T> list) //Trier les questions dans un ordre aléatoire
         {
             Random random = new Random();

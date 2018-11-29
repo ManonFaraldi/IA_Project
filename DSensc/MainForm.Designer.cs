@@ -41,20 +41,20 @@
             // nom_txt
             // 
             this.nom_txt.AutoSize = true;
-            this.nom_txt.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nom_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nom_txt.Location = new System.Drawing.Point(67, 101);
             this.nom_txt.Name = "nom_txt";
-            this.nom_txt.Size = new System.Drawing.Size(52, 23);
+            this.nom_txt.Size = new System.Drawing.Size(50, 20);
             this.nom_txt.TabIndex = 0;
             this.nom_txt.Text = "Nom :";
             // 
             // prenom_txt
             // 
             this.prenom_txt.AutoSize = true;
-            this.prenom_txt.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prenom_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prenom_txt.Location = new System.Drawing.Point(50, 146);
             this.prenom_txt.Name = "prenom_txt";
-            this.prenom_txt.Size = new System.Drawing.Size(69, 23);
+            this.prenom_txt.Size = new System.Drawing.Size(72, 20);
             this.prenom_txt.TabIndex = 1;
             this.prenom_txt.Text = "Prénom :";
             // 
@@ -76,20 +76,20 @@
             // 
             this.TestIA_txt.AutoSize = true;
             this.TestIA_txt.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TestIA_txt.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestIA_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TestIA_txt.Location = new System.Drawing.Point(158, 24);
             this.TestIA_txt.Name = "TestIA_txt";
-            this.TestIA_txt.Size = new System.Drawing.Size(145, 42);
+            this.TestIA_txt.Size = new System.Drawing.Size(107, 33);
             this.TestIA_txt.TabIndex = 4;
             this.TestIA_txt.Text = "Test IA";
             // 
             // JMSalotti_txt
             // 
             this.JMSalotti_txt.AutoSize = true;
-            this.JMSalotti_txt.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JMSalotti_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.JMSalotti_txt.Location = new System.Drawing.Point(344, 36);
             this.JMSalotti_txt.Name = "JMSalotti_txt";
-            this.JMSalotti_txt.Size = new System.Drawing.Size(85, 16);
+            this.JMSalotti_txt.Size = new System.Drawing.Size(89, 13);
             this.JMSalotti_txt.TabIndex = 5;
             this.JMSalotti_txt.Text = "Jean-Marc Salotti";
             // 
@@ -97,7 +97,7 @@
             // 
             this.demarrer_btn.BackColor = System.Drawing.Color.LimeGreen;
             this.demarrer_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.demarrer_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.demarrer_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.demarrer_btn.Location = new System.Drawing.Point(165, 196);
             this.demarrer_btn.Name = "demarrer_btn";
             this.demarrer_btn.Size = new System.Drawing.Size(138, 67);
@@ -108,13 +108,13 @@
             // 
             // dateDS_txt
             // 
-            this.dateDS_txt.AccessibleRole = System.Windows.Forms.AccessibleRole.Clock;
+            this.dateDS_txt.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor;
             this.dateDS_txt.AutoSize = true;
             this.dateDS_txt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dateDS_txt.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateDS_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateDS_txt.Location = new System.Drawing.Point(28, 36);
             this.dateDS_txt.Name = "dateDS_txt";
-            this.dateDS_txt.Size = new System.Drawing.Size(52, 16);
+            this.dateDS_txt.Size = new System.Drawing.Size(53, 13);
             this.dateDS_txt.TabIndex = 7;
             this.dateDS_txt.Text = "DateTime\r\n";
             // 

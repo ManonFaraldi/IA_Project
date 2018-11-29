@@ -29,7 +29,7 @@ namespace App
             matrice = new double[nbnodes, nbnodes];
             for (int k = 0; k < nbnodes; k++)
                 for (int j = 0; j < nbnodes; j++)
-                    matrice[k, j] = -1;       
+                    matrice[k, j] = -1;
             // Remplissage de la matrice avec les poids de chaque arc (symétrique, car va de parent vers enfant et inversement quand on cherche le + court chemin !) : idem (voir si peut pas l'intégrer avec la partie suivante "Affichage des poids de chaque noeud"
             matrice[0, 1] = 3; matrice[1, 0] = 3;
             matrice[0, 2] = 5; matrice[2, 0] = 5;
@@ -104,6 +104,19 @@ namespace App
                 listBoxgraphe.Items.Add(Convert.ToString(N1)
                    + "--->" + Convert.ToString(N2)
                    + "   : " + Convert.ToString(matrice[N1, N2]));
+
+
+                //#####################################################
+                // ON COMPLETE EN MEME TEMPS L'ARBRE DE L'AUTRE ONGLET
+                //#####################################################
+
+                listBox2.Items.Add(Convert.ToString(N1)
+                    + "--->" + Convert.ToString(N2)
+                    + "   : " + Convert.ToString(matrice[N1, N2]));
+
+                //#####################################################
+                //METTRE L'AFFICHAGE DE L'ARBRE DES LE DEBUT ICI
+                //#####################################################
 
                 ligne = monStreamReader.ReadLine();
             }
@@ -201,7 +214,7 @@ namespace App
             }
             F_txtBox.ForeColor = Color.Black;
 
-            correctionFermes_lbl.Hide();        
+            correctionFermes_lbl.Hide();
             suivant_btn.Hide();
             valider_btn.Show();
         }
@@ -227,7 +240,7 @@ namespace App
             }
             g.GetSearchTree(treeView1);
         }
-        
+
         /*
         //Affichage des poids de chaque noeud :
         private void button3_Click(object sender, EventArgs e)
@@ -304,9 +317,9 @@ namespace App
             // Fermeture du StreamReader (obligatoire) 
             monStreamReader.Close();
         }*/
-        
+
         //Comparer la liste des fermés ou ouverts du user avec la liste correcte générée par le pgrm : ATTENTION, on suppose ici que le user rentre la liste dans le bon ordre, avec tous les bons caractères, sans problème d'espace, ... !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        public bool VérifListe (string[] listeOK, string listeUser, int numEtape)
+        public bool VérifListe(string[] listeOK, string listeUser, int numEtape)
         {
             bool correct = true;
 
@@ -323,5 +336,65 @@ namespace App
         }
 
 
+        //###############################################
+        //Page 2 - 2ème partie de l'exercice 
+        //###############################################
+        private void validate_btn_Click(object sender, EventArgs e)
+        {
+            numinitial = 0;
+            numfinal = 6;
+            SearchTree g = new SearchTree();
+            Node2 N0 = new Node2();
+            N0.numero = numinitial;
+            List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
+
+            Node2 N1 = N0;
+            for (int i = 1; i < solution.Count; i++)
+            {
+                Node2 N2 = (Node2)solution[i];
+                listBox3.Items.Add(Convert.ToString(N1.numero)
+                     + "--->" + Convert.ToString(N2.numero)
+                     + "   : " + Convert.ToString(matrice[N1.numero, N2.numero]));
+                N1 = N2;
+            }
+
+            g.GetSearchTree(treeView2);
+
+        }
+       
+        private void next_btn_Click(object sender, EventArgs e)
+        {
+            if ((F_txtBox.ForeColor == Color.Red) || (F_txtBox.Text == ""))
+            {
+                F_txtBox.Text = correctionFermes_lbl.Text;
+            }
+            F_txtBox.ForeColor = Color.Black;
+
+            correctionFermes_lbl.Hide();
+            suivant_btn.Hide();
+            valider_btn.Show();
+        }
+
+
+        //Calcul et affichage de l'arbre avec le meilleur chemin (bouton Valider) :
+        private void treeViewComplete_btn_Click(object sender, EventArgs e)
+        {
+            SearchTree g = new SearchTree();
+            Node2 N0 = new Node2();
+            N0.numero = numinitial;
+            // Recherche du meilleur chemin à partir de ce noeud initial et final :
+            List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
+            //Affichage de ce meilleur chemin dans listBox1
+            Node2 N1 = N0;
+            for (int i = 1; i < solution.Count; i++)
+            {
+                Node2 N2 = (Node2)solution[i];
+                listBox1.Items.Add(Convert.ToString(N1.numero)
+                     + "--->" + Convert.ToString(N2.numero)
+                     + "   : " + Convert.ToString(matrice[N1.numero, N2.numero]));
+                N1 = N2;
+            }
+            g.GetSearchTree(treeView1);
+        }
     }
 }

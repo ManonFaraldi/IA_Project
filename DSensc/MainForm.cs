@@ -18,9 +18,11 @@ namespace App
         public MainForm()
         {
             InitializeComponent();
+            dateDS_txt.Text = DateTime.Today.ToLongDateString();
         }
 
         public static string prenomValue;
+       
         public void demarrer_btn_Click(object sender, EventArgs e)
         {
             prenomValue =prenom_txtbox.Text;
