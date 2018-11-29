@@ -161,7 +161,7 @@ namespace App
         private void treeViewFinal_btn_Click(object sender, EventArgs e)
         {
             numinitial = 0; // Convert.ToInt32(textBox1.Text);
-            numfinal = 0; // Convert.ToInt32(textBox2.Text);
+            numfinal = 6; // Convert.ToInt32(textBox2.Text);
             SearchTree g = new SearchTree();
             Node2 N0 = new Node2();
             N0.numero = numinitial;
@@ -177,7 +177,7 @@ namespace App
                      + "   : " + Convert.ToString(matrice[N1.numero, N2.numero]));
                 N1 = N2;
             }
-
+            essaiTreeView_lbl.Text = "OK";
             g.GetSearchTree(treeView1);
         }
         

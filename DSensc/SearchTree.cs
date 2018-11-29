@@ -64,6 +64,12 @@ namespace App
                 L_Ouverts.Remove(N);
                 L_Fermes.Add(N);
 
+
+                //Ici qu'on enregistre à chaque fois les étapes de recherche de F et O !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
                 // Il faut trouver les noeuds successeurs de N
                 this.MAJSuccesseurs(N);
                 // Inutile de retrier car les insertions ont été faites en respectant l'ordre
