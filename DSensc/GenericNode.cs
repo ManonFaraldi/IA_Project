@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace App
 {
@@ -81,6 +82,11 @@ namespace App
         public abstract bool EndState();
         public abstract List<GenericNode> GetListSucc();
         public abstract double CalculeHCost();
+
+        public static explicit operator GenericNode(TreeNode v)
+        {
+            throw new NotImplementedException();
+        }
         // On peut aussi penser à surcharger ToString() pour afficher correctement un état
         // c'est utile pour l'affichage du treenode
     }

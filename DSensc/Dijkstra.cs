@@ -314,7 +314,6 @@ namespace App
         private void verifTree_btn_Click(object sender, EventArgs e)
         {
 
-            int error = 0;
             List<TreeNode> reponse = new List<TreeNode>();
             //Collection des bonnes réponses
             TreeNode N0 = new TreeNode("0");
@@ -332,55 +331,21 @@ namespace App
             reponse.Add(N5);
             reponse.Add(N6);
 
-            int tailleTree = treeView_toComplete.GetNodeCount(true);
-            TreeNodeCollection N = treeView_toComplete.Nodes; //on récupère la collection des noeuds rentrée par l'utilisateur
 
             //On récupère la liste de saisie de l'utilisateur
             List<TreeNode> reponseUser = CallRecursive(treeView_toComplete);
-            //foreach (TreeNode item in CallRecursive(treeView_toComplete))
-            //{
-            //    if (item != null)
-            //    {
-            //        reponseUser.Add(item);
-            //    }
-            //}
-            
-            int i = 0;
-            //while (i < reponse.Count())
-            //{
-            //On vérifie que les réponses de l'utilisateur sont correctes
-            foreach (TreeNode tn1 in reponseUser)
-            {
-                if (tn1.Text != reponse[i].Text)
-                {
-                    string help = reponse[i].Text;
-                    tn1.BackColor = Color.Red;
-                    error++;
-                    i++;
-                }
-                else
-                {
-                    tn1.BackColor = Color.LimeGreen;
-
-                    i++;
-                }
-            }
+            int erreur = VerifierRéponsesTree(reponse, reponseUser);
         }
-
-        //i++;
-
-        //}
 
 
         //Renvoie chaque noeud d'1 collection :
         private List<TreeNode> Recursive(TreeNode collecNode)
         {
             List<TreeNode> listeNoeuds1Collec = new List<TreeNode>(); //tous les noeuds d'1 seule collection !!!
-            
-            System.Diagnostics.Debug.WriteLine(collecNode.Text);
-            MessageBox.Show(collecNode.Text);
+            //System.Diagnostics.Debug.WriteLine(collecNode.Text);
+            // MessageBox.Show(collecNode.Text);
             TreeNode n = new TreeNode();
-            // Print each node recursively.  
+              
             foreach (TreeNode tn in collecNode.Nodes) //tn = vrai noeud unique
             {
                 listeNoeuds1Collec.Add(tn);
@@ -400,26 +365,42 @@ namespace App
             TreeNodeCollection collecNodes = treeView.Nodes;//collecNodes = TOUTES les collections
             foreach (TreeNode collecN in collecNodes) //collecN = 1 seule collection parmie toutes les collections
             {
-
-                //tnList = Recursive(collecN);
+                
+                tnList = Recursive(collecN);
                 tnList.Add(collecN);
-                if (collecN.GetNodeCount(true) == 1) //1 seul noeud que l'on peut ajouter directement
+                foreach (TreeNode test in tnList)
                 {
-                    tnList.Add(collecN);
+                    tnList = Recursive(collecN);
+                    tnList.Add(test);
                 }
-                else //prend tous les sous noeuds
-                {
-                    sousListe = Recursive(collecN);
-                    foreach (TreeNode noeud in sousListe)
-                    {
-                        tnList.Add(noeud);
-                    }
-                }
-
             }
 
             return tnList;
 
+        }
+        private int VerifierRéponsesTree(List<TreeNode> TN_juste, List<TreeNode> TN_user)
+        {
+            int erreur =0;
+            foreach (TreeNode tn1 in TN_user)
+            {
+                for(int i =0; i < TN_juste.Count; i++)
+                {
+                    if (tn1.Text != TN_juste[i].Text)
+                    {
+                        tn1.BackColor = Color.Red;
+                        erreur++;
+                    }
+                    else if ( tn1.Text == TN_juste[i].Text)
+                    {
+                        tn1.BackColor = Color.LimeGreen;
+                    }
+                    else
+                    {
+
+                    }
+                }
+            }
+            return erreur;
         }
     }
 }
