@@ -236,21 +236,52 @@ namespace App
         }
 
         //Comparer la liste des fermés ou ouverts du user avec la liste correcte générée par le pgrm : ATTENTION, on suppose ici que le user rentre la liste dans le bon ordre, avec tous les bons caractères, sans problème d'espace, ... !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        public bool VérifListe(string[] listeOK, string listeUser, int numEtape)
+        /*public bool VérifListe(string[] listeOK, string listeUser, int numEtape)
         {
             bool correct = true;
 
             int i = 0;
             while ((i < listeOK.Length) && (i < listeUser.Length) && (correct == true))
             {
-                if (listeUser[i] != listeOK[numEtape][i]) //OUT of range :!!!
+                if (listeUser[i] != listeOK[numEtape][i]) //OUT of range :!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 {
                     correct = false;
                 }
                 i++;
             }
             return correct;
+        }*/
+        //Comparer la liste des fermés ou ouverts du user avec la liste correcte générée par le pgrm : ATTENTION, on suppose ici que le user rentre la liste dans le bon ordre, avec tous les bons caractères, sans problème d'espace, ... !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        public bool VérifListe(string[] listeOK, string listeUser, int numEtape)
+        {
+            bool correct = true;
+            int i = 0;
+
+            if (listeUser.Count() != listeOK[numEtape].Count())
+            {
+                correct = false;
+            }
+            else
+            {
+                while ((i<listeOK[numEtape].Count()) && (correct == true))
+                {
+                    if (listeUser[i] != listeOK[numEtape][i])
+                    {
+                        correct = false;
+                    }
+                    i++;
+                }
+            }
+
+            return correct;
         }
+
+
+
+
+
+
+
 
         //Permet de compléter l'arbre à la main
 
