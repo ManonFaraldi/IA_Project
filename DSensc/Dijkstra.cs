@@ -218,7 +218,7 @@ namespace App
             Node2 N1 = N0;
             for (int i = 1; i < solution.Count; i++)
             {
-                Node2 N2 = (Node2)solution[i];
+                Node2 N2 = (Node2)solution[i]; 
                 listBox1.Items.Add(Convert.ToString(N1.numero)
                      + "--->" + Convert.ToString(N2.numero)
                      + "   : " + Convert.ToString(matrice[N1.numero, N2.numero]));
