@@ -332,8 +332,8 @@ namespace App
             reponse.Add(N5);
             reponse.Add(N6);
 
-            TreeNodeCollection N = treeView_toComplete.Nodes; //on récupère la liste des noeuds rentrée par l'utilisateur
-            List<TreeNode> reponseUser = new List<TreeNode>();
+            TreeNodeCollection N = treeView_toComplete.Nodes; //on récupère la collection des noeuds rentrée par l'utilisateur
+            List<TreeNode> reponseUser =  new List<TreeNode>();
 
             //On récupère la liste de saisie de l'utilisateur
             foreach (TreeNode item in N)
@@ -345,25 +345,30 @@ namespace App
             }
 
             int i = 0;
-            while (i < reponse.Count)
+            //while (i < reponse.Count())
+            //{
+            //On vérifie que les réponses de l'utilisateur sont correctes
+            foreach (TreeNode tn1 in reponseUser)
             {
-                //On vérifie que l'arbre soit bien remplit par l'utilisateur
-                foreach ( TreeNode tn1 in reponseUser)
+                int taille = reponseUser.Count();
+                if (tn1.Text != reponse[i].Text)
                 {
-                    if (tn1.Text != reponse[i].Text)
-                    {
-                        
-                        tn1.BackColor = Color.Red;
-                        error++;
-                    }
-                    else
-                    {
-                        tn1.BackColor = Color.LimeGreen;
-                    }
+                    string help = reponse[i].Text;
+                    tn1.BackColor = Color.Red;
+                    error++;
+                    i++;
                 }
-                i++;
+                else
+                {
+                    tn1.BackColor = Color.LimeGreen;
+
+                    i++;
+                }
 
             }
+                //i++;
+
+            //}
         }
     }
 }
