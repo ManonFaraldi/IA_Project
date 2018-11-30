@@ -84,7 +84,7 @@ namespace App
                     N = null;
                 }
 
-                //Ici qu'on enregistre à chaque fois les étapes de recherche de F et O !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                //Enregistrement des étapes de recherche de F et O à chaque fois :
                 for (int i = 0; i < L_Fermes.Count; i++)
                 {
                     ListeFermes[etapeDij] += Convert.ToString(L_Fermes[i]);
@@ -93,6 +93,19 @@ namespace App
                 {
                     ListeOuverts[etapeDij] += Convert.ToString(L_Ouverts[i]);
                 }
+                etapeDij++;
+            }
+            if (N.EndState() == true) //Dernière étape
+            {
+                L_Ouverts.Remove(N);
+                L_Fermes.Add(N);
+
+                //Enregistrement de la dernière étapes pour F et O :
+                for (int i = 0; i < L_Fermes.Count; i++)
+                {
+                    ListeFermes[etapeDij] += Convert.ToString(L_Fermes[i]);
+                }
+                    ListeOuverts[etapeDij] += "vide";                
                 etapeDij++;
             }
 

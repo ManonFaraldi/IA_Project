@@ -110,7 +110,11 @@ namespace App
             // Fermeture du StreamReader (obligatoire) 
             monStreamReader.Close();
 
+            //Cacher les boutons et lbl nécessaires :
             suivant_btn.Hide();
+            treeViewFinal_btn.Hide();
+            correctionFermes_lbl.Hide();
+            correctionOuverts_lbl.Hide();
         }
 
 
