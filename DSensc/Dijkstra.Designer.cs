@@ -247,18 +247,25 @@
             this.treeView_toComplete.Location = new System.Drawing.Point(775, 110);
             this.treeView_toComplete.Name = "treeView_toComplete";
             treeNode1.Name = "Nœud1";
+            treeNode1.Tag = "N1";
             treeNode1.Text = "??";
             treeNode2.Name = "Nœud6";
+            treeNode2.Tag = "N6";
             treeNode2.Text = "??";
             treeNode3.Name = "Nœud5";
+            treeNode3.Tag = "N5";
             treeNode3.Text = "??";
             treeNode4.Name = "Nœud4";
+            treeNode4.Tag = "N4";
             treeNode4.Text = "??";
             treeNode5.Name = "Nœud2";
+            treeNode5.Tag = "N2";
             treeNode5.Text = "??";
             treeNode6.Name = "Nœud3";
+            treeNode6.Tag = "N3";
             treeNode6.Text = "??";
             treeNode7.Name = "Nœud0";
+            treeNode7.Tag = "N0";
             treeNode7.Text = "??";
             this.treeView_toComplete.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode7});

@@ -345,52 +345,60 @@ namespace App
             }
         }
 
-        //Une fois que l'utilisateur a compléter le treeviw 
+        //Une fois que l'utilisateur a compléter le treeview 
         private void verifTree_btn_Click(object sender, EventArgs e)
         {
-            List<string> reponseUser = new List<string>();
+           
             int error = 0;
-            string[] reponse = { "0", "1", "2", "3", "4", "5", "6" };
-            TreeNodeCollection N = treeView_toComplete.Nodes; //on récupère la liste des noeuds
+            List<TreeNode> reponse = new List<TreeNode>();
+            //Collection des bonnes réponses
+            TreeNode N0 = new TreeNode("0");
+            TreeNode N1 = new TreeNode("1");
+            TreeNode N2 = new TreeNode("2");
+            TreeNode N3 = new TreeNode("3");
+            TreeNode N4 = new TreeNode("4");
+            TreeNode N5 = new TreeNode("5");
+            TreeNode N6 = new TreeNode("6");
+            reponse.Add(N0);
+            reponse.Add(N1);
+            reponse.Add(N2);
+            reponse.Add(N3);
+            reponse.Add(N4);
+            reponse.Add(N5);
+            reponse.Add(N6);
 
+            TreeNodeCollection N = treeView_toComplete.Nodes; //on récupère la liste des noeuds rentrée par l'utilisateur
+            List<TreeNode> reponseUser = new List<TreeNode>();
 
             //On récupère la liste de saisie de l'utilisateur
             foreach (TreeNode item in N)
             {
                 if (item != null)
                 {
-                    reponseUser.Add(Convert.ToString(item.Text));
+                    reponseUser.Add(item);
                 }
             }
 
-            for (int n = 1; n < reponseUser.Count; n++)
-            {
-
-                listBox2.Items.Add(reponseUser[n]
-                     + "--->" + reponse[n]);
-               
-            }
-
             int i = 0;
-           /* while (i < 7)
+            while (i < reponse.Count)
             {
                 //On vérifie que l'arbre soit bien remplit par l'utilisateur
-                foreach (string rep in reponseUser)
+                foreach ( TreeNode tn1 in reponseUser)
                 {
-                    if (rep != reponse[i])
+                    if (tn1.Text != reponse[i].Text)
                     {
                         
-                       // N[i].BackColor = Color.Red;
+                        tn1.BackColor = Color.Red;
                         error++;
                     }
                     else
                     {
-                        //N[i].BackColor = Color.LimeGreen;
+                        tn1.BackColor = Color.LimeGreen;
                     }
                 }
                 i++;
 
-            }*/
+            }
         }
     }
 }
