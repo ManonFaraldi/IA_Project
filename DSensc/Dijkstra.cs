@@ -371,18 +371,21 @@ namespace App
 
         //}
 
+
         //Renvoie chaque noeud d'1 collection :
         private List<TreeNode> Recursive(TreeNode collecNode)
         {
             List<TreeNode> listeNoeuds1Collec = new List<TreeNode>(); //tous les noeuds d'1 seule collection !!!
-            /*System.Diagnostics.Debug.WriteLine(collecNode.Text);
-            MessageBox.Show(collecNode.Text);*/
+            
+            System.Diagnostics.Debug.WriteLine(collecNode.Text);
+            MessageBox.Show(collecNode.Text);
+            TreeNode n = new TreeNode();
             // Print each node recursively.  
             foreach (TreeNode tn in collecNode.Nodes) //tn = vrai noeud unique
             {
-               listeNoeuds1Collec.Add(tn);
-               Recursive(tn);
-               
+                listeNoeuds1Collec.Add(tn);
+                Recursive(tn);
+
             }
             return listeNoeuds1Collec;
         }
@@ -397,6 +400,8 @@ namespace App
             TreeNodeCollection collecNodes = treeView.Nodes;//collecNodes = TOUTES les collections
             foreach (TreeNode collecN in collecNodes) //collecN = 1 seule collection parmie toutes les collections
             {
+
+                //tnList = Recursive(collecN);
                 tnList.Add(collecN);
                 if (collecN.GetNodeCount(true) == 1) //1 seul noeud que l'on peut ajouter directement
                 {
@@ -412,12 +417,10 @@ namespace App
                 }
 
             }
+
             return tnList;
 
         }
-
-
-
     }
 }
 
