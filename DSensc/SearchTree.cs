@@ -55,7 +55,7 @@ namespace App
             L_Ouverts = new List<GenericNode>();
             L_Fermes = new List<GenericNode>();
             ListeOuverts = new string[50]; //Voir si on ne peut pas faire un tableau de la taille exacte du nombre de n°/noeuds !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            ListeFermes = new string[50];
+            ListeFermes = new string[50]; // Liste des fermés enregistrés à chaque étape
             // Le noeud passé en paramètre est supposé être le noeud initial
             GenericNode N = N0;
             L_Ouverts.Add(N0);
@@ -69,22 +69,7 @@ namespace App
                 L_Ouverts.Remove(N);
                 L_Fermes.Add(N);
 
-
-                //Ici qu'on enregistre à chaque fois les étapes de recherche de F et O !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                //ListeFermes[etapeDij] = Convert.ToString(L_Fermes) +"????";
-                //ListeOuverts[etapeDij] = Convert.ToString(L_Ouverts) + "???";
-                for (int i = 0; i < L_Fermes.Count; i++)
-                {
-                    ListeFermes[etapeDij] += Convert.ToString(L_Fermes[i]);
-                }
-                for (int i=0; i < L_Ouverts.Count; i++)
-                {
-                    ListeOuverts[etapeDij] += Convert.ToString(L_Ouverts[i]);
-                }
-                etapeDij++;
-
-
-                // Il faut trouver les noeuds successeurs de N
+                // Il faut trouver les noeuds successeurs de N et les mettre dans le ouverts
                 this.MAJSuccesseurs(N);
                 // Inutile de retrier car les insertions ont été faites en respectant l'ordre
 
@@ -98,6 +83,17 @@ namespace App
                 {
                     N = null;
                 }
+
+                //Ici qu'on enregistre à chaque fois les étapes de recherche de F et O !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                for (int i = 0; i < L_Fermes.Count; i++)
+                {
+                    ListeFermes[etapeDij] += Convert.ToString(L_Fermes[i]);
+                }
+                for (int i = 0; i < L_Ouverts.Count; i++)
+                {
+                    ListeOuverts[etapeDij] += Convert.ToString(L_Ouverts[i]);
+                }
+                etapeDij++;
             }
 
             // A* terminé

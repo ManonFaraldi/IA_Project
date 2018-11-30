@@ -153,7 +153,7 @@ namespace App
             {
                 O_txtBox.ForeColor = Color.Red;
                 correctionOuverts_lbl.Show();
-                correctionOuverts_lbl.Text = g.ListeFermes[nbValider];
+                correctionOuverts_lbl.Text = g.ListeOuverts[nbValider];
                 correctionOuverts_lbl.ForeColor = Color.Green;
             }
 
@@ -201,7 +201,14 @@ namespace App
             }
             F_txtBox.ForeColor = Color.Black;
 
+            if ((O_txtBox.ForeColor == Color.Red) || (O_txtBox.Text == ""))
+            {
+                O_txtBox.Text = correctionOuverts_lbl.Text;
+            }
+            O_txtBox.ForeColor = Color.Black;
+
             correctionFermes_lbl.Hide();
+            correctionOuverts_lbl.Hide();
             suivant_btn.Hide();
             valider_btn.Show();
         }
@@ -228,83 +235,6 @@ namespace App
             g.GetSearchTree(treeView1);
         }
 
-        /*
-        //Affichage des poids de chaque noeud :
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-            StreamReader monStreamReader = new StreamReader("..//..//..//Donnees//graphe1.txt"); //Grâce à System.IO
-
-            // Lecture du fichier ("graph1.txt" dans le bin) avec un while, évidemment !
-            // 1ère ligne : "nombre de noeuds du graphe
-            string ligne = monStreamReader.ReadLine();
-            int i = 0;
-            while (ligne[i] != ':') i++;
-            string strnbnoeuds = "";
-            i++; // On dépasse le ":"
-            while (ligne[i] == ' ') i++; // on saute les blancs éventuels
-            while (i < ligne.Length)
-            {
-                strnbnoeuds = strnbnoeuds + ligne[i];
-                i++;
-            }
-            nbnodes = Convert.ToInt32(strnbnoeuds);
-
-            matrice = new double[nbnodes, nbnodes];
-            for (i = 0; i < nbnodes; i++)
-                for (int j = 0; j < nbnodes; j++)
-                    matrice[i, j] = -1;
-
-            // Ensuite on a la structure suivante : 
-            //  arc : n°noeud départ  ->  n°noeud arrivée : valeur poids
-            //  exemple 4 : 
-            ligne = monStreamReader.ReadLine();
-            while (ligne != null)
-            {
-                i = 0;
-                while (ligne[i] != ':') i++;
-                i++; // on passe le :
-                while (ligne[i] == ' ') i++; // on saute les blancs éventuels
-                string strN1 = "";
-                while (ligne[i] != ' ')
-                {
-                    strN1 = strN1 + ligne[i];
-                    i++;
-                }
-                int N1 = Convert.ToInt32(strN1);
-
-                // On saute les blancs éventuels
-                while (ligne[i] == ' ') i++;
-                string strN2 = "";
-                while (ligne[i] != ' ')
-                {
-                    strN2 = strN2 + ligne[i];
-                    i++;
-                }
-                int N2 = Convert.ToInt32(strN2);
-
-                // On saute les blancs éventuels
-                while (ligne[i] == ' ') i++;
-                string strVal = "";
-                while ((i < ligne.Length) && (ligne[i] != ' '))
-                {
-                    strVal = strVal + ligne[i];
-                    i++;
-                }
-                double val = Convert.ToDouble(strVal);
-
-                matrice[N1, N2] = val;
-                matrice[N2, N1] = val;
-                listBoxgraphe.Items.Add(Convert.ToString(N1)
-                   + "--->" + Convert.ToString(N2)
-                   + "   : " + Convert.ToString(matrice[N1, N2]));
-
-                ligne = monStreamReader.ReadLine();
-            }
-            // Fermeture du StreamReader (obligatoire) 
-            monStreamReader.Close();
-        }*/
-
         //Comparer la liste des fermés ou ouverts du user avec la liste correcte générée par le pgrm : ATTENTION, on suppose ici que le user rentre la liste dans le bon ordre, avec tous les bons caractères, sans problème d'espace, ... !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         public bool VérifListe(string[] listeOK, string listeUser, int numEtape)
         {
@@ -313,7 +243,7 @@ namespace App
             int i = 0;
             while ((i < listeOK.Length) && (i < listeUser.Length) && (correct == true))
             {
-                if (listeUser[i] != listeOK[numEtape][i])
+                if (listeUser[i] != listeOK[numEtape][i]) //OUT of range :!!!
                 {
                     correct = false;
                 }
