@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("??");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("??");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
-            treeNode9});
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
-            treeNode10});
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
-            treeNode11});
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("??");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode12,
-            treeNode13});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("??");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("??");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
+            treeNode3});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
+            treeNode4});
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("??");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode5,
+            treeNode6});
             this.listBoxgraphe = new System.Windows.Forms.ListBox();
             this.TestIA_txt = new System.Windows.Forms.Label();
             this.F_txtBox = new System.Windows.Forms.TextBox();
@@ -206,22 +206,29 @@
             this.treeView_toComplete.LabelEdit = true;
             this.treeView_toComplete.Location = new System.Drawing.Point(775, 110);
             this.treeView_toComplete.Name = "treeView_toComplete";
-            treeNode8.Name = "Nœud1";
-            treeNode8.Text = "??";
-            treeNode9.Name = "Nœud6";
-            treeNode9.Text = "??";
-            treeNode10.Name = "Nœud5";
-            treeNode10.Text = "??";
-            treeNode11.Name = "Nœud4";
-            treeNode11.Text = "??";
-            treeNode12.Name = "Nœud2";
-            treeNode12.Text = "??";
-            treeNode13.Name = "Nœud3";
-            treeNode13.Text = "??";
-            treeNode14.Name = "Nœud0";
-            treeNode14.Text = "??";
+            treeNode1.Name = "Nœud1";
+            treeNode1.Tag = "N1";
+            treeNode1.Text = "??";
+            treeNode2.Name = "Nœud6";
+            treeNode2.Tag = "N6";
+            treeNode2.Text = "??";
+            treeNode3.Name = "Nœud5";
+            treeNode3.Tag = "N5";
+            treeNode3.Text = "??";
+            treeNode4.Name = "Nœud4";
+            treeNode4.Tag = "N4";
+            treeNode4.Text = "??";
+            treeNode5.Name = "Nœud2";
+            treeNode5.Tag = "N2";
+            treeNode5.Text = "??";
+            treeNode6.Name = "Nœud3";
+            treeNode6.Tag = "N3";
+            treeNode6.Text = "??";
+            treeNode7.Name = "Nœud0";
+            treeNode7.Tag = "N0";
+            treeNode7.Text = "??";
             this.treeView_toComplete.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode14});
+            treeNode7});
             this.treeView_toComplete.Size = new System.Drawing.Size(215, 238);
             this.treeView_toComplete.TabIndex = 33;
             // 
