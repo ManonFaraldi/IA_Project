@@ -187,7 +187,7 @@ namespace App
             O_txtBox.ForeColor = Color.Black;
 
             //Gestion des boutons :
-            if (nbValider ==  g.etapeDij)
+            if (nbValider == g.etapeDij)
             {
                 correctionFermes_lbl.Hide();
                 correctionOuverts_lbl.Hide();
@@ -213,7 +213,7 @@ namespace App
             N0.numero = numinitial;
             // Recherche du meilleur chemin à partir de ce noeud initial et final :
             List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
-             
+
             //Affichage de ce meilleur chemin dans listBox1
             Node2 N1 = N0;
             for (int i = 1; i < solution.Count; i++)
@@ -239,7 +239,7 @@ namespace App
             }
             else
             {
-                while ((i<listeOK[numEtape].Count()) && (correct == true))
+                while ((i < listeOK[numEtape].Count()) && (correct == true))
                 {
                     if (listeUser[i] != listeOK[numEtape][i])
                     {
@@ -313,7 +313,7 @@ namespace App
         //Une fois que l'utilisateur a compléter le treeview 
         private void verifTree_btn_Click(object sender, EventArgs e)
         {
-           
+
             int error = 0;
             List<TreeNode> reponse = new List<TreeNode>();
             //Collection des bonnes réponses
@@ -332,25 +332,25 @@ namespace App
             reponse.Add(N5);
             reponse.Add(N6);
 
+            int tailleTree = treeView_toComplete.GetNodeCount(true);
             TreeNodeCollection N = treeView_toComplete.Nodes; //on récupère la collection des noeuds rentrée par l'utilisateur
-            List<TreeNode> reponseUser =  new List<TreeNode>();
 
             //On récupère la liste de saisie de l'utilisateur
-            foreach (TreeNode item in N)
-            {
-                if (item != null)
-                {
-                    reponseUser.Add(item);
-                }
-            }
-
+            List<TreeNode> reponseUser = CallRecursive(treeView_toComplete);
+            //foreach (TreeNode item in CallRecursive(treeView_toComplete))
+            //{
+            //    if (item != null)
+            //    {
+            //        reponseUser.Add(item);
+            //    }
+            //}
+            
             int i = 0;
             //while (i < reponse.Count())
             //{
             //On vérifie que les réponses de l'utilisateur sont correctes
             foreach (TreeNode tn1 in reponseUser)
             {
-                int taille = reponseUser.Count();
                 if (tn1.Text != reponse[i].Text)
                 {
                     string help = reponse[i].Text;
@@ -364,11 +364,49 @@ namespace App
 
                     i++;
                 }
-
             }
-                //i++;
+        }
 
-            //}
+        //i++;
+
+        //}
+
+        //Renvoie chaque noeud d'1 collection :
+        private List<TreeNode> Recursive(TreeNode collecNode)
+        {
+            List<TreeNode> listeNoeuds1Collec = new List<TreeNode>(); //tous les noeuds d'1 seule collection !!!
+            /*System.Diagnostics.Debug.WriteLine(collecNode.Text);
+            MessageBox.Show(collecNode.Text);*/
+            // Print each node recursively.  
+            foreach (TreeNode tn in collecNode.Nodes) //tn = vrai noeud unique
+            {
+               listeNoeuds1Collec.Add(tn);
+               Recursive(tn);
+               
+            }
+            return listeNoeuds1Collec;
+        }
+
+        // Call the procedure using the TreeView.  
+        //Affiche les noeuds pour toutes les collections (CAD pour l'arbre entier) :
+        private List<TreeNode> CallRecursive(TreeView treeView)
+        {
+            List<TreeNode> tnList = new List<TreeNode>(); //Liste avec TOUS les noeuds de l'arbre
+            List<TreeNode> sousListe = new List<TreeNode>(); //Liste avec tous les sous-noeuds d'1 collection
+            // Print each node recursively.  
+            TreeNodeCollection collecNodes = treeView.Nodes;//collecNodes = TOUTES les collections
+            foreach (TreeNode collecN in collecNodes) //1 seule collection parmie toutes les collections
+            {
+                sousListe = Recursive(collecN);
+                tnList.Add(collecN);
+                foreach (TreeNode noeud in sousListe)
+                {                 
+                    tnList.Add(noeud);
+                }
+                
+                
+            }
+            return tnList;
         }
     }
 }
