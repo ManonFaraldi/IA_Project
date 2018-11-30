@@ -395,19 +395,29 @@ namespace App
             List<TreeNode> sousListe = new List<TreeNode>(); //Liste avec tous les sous-noeuds d'1 collection
             // Print each node recursively.  
             TreeNodeCollection collecNodes = treeView.Nodes;//collecNodes = TOUTES les collections
-            foreach (TreeNode collecN in collecNodes) //1 seule collection parmie toutes les collections
+            foreach (TreeNode collecN in collecNodes) //collecN = 1 seule collection parmie toutes les collections
             {
-                sousListe = Recursive(collecN);
                 tnList.Add(collecN);
-                foreach (TreeNode noeud in sousListe)
-                {                 
-                    tnList.Add(noeud);
+                if (collecN.GetNodeCount(true) == 1) //1 seul noeud que l'on peut ajouter directement
+                {
+                    tnList.Add(collecN);
                 }
-                
-                
+                else //prend tous les sous noeuds
+                {
+                    sousListe = Recursive(collecN);
+                    foreach (TreeNode noeud in sousListe)
+                    {
+                        tnList.Add(noeud);
+                    }
+                }
+
             }
             return tnList;
+
         }
+
+
+
     }
 }
 
