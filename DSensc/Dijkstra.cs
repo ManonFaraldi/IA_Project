@@ -129,8 +129,6 @@ namespace App
 
             string fermesUser = F_txtBox.Text;
             string ouvertsUser = O_txtBox.Text;
-            string afficheFermes = "";
-            string afficheOuverts = "";
             bool correct;
             //Comparer la liste des fermés du user avec celui qui est correct :
             correct = VérifListe(g.ListeFermes, fermesUser, nbValider);
@@ -170,6 +168,12 @@ namespace App
         //Affichage automatique des solutions correctes dans le txtBox à la prochaine étape :
         private void suivant_btn_Click(object sender, EventArgs e)
         {
+            SearchTree g = new SearchTree();
+            Node2 N0 = new Node2();
+            N0.numero = numinitial;
+            // Recherche du meilleur chemin à partir de ce noeud initial et final :
+            List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
+
             if ((F_txtBox.ForeColor == Color.Red) || (F_txtBox.Text == ""))
             {
                 F_txtBox.Text = correctionFermes_lbl.Text;
@@ -183,13 +187,21 @@ namespace App
             O_txtBox.ForeColor = Color.Black;
 
             //Gestion des boutons :
-            //if (nbValider ==  )
-
-
-            correctionFermes_lbl.Hide();
-            correctionOuverts_lbl.Hide();
-            suivant_btn.Hide();
-            valider_btn.Show();
+            if (nbValider ==  g.etapeDij)
+            {
+                correctionFermes_lbl.Hide();
+                correctionOuverts_lbl.Hide();
+                suivant_btn.Hide();
+                valider_btn.Hide();
+                treeViewFinal_btn.Show();
+            }
+            else
+            {
+                correctionFermes_lbl.Hide();
+                correctionOuverts_lbl.Hide();
+                suivant_btn.Hide();
+                valider_btn.Show();
+            }
         }
 
 
@@ -201,6 +213,7 @@ namespace App
             N0.numero = numinitial;
             // Recherche du meilleur chemin à partir de ce noeud initial et final :
             List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
+             
             //Affichage de ce meilleur chemin dans listBox1
             Node2 N1 = N0;
             for (int i = 1; i < solution.Count; i++)
@@ -238,13 +251,6 @@ namespace App
 
             return correct;
         }
-
-
-
-
-
-
-
 
         //Permet de compléter l'arbre à la main
 
