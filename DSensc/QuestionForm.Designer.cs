@@ -224,16 +224,16 @@
             this.resultats_panel.Controls.Add(this.sur20Final_lbl);
             this.resultats_panel.Controls.Add(this.noteFinale_lbl);
             this.resultats_panel.Controls.Add(this.label1);
-            this.resultats_panel.Location = new System.Drawing.Point(406, 58);
+            this.resultats_panel.Location = new System.Drawing.Point(367, 12);
             this.resultats_panel.Name = "resultats_panel";
-            this.resultats_panel.Size = new System.Drawing.Size(1074, 622);
+            this.resultats_panel.Size = new System.Drawing.Size(1074, 646);
             this.resultats_panel.TabIndex = 22;
             // 
             // AccesDijkstra_btn
             // 
             this.AccesDijkstra_btn.BackColor = System.Drawing.Color.LimeGreen;
             this.AccesDijkstra_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.AccesDijkstra_btn.Location = new System.Drawing.Point(115, 566);
+            this.AccesDijkstra_btn.Location = new System.Drawing.Point(142, 543);
             this.AccesDijkstra_btn.Name = "AccesDijkstra_btn";
             this.AccesDijkstra_btn.Size = new System.Drawing.Size(134, 36);
             this.AccesDijkstra_btn.TabIndex = 24;
