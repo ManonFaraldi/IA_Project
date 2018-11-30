@@ -12,6 +12,8 @@ namespace App
         public List<GenericNode> L_Fermes;
         public string[] ListeOuverts; // Chaque élément du tableau correspond à la liste des fermés à chaque étape de résolution de A*
         public string[] ListeFermes; // Idem pour les ouverts
+        public int etapeDij = 0; //(Nb. détapes - 1) de la résolution de A*
+
 
         //Compter le nb. d'élments dans les ouverts et fermés :
         public int CountInOpenList()
@@ -61,7 +63,7 @@ namespace App
             L_Ouverts.Add(N0);
 
             // Tant que le noeud n'est pas terminal et que ouverts n'est pas vide
-            int etapeDij = 0; //(Nb. détapes - 1) de la résolution de A*
+            //int etapeDij = 0; //(Nb. détapes - 1) de la résolution de A*
             while (L_Ouverts.Count != 0 && N.EndState() == false)
             {
                 // Le meilleur noeud des ouverts est supposé placé en tête de liste

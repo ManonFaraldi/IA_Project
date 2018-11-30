@@ -129,8 +129,6 @@ namespace App
 
             string fermesUser = F_txtBox.Text;
             string ouvertsUser = O_txtBox.Text;
-            string afficheFermes = "";
-            string afficheOuverts = "";
             bool correct;
             //Comparer la liste des fermés du user avec celui qui est correct :
             correct = VérifListe(g.ListeFermes, fermesUser, nbValider);
@@ -165,40 +163,17 @@ namespace App
             valider_btn.Hide();
             suivant_btn.Show();
 
-            //##################################################################### à enlever : mais garder pour l'instant pour vérifs ####################################################################
-            //Ecrire la liste de tous les fermés à chaque ETAPE :
-            //string afficheFermes = "";
-            for (int i = 0; i < g.ListeFermes.Count(); i++)
-            {
-                afficheFermes += g.ListeFermes[i];
-            }
-            listesFermes_txtBox.Text = afficheFermes;
-            //Ecrire la liste de tous les ouverts à chaque ETAPE :
-            //string afficheOuverts = "";
-            for (int i = 0; i < g.ListeOuverts.Count(); i++)
-            {
-                afficheOuverts += g.ListeOuverts[i];
-            }
-            listesOuverts_txtBox.Text = afficheOuverts;
-
-            //Ecrire la liste de tous les ouverts et les fermés à la FIN (après résolution du A*) : à enlever !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            string afficheFermesFinal = "";
-            for (int i = 0; i < g.L_Fermes.Count; i++)
-            {
-                afficheFermesFinal += Convert.ToString(g.L_Fermes[i]);
-            }
-            listFermesFinal_txtBox.Text = afficheFermesFinal;
-            string afficheOuvertsFinal = "";
-            for (int i = 0; i < g.L_Ouverts.Count; i++)
-            {
-                afficheOuvertsFinal += Convert.ToString(g.L_Ouverts[i]);
-            }
-            listOuvertsFinal_txtBox.Text = afficheOuvertsFinal;
-            //##################################################################### à enlever : mais garder pour l'instant pour vérifs ####################################################################
         }
 
+        //Affichage automatique des solutions correctes dans le txtBox à la prochaine étape :
         private void suivant_btn_Click(object sender, EventArgs e)
         {
+            SearchTree g = new SearchTree();
+            Node2 N0 = new Node2();
+            N0.numero = numinitial;
+            // Recherche du meilleur chemin à partir de ce noeud initial et final :
+            List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
+
             if ((F_txtBox.ForeColor == Color.Red) || (F_txtBox.Text == ""))
             {
                 F_txtBox.Text = correctionFermes_lbl.Text;
@@ -211,10 +186,22 @@ namespace App
             }
             O_txtBox.ForeColor = Color.Black;
 
-            correctionFermes_lbl.Hide();
-            correctionOuverts_lbl.Hide();
-            suivant_btn.Hide();
-            valider_btn.Show();
+            //Gestion des boutons :
+            if (nbValider ==  g.etapeDij)
+            {
+                correctionFermes_lbl.Hide();
+                correctionOuverts_lbl.Hide();
+                suivant_btn.Hide();
+                valider_btn.Hide();
+                treeViewFinal_btn.Show();
+            }
+            else
+            {
+                correctionFermes_lbl.Hide();
+                correctionOuverts_lbl.Hide();
+                suivant_btn.Hide();
+                valider_btn.Show();
+            }
         }
 
 
@@ -226,6 +213,7 @@ namespace App
             N0.numero = numinitial;
             // Recherche du meilleur chemin à partir de ce noeud initial et final :
             List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
+             
             //Affichage de ce meilleur chemin dans listBox1
             Node2 N1 = N0;
             for (int i = 1; i < solution.Count; i++)
@@ -239,22 +227,6 @@ namespace App
             g.GetSearchTree(treeView1);
         }
 
-        //Comparer la liste des fermés ou ouverts du user avec la liste correcte générée par le pgrm : ATTENTION, on suppose ici que le user rentre la liste dans le bon ordre, avec tous les bons caractères, sans problème d'espace, ... !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        /*public bool VérifListe(string[] listeOK, string listeUser, int numEtape)
-        {
-            bool correct = true;
-
-            int i = 0;
-            while ((i < listeOK.Length) && (i < listeUser.Length) && (correct == true))
-            {
-                if (listeUser[i] != listeOK[numEtape][i]) //OUT of range :!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                {
-                    correct = false;
-                }
-                i++;
-            }
-            return correct;
-        }*/
         //Comparer la liste des fermés ou ouverts du user avec la liste correcte générée par le pgrm : ATTENTION, on suppose ici que le user rentre la liste dans le bon ordre, avec tous les bons caractères, sans problème d'espace, ... !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         public bool VérifListe(string[] listeOK, string listeUser, int numEtape)
         {
@@ -279,13 +251,6 @@ namespace App
 
             return correct;
         }
-
-
-
-
-
-
-
 
         //Permet de compléter l'arbre à la main
 

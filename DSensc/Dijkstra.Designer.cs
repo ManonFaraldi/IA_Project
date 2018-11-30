@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("??");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("??");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
-            treeNode4});
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("??");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode5,
-            treeNode6});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("??");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("??");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
+            treeNode9});
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
+            treeNode10});
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
+            treeNode11});
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("??");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
+            treeNode8,
+            treeNode12,
+            treeNode13});
             this.listBoxgraphe = new System.Windows.Forms.ListBox();
             this.TestIA_txt = new System.Windows.Forms.Label();
             this.F_txtBox = new System.Windows.Forms.TextBox();
@@ -55,10 +55,6 @@
             this.enonce_lbl = new System.Windows.Forms.Label();
             this.correctionFermes_lbl = new System.Windows.Forms.Label();
             this.correctionOuverts_lbl = new System.Windows.Forms.Label();
-            this.listFermesFinal_txtBox = new System.Windows.Forms.TextBox();
-            this.listOuvertsFinal_txtBox = new System.Windows.Forms.TextBox();
-            this.listesFermes_txtBox = new System.Windows.Forms.TextBox();
-            this.listesOuverts_txtBox = new System.Windows.Forms.TextBox();
             this.treeView_toComplete = new System.Windows.Forms.TreeView();
             this.verifTree_btn = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -150,7 +146,7 @@
             this.treeViewFinal_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.treeViewFinal_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeViewFinal_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.treeViewFinal_btn.Location = new System.Drawing.Point(286, 398);
+            this.treeViewFinal_btn.Location = new System.Drawing.Point(285, 300);
             this.treeViewFinal_btn.Name = "treeViewFinal_btn";
             this.treeViewFinal_btn.Size = new System.Drawing.Size(128, 43);
             this.treeViewFinal_btn.TabIndex = 22;
@@ -168,7 +164,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(511, 368);
+            this.listBox1.Location = new System.Drawing.Point(511, 354);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(215, 134);
             this.listBox1.TabIndex = 24;
@@ -205,70 +201,27 @@
             this.correctionOuverts_lbl.TabIndex = 27;
             this.correctionOuverts_lbl.Text = "Correction des ouverts";
             // 
-            // listFermesFinal_txtBox
-            // 
-            this.listFermesFinal_txtBox.Location = new System.Drawing.Point(22, 353);
-            this.listFermesFinal_txtBox.Multiline = true;
-            this.listFermesFinal_txtBox.Name = "listFermesFinal_txtBox";
-            this.listFermesFinal_txtBox.Size = new System.Drawing.Size(237, 24);
-            this.listFermesFinal_txtBox.TabIndex = 28;
-            this.listFermesFinal_txtBox.Text = "Liste de tous les fermés à la fin";
-            // 
-            // listOuvertsFinal_txtBox
-            // 
-            this.listOuvertsFinal_txtBox.Location = new System.Drawing.Point(22, 383);
-            this.listOuvertsFinal_txtBox.Multiline = true;
-            this.listOuvertsFinal_txtBox.Name = "listOuvertsFinal_txtBox";
-            this.listOuvertsFinal_txtBox.Size = new System.Drawing.Size(237, 23);
-            this.listOuvertsFinal_txtBox.TabIndex = 29;
-            this.listOuvertsFinal_txtBox.Text = "Liste de tous les ouverts à la fin";
-            // 
-            // listesFermes_txtBox
-            // 
-            this.listesFermes_txtBox.Location = new System.Drawing.Point(22, 419);
-            this.listesFermes_txtBox.Multiline = true;
-            this.listesFermes_txtBox.Name = "listesFermes_txtBox";
-            this.listesFermes_txtBox.Size = new System.Drawing.Size(237, 294);
-            this.listesFermes_txtBox.TabIndex = 30;
-            this.listesFermes_txtBox.Text = "Liste de tous les fermés à chaque étape de résolution de A*";
-            // 
-            // listesOuverts_txtBox
-            // 
-            this.listesOuverts_txtBox.Location = new System.Drawing.Point(286, 517);
-            this.listesOuverts_txtBox.Multiline = true;
-            this.listesOuverts_txtBox.Name = "listesOuverts_txtBox";
-            this.listesOuverts_txtBox.Size = new System.Drawing.Size(237, 121);
-            this.listesOuverts_txtBox.TabIndex = 31;
-            this.listesOuverts_txtBox.Text = "Liste de tous les ouverts  à chaque étape de résolution de A*";
-            // 
             // treeView_toComplete
             // 
             this.treeView_toComplete.LabelEdit = true;
             this.treeView_toComplete.Location = new System.Drawing.Point(775, 110);
             this.treeView_toComplete.Name = "treeView_toComplete";
-            treeNode1.Name = "Nœud1";
-            treeNode1.Tag = "N1";
-            treeNode1.Text = "??";
-            treeNode2.Name = "Nœud6";
-            treeNode2.Tag = "N6";
-            treeNode2.Text = "??";
-            treeNode3.Name = "Nœud5";
-            treeNode3.Tag = "N5";
-            treeNode3.Text = "??";
-            treeNode4.Name = "Nœud4";
-            treeNode4.Tag = "N4";
-            treeNode4.Text = "??";
-            treeNode5.Name = "Nœud2";
-            treeNode5.Tag = "N2";
-            treeNode5.Text = "??";
-            treeNode6.Name = "Nœud3";
-            treeNode6.Tag = "N3";
-            treeNode6.Text = "??";
-            treeNode7.Name = "Nœud0";
-            treeNode7.Tag = "N0";
-            treeNode7.Text = "??";
+            treeNode8.Name = "Nœud1";
+            treeNode8.Text = "??";
+            treeNode9.Name = "Nœud6";
+            treeNode9.Text = "??";
+            treeNode10.Name = "Nœud5";
+            treeNode10.Text = "??";
+            treeNode11.Name = "Nœud4";
+            treeNode11.Text = "??";
+            treeNode12.Name = "Nœud2";
+            treeNode12.Text = "??";
+            treeNode13.Name = "Nœud3";
+            treeNode13.Text = "??";
+            treeNode14.Name = "Nœud0";
+            treeNode14.Text = "??";
             this.treeView_toComplete.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode7});
+            treeNode14});
             this.treeView_toComplete.Size = new System.Drawing.Size(215, 238);
             this.treeView_toComplete.TabIndex = 33;
             // 
@@ -303,10 +256,6 @@
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.verifTree_btn);
             this.Controls.Add(this.treeView_toComplete);
-            this.Controls.Add(this.listesOuverts_txtBox);
-            this.Controls.Add(this.listesFermes_txtBox);
-            this.Controls.Add(this.listOuvertsFinal_txtBox);
-            this.Controls.Add(this.listFermesFinal_txtBox);
             this.Controls.Add(this.correctionOuverts_lbl);
             this.Controls.Add(this.correctionFermes_lbl);
             this.Controls.Add(this.enonce_lbl);
@@ -344,10 +293,6 @@
         private System.Windows.Forms.Label enonce_lbl;
         private System.Windows.Forms.Label correctionFermes_lbl;
         private System.Windows.Forms.Label correctionOuverts_lbl;
-        private System.Windows.Forms.TextBox listFermesFinal_txtBox;
-        private System.Windows.Forms.TextBox listOuvertsFinal_txtBox;
-        private System.Windows.Forms.TextBox listesFermes_txtBox;
-        private System.Windows.Forms.TextBox listesOuverts_txtBox;
         private System.Windows.Forms.TreeView treeView_toComplete;
         private System.Windows.Forms.Button verifTree_btn;
         private System.Windows.Forms.ListBox listBox2;
