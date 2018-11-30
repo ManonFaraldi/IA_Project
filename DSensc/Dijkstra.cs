@@ -379,6 +379,43 @@ namespace App
                 }
             }
         }
+
+        //Une fois que l'utilisateur a compléter le treeviw 
+        private void verifTree_btn_Click(object sender, EventArgs e)
+        {
+            List<string> reponseUser = new List<string>();
+            int error = 0;
+            string[] reponse = { "0", "1", "2", "3", "4", "5", "6" };
+            TreeNodeCollection N = treeView_toComplete.Nodes; //on récupère la liste des noeuds
+
+            
+            //On récupère la liste de saisie de l'utilisateur
+            foreach (TreeNode item in N) 
+            {
+                if (item != null)
+                {
+                    reponseUser.Add(Convert.ToString(item.Text));
+                }
+            }
+
+            //On vérifie que l'arbre soit bien remplit
+            foreach ( string rep in reponseUser)
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    if (rep != reponse[i])
+                    {
+                        N[i].BackColor = Color.Red;
+                        error++;
+                    }
+                    else
+                    {
+                        N[i].BackColor = Color.LimeGreen;
+                    }
+                } 
+                
+            }
+        }
     }
 }
 

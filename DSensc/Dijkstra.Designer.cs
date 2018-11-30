@@ -60,6 +60,7 @@
             this.listesFermes_txtBox = new System.Windows.Forms.TextBox();
             this.listesOuverts_txtBox = new System.Windows.Forms.TextBox();
             this.treeView_toComplete = new System.Windows.Forms.TreeView();
+            this.verifTree_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxgraphe
@@ -263,12 +264,27 @@
             this.treeView_toComplete.Size = new System.Drawing.Size(215, 238);
             this.treeView_toComplete.TabIndex = 33;
             // 
+            // verifTree_btn
+            // 
+            this.verifTree_btn.BackColor = System.Drawing.Color.LimeGreen;
+            this.verifTree_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.verifTree_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.verifTree_btn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.verifTree_btn.Location = new System.Drawing.Point(818, 383);
+            this.verifTree_btn.Name = "verifTree_btn";
+            this.verifTree_btn.Size = new System.Drawing.Size(128, 43);
+            this.verifTree_btn.TabIndex = 34;
+            this.verifTree_btn.Text = "Vérification ";
+            this.verifTree_btn.UseVisualStyleBackColor = false;
+            this.verifTree_btn.Click += new System.EventHandler(this.verifTree_btn_Click);
+            // 
             // Dijkstra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1072, 725);
+            this.Controls.Add(this.verifTree_btn);
             this.Controls.Add(this.treeView_toComplete);
             this.Controls.Add(this.listesOuverts_txtBox);
             this.Controls.Add(this.listesFermes_txtBox);
@@ -316,5 +332,6 @@
         private System.Windows.Forms.TextBox listesFermes_txtBox;
         private System.Windows.Forms.TextBox listesOuverts_txtBox;
         private System.Windows.Forms.TreeView treeView_toComplete;
+        private System.Windows.Forms.Button verifTree_btn;
     }
 }
