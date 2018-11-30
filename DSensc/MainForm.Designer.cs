@@ -77,7 +77,7 @@
             this.TestIA_txt.AutoSize = true;
             this.TestIA_txt.Cursor = System.Windows.Forms.Cursors.Default;
             this.TestIA_txt.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestIA_txt.Location = new System.Drawing.Point(158, 9);
+            this.TestIA_txt.Location = new System.Drawing.Point(158, 5);
             this.TestIA_txt.Name = "TestIA_txt";
             this.TestIA_txt.Size = new System.Drawing.Size(145, 42);
             this.TestIA_txt.TabIndex = 4;
@@ -98,7 +98,7 @@
             this.demarrer_btn.BackColor = System.Drawing.Color.LimeGreen;
             this.demarrer_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.demarrer_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.demarrer_btn.Location = new System.Drawing.Point(165, 210);
+            this.demarrer_btn.Location = new System.Drawing.Point(165, 226);
             this.demarrer_btn.Name = "demarrer_btn";
             this.demarrer_btn.Size = new System.Drawing.Size(138, 67);
             this.demarrer_btn.TabIndex = 6;
@@ -112,7 +112,7 @@
             this.dateDS_txt.AutoSize = true;
             this.dateDS_txt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateDS_txt.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateDS_txt.Location = new System.Drawing.Point(34, 44);
+            this.dateDS_txt.Location = new System.Drawing.Point(26, 44);
             this.dateDS_txt.Name = "dateDS_txt";
             this.dateDS_txt.Size = new System.Drawing.Size(52, 16);
             this.dateDS_txt.TabIndex = 7;
