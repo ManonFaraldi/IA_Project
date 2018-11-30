@@ -42,7 +42,7 @@
             // 
             this.nom_txt.AutoSize = true;
             this.nom_txt.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nom_txt.Location = new System.Drawing.Point(67, 101);
+            this.nom_txt.Location = new System.Drawing.Point(67, 113);
             this.nom_txt.Name = "nom_txt";
             this.nom_txt.Size = new System.Drawing.Size(52, 23);
             this.nom_txt.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             this.prenom_txt.AutoSize = true;
             this.prenom_txt.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prenom_txt.Location = new System.Drawing.Point(50, 146);
+            this.prenom_txt.Location = new System.Drawing.Point(50, 158);
             this.prenom_txt.Name = "prenom_txt";
             this.prenom_txt.Size = new System.Drawing.Size(69, 23);
             this.prenom_txt.TabIndex = 1;
@@ -60,14 +60,14 @@
             // 
             // nom_txtbox
             // 
-            this.nom_txtbox.Location = new System.Drawing.Point(140, 105);
+            this.nom_txtbox.Location = new System.Drawing.Point(140, 117);
             this.nom_txtbox.Name = "nom_txtbox";
             this.nom_txtbox.Size = new System.Drawing.Size(182, 20);
             this.nom_txtbox.TabIndex = 2;
             // 
             // prenom_txtbox
             // 
-            this.prenom_txtbox.Location = new System.Drawing.Point(140, 150);
+            this.prenom_txtbox.Location = new System.Drawing.Point(140, 162);
             this.prenom_txtbox.Name = "prenom_txtbox";
             this.prenom_txtbox.Size = new System.Drawing.Size(182, 20);
             this.prenom_txtbox.TabIndex = 3;
@@ -77,7 +77,7 @@
             this.TestIA_txt.AutoSize = true;
             this.TestIA_txt.Cursor = System.Windows.Forms.Cursors.Default;
             this.TestIA_txt.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestIA_txt.Location = new System.Drawing.Point(158, 24);
+            this.TestIA_txt.Location = new System.Drawing.Point(158, 9);
             this.TestIA_txt.Name = "TestIA_txt";
             this.TestIA_txt.Size = new System.Drawing.Size(145, 42);
             this.TestIA_txt.TabIndex = 4;
@@ -87,7 +87,7 @@
             // 
             this.JMSalotti_txt.AutoSize = true;
             this.JMSalotti_txt.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.JMSalotti_txt.Location = new System.Drawing.Point(344, 36);
+            this.JMSalotti_txt.Location = new System.Drawing.Point(348, 44);
             this.JMSalotti_txt.Name = "JMSalotti_txt";
             this.JMSalotti_txt.Size = new System.Drawing.Size(85, 16);
             this.JMSalotti_txt.TabIndex = 5;
@@ -98,7 +98,7 @@
             this.demarrer_btn.BackColor = System.Drawing.Color.LimeGreen;
             this.demarrer_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.demarrer_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.demarrer_btn.Location = new System.Drawing.Point(165, 196);
+            this.demarrer_btn.Location = new System.Drawing.Point(165, 210);
             this.demarrer_btn.Name = "demarrer_btn";
             this.demarrer_btn.Size = new System.Drawing.Size(138, 67);
             this.demarrer_btn.TabIndex = 6;
@@ -112,7 +112,7 @@
             this.dateDS_txt.AutoSize = true;
             this.dateDS_txt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateDS_txt.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateDS_txt.Location = new System.Drawing.Point(28, 36);
+            this.dateDS_txt.Location = new System.Drawing.Point(34, 44);
             this.dateDS_txt.Name = "dateDS_txt";
             this.dateDS_txt.Size = new System.Drawing.Size(52, 16);
             this.dateDS_txt.TabIndex = 7;
@@ -123,7 +123,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(445, 292);
+            this.ClientSize = new System.Drawing.Size(445, 314);
             this.Controls.Add(this.dateDS_txt);
             this.Controls.Add(this.demarrer_btn);
             this.Controls.Add(this.JMSalotti_txt);

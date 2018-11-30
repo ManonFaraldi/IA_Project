@@ -28,6 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("??");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("??");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
+            treeNode3});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
+            treeNode4});
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("??");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode5,
+            treeNode6});
             this.listBoxgraphe = new System.Windows.Forms.ListBox();
             this.TestIA_txt = new System.Windows.Forms.Label();
             this.F_txtBox = new System.Windows.Forms.TextBox();
@@ -46,6 +59,7 @@
             this.listOuvertsFinal_txtBox = new System.Windows.Forms.TextBox();
             this.listesFermes_txtBox = new System.Windows.Forms.TextBox();
             this.listesOuverts_txtBox = new System.Windows.Forms.TextBox();
+            this.treeView_toComplete = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
             // listBoxgraphe
@@ -106,7 +120,7 @@
             this.valider_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.valider_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valider_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.valider_btn.Location = new System.Drawing.Point(310, 302);
+            this.valider_btn.Location = new System.Drawing.Point(307, 300);
             this.valider_btn.Name = "valider_btn";
             this.valider_btn.Size = new System.Drawing.Size(82, 43);
             this.valider_btn.TabIndex = 20;
@@ -120,7 +134,7 @@
             this.suivant_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.suivant_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.suivant_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.suivant_btn.Location = new System.Drawing.Point(310, 351);
+            this.suivant_btn.Location = new System.Drawing.Point(307, 349);
             this.suivant_btn.Name = "suivant_btn";
             this.suivant_btn.Size = new System.Drawing.Size(82, 43);
             this.suivant_btn.TabIndex = 21;
@@ -134,7 +148,7 @@
             this.treeViewFinal_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.treeViewFinal_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeViewFinal_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.treeViewFinal_btn.Location = new System.Drawing.Point(286, 400);
+            this.treeViewFinal_btn.Location = new System.Drawing.Point(286, 398);
             this.treeViewFinal_btn.Name = "treeViewFinal_btn";
             this.treeViewFinal_btn.Size = new System.Drawing.Size(128, 43);
             this.treeViewFinal_btn.TabIndex = 22;
@@ -225,12 +239,37 @@
             this.listesOuverts_txtBox.TabIndex = 31;
             this.listesOuverts_txtBox.Text = "Liste de tous les ouverts  à chaque étape de résolution de A*";
             // 
+            // treeView_toComplete
+            // 
+            this.treeView_toComplete.LabelEdit = true;
+            this.treeView_toComplete.Location = new System.Drawing.Point(775, 110);
+            this.treeView_toComplete.Name = "treeView_toComplete";
+            treeNode1.Name = "Nœud1";
+            treeNode1.Text = "??";
+            treeNode2.Name = "Nœud6";
+            treeNode2.Text = "??";
+            treeNode3.Name = "Nœud5";
+            treeNode3.Text = "??";
+            treeNode4.Name = "Nœud4";
+            treeNode4.Text = "??";
+            treeNode5.Name = "Nœud2";
+            treeNode5.Text = "??";
+            treeNode6.Name = "Nœud3";
+            treeNode6.Text = "??";
+            treeNode7.Name = "Nœud0";
+            treeNode7.Text = "??";
+            this.treeView_toComplete.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode7});
+            this.treeView_toComplete.Size = new System.Drawing.Size(215, 238);
+            this.treeView_toComplete.TabIndex = 33;
+            // 
             // Dijkstra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(758, 725);
+            this.ClientSize = new System.Drawing.Size(1072, 725);
+            this.Controls.Add(this.treeView_toComplete);
             this.Controls.Add(this.listesOuverts_txtBox);
             this.Controls.Add(this.listesFermes_txtBox);
             this.Controls.Add(this.listOuvertsFinal_txtBox);
@@ -276,5 +315,6 @@
         private System.Windows.Forms.TextBox listOuvertsFinal_txtBox;
         private System.Windows.Forms.TextBox listesFermes_txtBox;
         private System.Windows.Forms.TextBox listesOuverts_txtBox;
+        private System.Windows.Forms.TreeView treeView_toComplete;
     }
 }

@@ -29,7 +29,7 @@ namespace App
             matrice = new double[nbnodes, nbnodes];
             for (int k = 0; k < nbnodes; k++)
                 for (int j = 0; j < nbnodes; j++)
-                    matrice[k, j] = -1;       
+                    matrice[k, j] = -1;
             // Remplissage de la matrice avec les poids de chaque arc (symétrique, car va de parent vers enfant et inversement quand on cherche le + court chemin !) : idem (voir si peut pas l'intégrer avec la partie suivante "Affichage des poids de chaque noeud"
             matrice[0, 1] = 3; matrice[1, 0] = 3;
             matrice[0, 2] = 5; matrice[2, 0] = 5;
@@ -201,7 +201,7 @@ namespace App
             }
             F_txtBox.ForeColor = Color.Black;
 
-            correctionFermes_lbl.Hide();        
+            correctionFermes_lbl.Hide();
             suivant_btn.Hide();
             valider_btn.Show();
         }
@@ -227,7 +227,7 @@ namespace App
             }
             g.GetSearchTree(treeView1);
         }
-        
+
         /*
         //Affichage des poids de chaque noeud :
         private void button3_Click(object sender, EventArgs e)
@@ -304,9 +304,9 @@ namespace App
             // Fermeture du StreamReader (obligatoire) 
             monStreamReader.Close();
         }*/
-        
+
         //Comparer la liste des fermés ou ouverts du user avec la liste correcte générée par le pgrm : ATTENTION, on suppose ici que le user rentre la liste dans le bon ordre, avec tous les bons caractères, sans problème d'espace, ... !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        public bool VérifListe (string[] listeOK, string listeUser, int numEtape)
+        public bool VérifListe(string[] listeOK, string listeUser, int numEtape)
         {
             bool correct = true;
 
@@ -322,6 +322,63 @@ namespace App
             return correct;
         }
 
+        //Permet de compléter l'arbre à la main
+        
+            /* Get the tree node under the mouse pointer and 
+            save it in the mySelectedNode variable. */
+        private void menuItem1_Click(object sender, EventArgs e, MouseEventArgs m)
+        {
 
+            TreeNode mySelectedNode = treeView_toComplete.GetNodeAt(m.X, m.Y);
+            if (mySelectedNode != null && mySelectedNode.Parent != null)
+            {
+                treeView_toComplete.SelectedNode = mySelectedNode;
+                treeView_toComplete.LabelEdit = true;
+                if (!mySelectedNode.IsEditing)
+                {
+                    mySelectedNode.BeginEdit();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Aucun noeud sélectionné ou sélection d'un noeud principal.\n" +
+                   "Edition du noeud principal non autorisé.", "Sélection invalide");
+            }
+        }
+
+        private void treeView_toComplete_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
+        {
+            if (e.Label != null)
+            {
+                if (e.Label.Length > 0)
+                {
+                    if (e.Label.IndexOfAny(new char[] { '@', '.', ',', '!', '>', '<', '&' }) == -1) //caractères interdits
+                    {
+                        // Stop editing without canceling the label change.
+                        e.Node.EndEdit(false);
+                    }
+                    else
+                    {
+                        /* Cancel the label edit action, inform the user, and 
+                           place the node in edit mode again. */
+                        e.CancelEdit = true;
+                        MessageBox.Show("Label invalide.\n" +
+                           "Les caractères non autorisés sont '@','.', ',', '!','>','<','&'",
+                           "Node Label Edit");
+                        e.Node.BeginEdit();
+                    }
+                }
+                else
+                {
+                    /* Cancel the label edit action, inform the user, and 
+                       place the node in edit mode again. */
+                    e.CancelEdit = true;
+                    MessageBox.Show("Label de noeud invalide.\nLe label ne peut pas être vide",
+                       "Node Label Edit");
+                    e.Node.BeginEdit();
+                }
+            }
+        }
     }
 }
+
