@@ -219,6 +219,7 @@
             // 
             // resultats_panel
             // 
+            this.resultats_panel.Controls.Add(this.AccesDijkstra_btn);
             this.resultats_panel.Controls.Add(this.quitter_btn);
             this.resultats_panel.Controls.Add(this.appreciation_txt);
             this.resultats_panel.Controls.Add(this.sur20Final_lbl);
@@ -236,7 +237,7 @@
             this.quitter_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.quitter_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quitter_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.quitter_btn.Location = new System.Drawing.Point(424, 357);
+            this.quitter_btn.Location = new System.Drawing.Point(450, 417);
             this.quitter_btn.Name = "quitter_btn";
             this.quitter_btn.Size = new System.Drawing.Size(82, 43);
             this.quitter_btn.TabIndex = 19;
@@ -249,7 +250,7 @@
             this.appreciation_txt.AutoSize = true;
             this.appreciation_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.appreciation_txt.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.appreciation_txt.Location = new System.Drawing.Point(410, 254);
+            this.appreciation_txt.Location = new System.Drawing.Point(435, 261);
             this.appreciation_txt.Name = "appreciation_txt";
             this.appreciation_txt.Size = new System.Drawing.Size(108, 20);
             this.appreciation_txt.TabIndex = 18;
@@ -260,7 +261,7 @@
             this.sur20Final_lbl.AutoSize = true;
             this.sur20Final_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sur20Final_lbl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.sur20Final_lbl.Location = new System.Drawing.Point(451, 199);
+            this.sur20Final_lbl.Location = new System.Drawing.Point(477, 199);
             this.sur20Final_lbl.Name = "sur20Final_lbl";
             this.sur20Final_lbl.Size = new System.Drawing.Size(63, 31);
             this.sur20Final_lbl.TabIndex = 17;
@@ -271,7 +272,7 @@
             this.noteFinale_lbl.AutoSize = true;
             this.noteFinale_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.noteFinale_lbl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.noteFinale_lbl.Location = new System.Drawing.Point(407, 199);
+            this.noteFinale_lbl.Location = new System.Drawing.Point(433, 199);
             this.noteFinale_lbl.Name = "noteFinale_lbl";
             this.noteFinale_lbl.Size = new System.Drawing.Size(46, 31);
             this.noteFinale_lbl.TabIndex = 16;
@@ -282,7 +283,7 @@
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(392, 90);
+            this.label1.Location = new System.Drawing.Point(433, 130);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 33);
             this.label1.TabIndex = 6;
@@ -300,12 +301,14 @@
             // 
             // AccesDijkstra_btn
             // 
-            this.AccesDijkstra_btn.Location = new System.Drawing.Point(99, 557);
+            this.AccesDijkstra_btn.BackColor = System.Drawing.Color.LimeGreen;
+            this.AccesDijkstra_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.AccesDijkstra_btn.Location = new System.Drawing.Point(424, 352);
             this.AccesDijkstra_btn.Name = "AccesDijkstra_btn";
-            this.AccesDijkstra_btn.Size = new System.Drawing.Size(134, 23);
+            this.AccesDijkstra_btn.Size = new System.Drawing.Size(134, 36);
             this.AccesDijkstra_btn.TabIndex = 24;
             this.AccesDijkstra_btn.Text = "Accès Dijkstra";
-            this.AccesDijkstra_btn.UseVisualStyleBackColor = true;
+            this.AccesDijkstra_btn.UseVisualStyleBackColor = false;
             this.AccesDijkstra_btn.Click += new System.EventHandler(this.AccesDijkstra_btn_Click);
             // 
             // QuestionForm
@@ -314,7 +317,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1074, 646);
-            this.Controls.Add(this.AccesDijkstra_btn);
             this.Controls.Add(this.resultats_panel);
             this.Controls.Add(this.sur20_lbl);
             this.Controls.Add(this.note_lbl);

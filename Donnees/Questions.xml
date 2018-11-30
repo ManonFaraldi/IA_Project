@@ -293,7 +293,7 @@ x=""
       "Soit le graphique suivant :
       Quel est le plus court chemin selon l'algorithme de Dijkstra entre B et J en prenant en compte les distances entre les noeuds ? "
     </Enonce>
-    <Reponse1>B>C>D>H>J	B>C>D>H>J</Reponse1>
+    <Reponse1>B>C>D>H>J</Reponse1>
     <Reponse2>B>C>H>J</Reponse2>
     <Reponse3>B>C>J </Reponse3>
     <Reponse4>B>C>D>H>I>J</Reponse4>
