@@ -105,25 +105,16 @@ namespace App
                    + "--->" + Convert.ToString(N2)
                    + "   : " + Convert.ToString(matrice[N1, N2]));
 
-
-                //#####################################################
-                // ON COMPLETE EN MEME TEMPS L'ARBRE DE L'AUTRE ONGLET
-                //#####################################################
-
-                listBox2.Items.Add(Convert.ToString(N1)
-                    + "--->" + Convert.ToString(N2)
-                    + "   : " + Convert.ToString(matrice[N1, N2]));
-
-                //#####################################################
-                //METTRE L'AFFICHAGE DE L'ARBRE DES LE DEBUT ICI
-                //#####################################################
-
                 ligne = monStreamReader.ReadLine();
             }
             // Fermeture du StreamReader (obligatoire) 
             monStreamReader.Close();
 
+            //Cacher les boutons et lbl nécessaires :
             suivant_btn.Hide();
+            treeViewFinal_btn.Hide();
+            correctionFermes_lbl.Hide();
+            correctionOuverts_lbl.Hide();
         }
 
 
@@ -138,8 +129,6 @@ namespace App
 
             string fermesUser = F_txtBox.Text;
             string ouvertsUser = O_txtBox.Text;
-            string afficheFermes = "";
-            string afficheOuverts = "";
             bool correct;
             //Comparer la liste des fermés du user avec celui qui est correct :
             correct = VérifListe(g.ListeFermes, fermesUser, nbValider);
@@ -166,7 +155,7 @@ namespace App
             {
                 O_txtBox.ForeColor = Color.Red;
                 correctionOuverts_lbl.Show();
-                correctionOuverts_lbl.Text = g.ListeFermes[nbValider];
+                correctionOuverts_lbl.Text = g.ListeOuverts[nbValider];
                 correctionOuverts_lbl.ForeColor = Color.Green;
             }
 
@@ -174,49 +163,45 @@ namespace App
             valider_btn.Hide();
             suivant_btn.Show();
 
-            //##################################################################### à enlever : mais garder pour l'instant pour vérifs ####################################################################
-            //Ecrire la liste de tous les fermés à chaque ETAPE :
-            //string afficheFermes = "";
-            for (int i = 0; i < g.ListeFermes.Count(); i++)
-            {
-                afficheFermes += g.ListeFermes[i];
-            }
-            listesFermes_txtBox.Text = afficheFermes;
-            //Ecrire la liste de tous les ouverts à chaque ETAPE :
-            //string afficheOuverts = "";
-            for (int i = 0; i < g.ListeOuverts.Count(); i++)
-            {
-                afficheOuverts += g.ListeOuverts[i];
-            }
-            listesOuverts_txtBox.Text = afficheOuverts;
-
-            //Ecrire la liste de tous les ouverts et les fermés à la FIN (après résolution du A*) : à enlever !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            string afficheFermesFinal = "";
-            for (int i = 0; i < g.L_Fermes.Count; i++)
-            {
-                afficheFermesFinal += Convert.ToString(g.L_Fermes[i]);
-            }
-            listFermesFinal_txtBox.Text = afficheFermesFinal;
-            string afficheOuvertsFinal = "";
-            for (int i = 0; i < g.L_Ouverts.Count; i++)
-            {
-                afficheOuvertsFinal += Convert.ToString(g.L_Ouverts[i]);
-            }
-            listOuvertsFinal_txtBox.Text = afficheOuvertsFinal;
-            //##################################################################### à enlever : mais garder pour l'instant pour vérifs ####################################################################
         }
 
+        //Affichage automatique des solutions correctes dans le txtBox à la prochaine étape :
         private void suivant_btn_Click(object sender, EventArgs e)
         {
+            SearchTree g = new SearchTree();
+            Node2 N0 = new Node2();
+            N0.numero = numinitial;
+            // Recherche du meilleur chemin à partir de ce noeud initial et final :
+            List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
+
             if ((F_txtBox.ForeColor == Color.Red) || (F_txtBox.Text == ""))
             {
                 F_txtBox.Text = correctionFermes_lbl.Text;
             }
             F_txtBox.ForeColor = Color.Black;
 
-            correctionFermes_lbl.Hide();
-            suivant_btn.Hide();
-            valider_btn.Show();
+            if ((O_txtBox.ForeColor == Color.Red) || (O_txtBox.Text == ""))
+            {
+                O_txtBox.Text = correctionOuverts_lbl.Text;
+            }
+            O_txtBox.ForeColor = Color.Black;
+
+            //Gestion des boutons :
+            if (nbValider == g.etapeDij)
+            {
+                correctionFermes_lbl.Hide();
+                correctionOuverts_lbl.Hide();
+                suivant_btn.Hide();
+                valider_btn.Hide();
+                treeViewFinal_btn.Show();
+            }
+            else
+            {
+                correctionFermes_lbl.Hide();
+                correctionOuverts_lbl.Hide();
+                suivant_btn.Hide();
+                valider_btn.Show();
+            }
         }
 
 
@@ -228,11 +213,12 @@ namespace App
             N0.numero = numinitial;
             // Recherche du meilleur chemin à partir de ce noeud initial et final :
             List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
+
             //Affichage de ce meilleur chemin dans listBox1
             Node2 N1 = N0;
             for (int i = 1; i < solution.Count; i++)
             {
-                Node2 N2 = (Node2)solution[i];
+                Node2 N2 = (Node2)solution[i]; 
                 listBox1.Items.Add(Convert.ToString(N1.numero)
                      + "--->" + Convert.ToString(N2.numero)
                      + "   : " + Convert.ToString(matrice[N1.numero, N2.numero]));
@@ -240,161 +226,201 @@ namespace App
             }
             g.GetSearchTree(treeView1);
         }
-
-        /*
-        //Affichage des poids de chaque noeud :
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-            StreamReader monStreamReader = new StreamReader("..//..//..//Donnees//graphe1.txt"); //Grâce à System.IO
-
-            // Lecture du fichier ("graph1.txt" dans le bin) avec un while, évidemment !
-            // 1ère ligne : "nombre de noeuds du graphe
-            string ligne = monStreamReader.ReadLine();
-            int i = 0;
-            while (ligne[i] != ':') i++;
-            string strnbnoeuds = "";
-            i++; // On dépasse le ":"
-            while (ligne[i] == ' ') i++; // on saute les blancs éventuels
-            while (i < ligne.Length)
-            {
-                strnbnoeuds = strnbnoeuds + ligne[i];
-                i++;
-            }
-            nbnodes = Convert.ToInt32(strnbnoeuds);
-
-            matrice = new double[nbnodes, nbnodes];
-            for (i = 0; i < nbnodes; i++)
-                for (int j = 0; j < nbnodes; j++)
-                    matrice[i, j] = -1;
-
-            // Ensuite on a la structure suivante : 
-            //  arc : n°noeud départ  ->  n°noeud arrivée : valeur poids
-            //  exemple 4 : 
-            ligne = monStreamReader.ReadLine();
-            while (ligne != null)
-            {
-                i = 0;
-                while (ligne[i] != ':') i++;
-                i++; // on passe le :
-                while (ligne[i] == ' ') i++; // on saute les blancs éventuels
-                string strN1 = "";
-                while (ligne[i] != ' ')
-                {
-                    strN1 = strN1 + ligne[i];
-                    i++;
-                }
-                int N1 = Convert.ToInt32(strN1);
-
-                // On saute les blancs éventuels
-                while (ligne[i] == ' ') i++;
-                string strN2 = "";
-                while (ligne[i] != ' ')
-                {
-                    strN2 = strN2 + ligne[i];
-                    i++;
-                }
-                int N2 = Convert.ToInt32(strN2);
-
-                // On saute les blancs éventuels
-                while (ligne[i] == ' ') i++;
-                string strVal = "";
-                while ((i < ligne.Length) && (ligne[i] != ' '))
-                {
-                    strVal = strVal + ligne[i];
-                    i++;
-                }
-                double val = Convert.ToDouble(strVal);
-
-                matrice[N1, N2] = val;
-                matrice[N2, N1] = val;
-                listBoxgraphe.Items.Add(Convert.ToString(N1)
-                   + "--->" + Convert.ToString(N2)
-                   + "   : " + Convert.ToString(matrice[N1, N2]));
-
-                ligne = monStreamReader.ReadLine();
-            }
-            // Fermeture du StreamReader (obligatoire) 
-            monStreamReader.Close();
-        }*/
 
         //Comparer la liste des fermés ou ouverts du user avec la liste correcte générée par le pgrm : ATTENTION, on suppose ici que le user rentre la liste dans le bon ordre, avec tous les bons caractères, sans problème d'espace, ... !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         public bool VérifListe(string[] listeOK, string listeUser, int numEtape)
         {
             bool correct = true;
-
             int i = 0;
-            while ((i < listeOK.Length) && (i < listeUser.Length) && (correct == true))
+
+            if (listeUser.Count() != listeOK[numEtape].Count())
             {
-                if (listeUser[i] != listeOK[numEtape][i])
-                {
-                    correct = false;
-                }
-                i++;
+                correct = false;
             }
+            else
+            {
+                while ((i < listeOK[numEtape].Count()) && (correct == true))
+                {
+                    if (listeUser[i] != listeOK[numEtape][i])
+                    {
+                        correct = false;
+                    }
+                    i++;
+                }
+            }
+
             return correct;
         }
 
+        //Permet de compléter l'arbre à la main
 
-        //###############################################
-        //Page 2 - 2ème partie de l'exercice 
-        //###############################################
-        private void validate_btn_Click(object sender, EventArgs e)
+        /* Get the tree node under the mouse pointer and 
+        save it in the mySelectedNode variable. */
+        private void menuItem1_Click(object sender, EventArgs e, MouseEventArgs m)
         {
-            numinitial = 0;
-            numfinal = 6;
-            SearchTree g = new SearchTree();
-            Node2 N0 = new Node2();
-            N0.numero = numinitial;
-            List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
 
-            Node2 N1 = N0;
-            for (int i = 1; i < solution.Count; i++)
+            TreeNode mySelectedNode = treeView_toComplete.GetNodeAt(m.X, m.Y);
+            if (mySelectedNode != null && mySelectedNode.Parent != null)
             {
-                Node2 N2 = (Node2)solution[i];
-                listBox3.Items.Add(Convert.ToString(N1.numero)
-                     + "--->" + Convert.ToString(N2.numero)
-                     + "   : " + Convert.ToString(matrice[N1.numero, N2.numero]));
-                N1 = N2;
+                treeView_toComplete.SelectedNode = mySelectedNode;
+                treeView_toComplete.LabelEdit = true;
+                if (!mySelectedNode.IsEditing)
+                {
+                    mySelectedNode.BeginEdit();
+                }
             }
-
-            g.GetSearchTree(treeView2);
-
-        }
-       
-        private void next_btn_Click(object sender, EventArgs e)
-        {
-            if ((F_txtBox.ForeColor == Color.Red) || (F_txtBox.Text == ""))
+            else
             {
-                F_txtBox.Text = correctionFermes_lbl.Text;
+                MessageBox.Show("Aucun noeud sélectionné ou sélection d'un noeud principal.\n" +
+                   "Edition du noeud principal non autorisé.", "Sélection invalide");
             }
-            F_txtBox.ForeColor = Color.Black;
-
-            correctionFermes_lbl.Hide();
-            suivant_btn.Hide();
-            valider_btn.Show();
         }
 
-
-        //Calcul et affichage de l'arbre avec le meilleur chemin (bouton Valider) :
-        private void treeViewComplete_btn_Click(object sender, EventArgs e)
+        private void treeView_toComplete_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
-            SearchTree g = new SearchTree();
-            Node2 N0 = new Node2();
-            N0.numero = numinitial;
-            // Recherche du meilleur chemin à partir de ce noeud initial et final :
-            List<GenericNode> solution = g.RechercheSolutionAEtoile(N0);
-            //Affichage de ce meilleur chemin dans listBox1
-            Node2 N1 = N0;
-            for (int i = 1; i < solution.Count; i++)
+            if (e.Label != null)
             {
-                Node2 N2 = (Node2)solution[i];
-                listBox1.Items.Add(Convert.ToString(N1.numero)
-                     + "--->" + Convert.ToString(N2.numero)
-                     + "   : " + Convert.ToString(matrice[N1.numero, N2.numero]));
-                N1 = N2;
+                if (e.Label.Length > 0)
+                {
+                    if (e.Label.IndexOfAny(new char[] { '@', '.', ',', '!', '>', '<', '&' }) == -1) //caractères interdits
+                    {
+                        // Stop editing without canceling the label change.
+                        e.Node.EndEdit(false);
+                    }
+                    else
+                    {
+                        /* Cancel the label edit action, inform the user, and 
+                           place the node in edit mode again. */
+                        e.CancelEdit = true;
+                        MessageBox.Show("Label invalide.\n" +
+                           "Les caractères non autorisés sont '@','.', ',', '!','>','<','&'",
+                           "Node Label Edit");
+                        e.Node.BeginEdit();
+                    }
+                }
+                else
+                {
+                    /* Cancel the label edit action, inform the user, and 
+                       place the node in edit mode again. */
+                    e.CancelEdit = true;
+                    MessageBox.Show("Label de noeud invalide.\nLe label ne peut pas être vide",
+                       "Node Label Edit");
+                    e.Node.BeginEdit();
+                }
             }
-            g.GetSearchTree(treeView1);
+        }
+
+        //Une fois que l'utilisateur a compléter le treeview 
+        private void verifTree_btn_Click(object sender, EventArgs e)
+        {
+
+            int error = 0;
+            List<TreeNode> reponse = new List<TreeNode>();
+            //Collection des bonnes réponses
+            TreeNode N0 = new TreeNode("0");
+            TreeNode N1 = new TreeNode("1");
+            TreeNode N2 = new TreeNode("2");
+            TreeNode N3 = new TreeNode("3");
+            TreeNode N4 = new TreeNode("4");
+            TreeNode N5 = new TreeNode("5");
+            TreeNode N6 = new TreeNode("6");
+            reponse.Add(N0);
+            reponse.Add(N1);
+            reponse.Add(N2);
+            reponse.Add(N3);
+            reponse.Add(N4);
+            reponse.Add(N5);
+            reponse.Add(N6);
+
+            int tailleTree = treeView_toComplete.GetNodeCount(true);
+            TreeNodeCollection N = treeView_toComplete.Nodes; //on récupère la collection des noeuds rentrée par l'utilisateur
+
+            //On récupère la liste de saisie de l'utilisateur
+            List<TreeNode> reponseUser = CallRecursive(treeView_toComplete);
+            //foreach (TreeNode item in CallRecursive(treeView_toComplete))
+            //{
+            //    if (item != null)
+            //    {
+            //        reponseUser.Add(item);
+            //    }
+            //}
+            
+            int i = 0;
+            //while (i < reponse.Count())
+            //{
+            //On vérifie que les réponses de l'utilisateur sont correctes
+            foreach (TreeNode tn1 in reponseUser)
+            {
+                if (tn1.Text != reponse[i].Text)
+                {
+                    string help = reponse[i].Text;
+                    tn1.BackColor = Color.Red;
+                    error++;
+                    i++;
+                }
+                else
+                {
+                    tn1.BackColor = Color.LimeGreen;
+
+                    i++;
+                }
+            }
+        }
+
+        //i++;
+
+        //}
+
+
+        //Renvoie chaque noeud d'1 collection :
+        private List<TreeNode> Recursive(TreeNode collecNode)
+        {
+            List<TreeNode> listeNoeuds1Collec = new List<TreeNode>(); //tous les noeuds d'1 seule collection !!!
+            
+            System.Diagnostics.Debug.WriteLine(collecNode.Text);
+            MessageBox.Show(collecNode.Text);
+            TreeNode n = new TreeNode();
+            // Print each node recursively.  
+            foreach (TreeNode tn in collecNode.Nodes) //tn = vrai noeud unique
+            {
+                listeNoeuds1Collec.Add(tn);
+                Recursive(tn);
+
+            }
+            return listeNoeuds1Collec;
+        }
+
+        // Call the procedure using the TreeView.  
+        //Affiche les noeuds pour toutes les collections (CAD pour l'arbre entier) :
+        private List<TreeNode> CallRecursive(TreeView treeView)
+        {
+            List<TreeNode> tnList = new List<TreeNode>(); //Liste avec TOUS les noeuds de l'arbre
+            List<TreeNode> sousListe = new List<TreeNode>(); //Liste avec tous les sous-noeuds d'1 collection
+            // Print each node recursively.  
+            TreeNodeCollection collecNodes = treeView.Nodes;//collecNodes = TOUTES les collections
+            foreach (TreeNode collecN in collecNodes) //collecN = 1 seule collection parmie toutes les collections
+            {
+
+                //tnList = Recursive(collecN);
+                tnList.Add(collecN);
+                if (collecN.GetNodeCount(true) == 1) //1 seul noeud que l'on peut ajouter directement
+                {
+                    tnList.Add(collecN);
+                }
+                else //prend tous les sous noeuds
+                {
+                    sousListe = Recursive(collecN);
+                    foreach (TreeNode noeud in sousListe)
+                    {
+                        tnList.Add(noeud);
+                    }
+                }
+
+            }
+
+            return tnList;
+
         }
     }
 }
+
