@@ -323,9 +323,9 @@ namespace App
         }
 
         //Permet de compléter l'arbre à la main
-        
-            /* Get the tree node under the mouse pointer and 
-            save it in the mySelectedNode variable. */
+
+        /* Get the tree node under the mouse pointer and 
+        save it in the mySelectedNode variable. */
         private void menuItem1_Click(object sender, EventArgs e, MouseEventArgs m)
         {
 
@@ -388,9 +388,9 @@ namespace App
             string[] reponse = { "0", "1", "2", "3", "4", "5", "6" };
             TreeNodeCollection N = treeView_toComplete.Nodes; //on récupère la liste des noeuds
 
-            
+
             //On récupère la liste de saisie de l'utilisateur
-            foreach (TreeNode item in N) 
+            foreach (TreeNode item in N)
             {
                 if (item != null)
                 {
@@ -398,23 +398,34 @@ namespace App
                 }
             }
 
-            //On vérifie que l'arbre soit bien remplit
-            foreach ( string rep in reponseUser)
+            for (int n = 1; n < reponseUser.Count; n++)
             {
-                for (int i = 0; i < 7; i++)
+
+                listBox2.Items.Add(reponseUser[n]
+                     + "--->" + reponse[n]);
+               
+            }
+
+            int i = 0;
+           /* while (i < 7)
+            {
+                //On vérifie que l'arbre soit bien remplit par l'utilisateur
+                foreach (string rep in reponseUser)
                 {
                     if (rep != reponse[i])
                     {
-                        N[i].BackColor = Color.Red;
+                        
+                       // N[i].BackColor = Color.Red;
                         error++;
                     }
                     else
                     {
-                        N[i].BackColor = Color.LimeGreen;
+                        //N[i].BackColor = Color.LimeGreen;
                     }
-                } 
-                
-            }
+                }
+                i++;
+
+            }*/
         }
     }
 }

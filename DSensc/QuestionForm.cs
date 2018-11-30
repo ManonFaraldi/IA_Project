@@ -266,7 +266,5 @@ namespace App
             prenom_txt.Text = MainForm.prenomValue;
         }
 
-    
-
     }
 }

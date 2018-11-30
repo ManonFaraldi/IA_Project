@@ -61,6 +61,7 @@
             this.listesOuverts_txtBox = new System.Windows.Forms.TextBox();
             this.treeView_toComplete = new System.Windows.Forms.TreeView();
             this.verifTree_btn = new System.Windows.Forms.Button();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // listBoxgraphe
@@ -278,12 +279,21 @@
             this.verifTree_btn.UseVisualStyleBackColor = false;
             this.verifTree_btn.Click += new System.EventHandler(this.verifTree_btn_Click);
             // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(775, 453);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(215, 134);
+            this.listBox2.TabIndex = 35;
+            // 
             // Dijkstra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1072, 725);
+            this.Controls.Add(this.listBox2);
             this.Controls.Add(this.verifTree_btn);
             this.Controls.Add(this.treeView_toComplete);
             this.Controls.Add(this.listesOuverts_txtBox);
@@ -333,5 +343,6 @@
         private System.Windows.Forms.TextBox listesOuverts_txtBox;
         private System.Windows.Forms.TreeView treeView_toComplete;
         private System.Windows.Forms.Button verifTree_btn;
+        private System.Windows.Forms.ListBox listBox2;
     }
 }
