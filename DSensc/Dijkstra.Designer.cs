@@ -55,10 +55,6 @@
             this.enonce_lbl = new System.Windows.Forms.Label();
             this.correctionFermes_lbl = new System.Windows.Forms.Label();
             this.correctionOuverts_lbl = new System.Windows.Forms.Label();
-            this.listFermesFinal_txtBox = new System.Windows.Forms.TextBox();
-            this.listOuvertsFinal_txtBox = new System.Windows.Forms.TextBox();
-            this.listesFermes_txtBox = new System.Windows.Forms.TextBox();
-            this.listesOuverts_txtBox = new System.Windows.Forms.TextBox();
             this.treeView_toComplete = new System.Windows.Forms.TreeView();
             this.verifTree_btn = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -168,7 +164,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(511, 368);
+            this.listBox1.Location = new System.Drawing.Point(511, 354);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(215, 134);
             this.listBox1.TabIndex = 24;
@@ -204,42 +200,6 @@
             this.correctionOuverts_lbl.Size = new System.Drawing.Size(113, 13);
             this.correctionOuverts_lbl.TabIndex = 27;
             this.correctionOuverts_lbl.Text = "Correction des ouverts";
-            // 
-            // listFermesFinal_txtBox
-            // 
-            this.listFermesFinal_txtBox.Location = new System.Drawing.Point(22, 353);
-            this.listFermesFinal_txtBox.Multiline = true;
-            this.listFermesFinal_txtBox.Name = "listFermesFinal_txtBox";
-            this.listFermesFinal_txtBox.Size = new System.Drawing.Size(237, 24);
-            this.listFermesFinal_txtBox.TabIndex = 28;
-            this.listFermesFinal_txtBox.Text = "Liste de tous les fermés à la fin";
-            // 
-            // listOuvertsFinal_txtBox
-            // 
-            this.listOuvertsFinal_txtBox.Location = new System.Drawing.Point(22, 383);
-            this.listOuvertsFinal_txtBox.Multiline = true;
-            this.listOuvertsFinal_txtBox.Name = "listOuvertsFinal_txtBox";
-            this.listOuvertsFinal_txtBox.Size = new System.Drawing.Size(237, 23);
-            this.listOuvertsFinal_txtBox.TabIndex = 29;
-            this.listOuvertsFinal_txtBox.Text = "Liste de tous les ouverts à la fin";
-            // 
-            // listesFermes_txtBox
-            // 
-            this.listesFermes_txtBox.Location = new System.Drawing.Point(22, 419);
-            this.listesFermes_txtBox.Multiline = true;
-            this.listesFermes_txtBox.Name = "listesFermes_txtBox";
-            this.listesFermes_txtBox.Size = new System.Drawing.Size(237, 294);
-            this.listesFermes_txtBox.TabIndex = 30;
-            this.listesFermes_txtBox.Text = "Liste de tous les fermés à chaque étape de résolution de A*";
-            // 
-            // listesOuverts_txtBox
-            // 
-            this.listesOuverts_txtBox.Location = new System.Drawing.Point(286, 517);
-            this.listesOuverts_txtBox.Multiline = true;
-            this.listesOuverts_txtBox.Name = "listesOuverts_txtBox";
-            this.listesOuverts_txtBox.Size = new System.Drawing.Size(237, 121);
-            this.listesOuverts_txtBox.TabIndex = 31;
-            this.listesOuverts_txtBox.Text = "Liste de tous les ouverts  à chaque étape de résolution de A*";
             // 
             // treeView_toComplete
             // 
@@ -296,10 +256,6 @@
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.verifTree_btn);
             this.Controls.Add(this.treeView_toComplete);
-            this.Controls.Add(this.listesOuverts_txtBox);
-            this.Controls.Add(this.listesFermes_txtBox);
-            this.Controls.Add(this.listOuvertsFinal_txtBox);
-            this.Controls.Add(this.listFermesFinal_txtBox);
             this.Controls.Add(this.correctionOuverts_lbl);
             this.Controls.Add(this.correctionFermes_lbl);
             this.Controls.Add(this.enonce_lbl);
@@ -337,10 +293,6 @@
         private System.Windows.Forms.Label enonce_lbl;
         private System.Windows.Forms.Label correctionFermes_lbl;
         private System.Windows.Forms.Label correctionOuverts_lbl;
-        private System.Windows.Forms.TextBox listFermesFinal_txtBox;
-        private System.Windows.Forms.TextBox listOuvertsFinal_txtBox;
-        private System.Windows.Forms.TextBox listesFermes_txtBox;
-        private System.Windows.Forms.TextBox listesOuverts_txtBox;
         private System.Windows.Forms.TreeView treeView_toComplete;
         private System.Windows.Forms.Button verifTree_btn;
         private System.Windows.Forms.ListBox listBox2;

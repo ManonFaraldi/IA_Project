@@ -44,13 +44,13 @@
             this.sur20_lbl = new System.Windows.Forms.Label();
             this.note_lbl = new System.Windows.Forms.Label();
             this.resultats_panel = new System.Windows.Forms.Panel();
+            this.AccesDijkstra_btn = new System.Windows.Forms.Button();
             this.quitter_btn = new System.Windows.Forms.Button();
             this.appreciation_txt = new System.Windows.Forms.Label();
             this.sur20Final_lbl = new System.Windows.Forms.Label();
             this.noteFinale_lbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.prenom_lbl = new System.Windows.Forms.Label();
-            this.AccesDijkstra_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.resultats_panel.SuspendLayout();
             this.SuspendLayout();
@@ -219,17 +219,27 @@
             // 
             // resultats_panel
             // 
-            this.resultats_panel.Controls.Add(this.AccesDijkstra_btn);
             this.resultats_panel.Controls.Add(this.quitter_btn);
             this.resultats_panel.Controls.Add(this.appreciation_txt);
             this.resultats_panel.Controls.Add(this.sur20Final_lbl);
             this.resultats_panel.Controls.Add(this.noteFinale_lbl);
             this.resultats_panel.Controls.Add(this.label1);
-            this.resultats_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.resultats_panel.Location = new System.Drawing.Point(0, 0);
+            this.resultats_panel.Location = new System.Drawing.Point(406, 58);
             this.resultats_panel.Name = "resultats_panel";
-            this.resultats_panel.Size = new System.Drawing.Size(1074, 646);
+            this.resultats_panel.Size = new System.Drawing.Size(1074, 622);
             this.resultats_panel.TabIndex = 22;
+            // 
+            // AccesDijkstra_btn
+            // 
+            this.AccesDijkstra_btn.BackColor = System.Drawing.Color.LimeGreen;
+            this.AccesDijkstra_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.AccesDijkstra_btn.Location = new System.Drawing.Point(115, 566);
+            this.AccesDijkstra_btn.Name = "AccesDijkstra_btn";
+            this.AccesDijkstra_btn.Size = new System.Drawing.Size(134, 36);
+            this.AccesDijkstra_btn.TabIndex = 24;
+            this.AccesDijkstra_btn.Text = "Accès Dijkstra";
+            this.AccesDijkstra_btn.UseVisualStyleBackColor = false;
+            this.AccesDijkstra_btn.Click += new System.EventHandler(this.AccesDijkstra_btn_Click);
             // 
             // quitter_btn
             // 
@@ -299,24 +309,13 @@
             this.prenom_lbl.TabIndex = 23;
             this.prenom_lbl.Text = "Utilisateur :";
             // 
-            // AccesDijkstra_btn
-            // 
-            this.AccesDijkstra_btn.BackColor = System.Drawing.Color.LimeGreen;
-            this.AccesDijkstra_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.AccesDijkstra_btn.Location = new System.Drawing.Point(424, 352);
-            this.AccesDijkstra_btn.Name = "AccesDijkstra_btn";
-            this.AccesDijkstra_btn.Size = new System.Drawing.Size(134, 36);
-            this.AccesDijkstra_btn.TabIndex = 24;
-            this.AccesDijkstra_btn.Text = "Accès Dijkstra";
-            this.AccesDijkstra_btn.UseVisualStyleBackColor = false;
-            this.AccesDijkstra_btn.Click += new System.EventHandler(this.AccesDijkstra_btn_Click);
-            // 
             // QuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1074, 646);
+            this.Controls.Add(this.AccesDijkstra_btn);
             this.Controls.Add(this.resultats_panel);
             this.Controls.Add(this.sur20_lbl);
             this.Controls.Add(this.note_lbl);
