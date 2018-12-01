@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Donnees;
 using System.IO;
+using DSensc;
 
 namespace App
 {
@@ -253,9 +254,7 @@ namespace App
         }
 
 
-        //Permet de compléter l'arbre à la main
-        /* Get the tree node under the mouse pointer and 
-        save it in the mySelectedNode variable. */
+        //Permet de compléter l'arbre à la main : obtient les TreeNode sélectionnés par la souris et les sauvegarde dans la variable mySelectedNode
         private void menuItem1_Click(object sender, EventArgs e, MouseEventArgs m)
         {
 
@@ -285,13 +284,12 @@ namespace App
                 {
                     if (e.Label.IndexOfAny(new char[] { '@', '.', ',', '!', '>', '<', '&' }) == -1) //caractères interdits
                     {
-                        // Stop editing without canceling the label change.
+                        // Arrête l'édition sans annuler le changement du label.
                         e.Node.EndEdit(false);
                     }
                     else
                     {
-                        /* Cancel the label edit action, inform the user, and 
-                           place the node in edit mode again. */
+                        //Annule l'action de modification du label, informe l'utilisateur, et place le noeud en mode édition à nouveau.
                         e.CancelEdit = true;
                         MessageBox.Show("Label invalide.\n" +
                            "Les caractères non autorisés sont '@','.', ',', '!','>','<','&'",
@@ -301,8 +299,7 @@ namespace App
                 }
                 else
                 {
-                    /* Cancel the label edit action, inform the user, and 
-                       place the node in edit mode again. */
+                    //Annulez l'action de modification du label, informez l'utilisateur, et placez le noeud en mode édition à nouveau.
                     e.CancelEdit = true;
                     MessageBox.Show("Label de noeud invalide.\nLe label ne peut pas être vide",
                        "Node Label Edit");
@@ -338,24 +335,18 @@ namespace App
         }
 
 
-        //Renvoie chaque noeud d'1 collection :
+        //Enregistre dans tnList tous les noeuds contenus dans collecNode
         private void Recursive(TreeNode collecNode, List<TreeNode> tnList)
         {
-            //List<TreeNode> listeNoeuds1Collec = new List<TreeNode>(); //tous les noeuds d'1 seule collection !!!
-            /*System.Diagnostics.Debug.WriteLine(collecNode.Text);
-            MessageBox.Show(collecNode.Text);*/
-            //TreeNode n = new TreeNode();
             tnList.Add(collecNode);  
-            foreach (TreeNode tn in collecNode.Nodes) //tn = vrai noeud unique
+            foreach (TreeNode tn in collecNode.Nodes) //tn = noeud unique ou collection de noeuds
             {
-                //listeNoeuds1Collec.Add(tn);
                 Recursive(tn, tnList);
 
             }
-            //return listeNoeuds1Collec;
         }
 
-        // Call the procedure using the TreeView.  Utiliser la fonction recursive pour un TreeView et non un TreeNode
+        //Utiliser la fonction recursive pour un TreeView et non un TreeNode
         //Affiche les noeuds pour toutes les collections (CAD pour l'arbre entier) :
         private List<TreeNode> CallRecursive(TreeView treeView)
         {
@@ -423,7 +414,10 @@ namespace App
 
         private void result_btn_Click(object sender, EventArgs e)
         {
-
+            ResultForm result = new ResultForm();
+            if (result.ShowDialog() == DialogResult.OK)
+            {
+            }
         }
     }
 }

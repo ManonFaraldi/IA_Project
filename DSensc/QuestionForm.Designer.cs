@@ -45,7 +45,6 @@
             this.note_lbl = new System.Windows.Forms.Label();
             this.resultats_panel = new System.Windows.Forms.Panel();
             this.AccesDijkstra_btn = new System.Windows.Forms.Button();
-            this.quitter_btn = new System.Windows.Forms.Button();
             this.appreciation_txt = new System.Windows.Forms.Label();
             this.sur20Final_lbl = new System.Windows.Forms.Label();
             this.noteFinale_lbl = new System.Windows.Forms.Label();
@@ -220,7 +219,6 @@
             // resultats_panel
             // 
             this.resultats_panel.Controls.Add(this.AccesDijkstra_btn);
-            this.resultats_panel.Controls.Add(this.quitter_btn);
             this.resultats_panel.Controls.Add(this.appreciation_txt);
             this.resultats_panel.Controls.Add(this.sur20Final_lbl);
             this.resultats_panel.Controls.Add(this.noteFinale_lbl);
@@ -242,20 +240,6 @@
             this.AccesDijkstra_btn.Text = "Accès Dijkstra";
             this.AccesDijkstra_btn.UseVisualStyleBackColor = false;
             this.AccesDijkstra_btn.Click += new System.EventHandler(this.AccesDijkstra_btn_Click);
-            // 
-            // quitter_btn
-            // 
-            this.quitter_btn.BackColor = System.Drawing.Color.IndianRed;
-            this.quitter_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.quitter_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quitter_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.quitter_btn.Location = new System.Drawing.Point(450, 417);
-            this.quitter_btn.Name = "quitter_btn";
-            this.quitter_btn.Size = new System.Drawing.Size(82, 43);
-            this.quitter_btn.TabIndex = 19;
-            this.quitter_btn.Text = "Quitter";
-            this.quitter_btn.UseVisualStyleBackColor = false;
-            this.quitter_btn.Click += new System.EventHandler(this.quitter_btn_Click);
             // 
             // appreciation_txt
             // 
@@ -365,7 +349,6 @@
         private System.Windows.Forms.Label note_lbl;
         private System.Windows.Forms.Panel resultats_panel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button quitter_btn;
         private System.Windows.Forms.Label appreciation_txt;
         private System.Windows.Forms.Label sur20Final_lbl;
         private System.Windows.Forms.Label noteFinale_lbl;

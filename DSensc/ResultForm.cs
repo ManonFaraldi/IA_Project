@@ -16,8 +16,10 @@ namespace DSensc
         public ResultForm()
         {
             InitializeComponent();
-            int note1 = int.Parse(note1_lbl.Text);
-            int note2 = int.Parse(note2_lbl.Text);
+            string note1t = note1_lbl.Text;
+            string note2t = note2_lbl.Text;
+            int note1 = Convert.ToInt32(note1t);
+            int note2 = Convert.ToInt32(note2t);
             noteFinal_lbl.Text = (CalculerMean(note1, note2)).ToString();
         }
 
