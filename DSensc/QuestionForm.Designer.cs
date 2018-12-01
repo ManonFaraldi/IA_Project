@@ -69,7 +69,7 @@
             // 
             this.nom_txt.AutoSize = true;
             this.nom_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nom_txt.Location = new System.Drawing.Point(26, 84);
+            this.nom_txt.Location = new System.Drawing.Point(58, 80);
             this.nom_txt.Name = "nom_txt";
             this.nom_txt.Size = new System.Drawing.Size(81, 20);
             this.nom_txt.TabIndex = 8;
@@ -79,7 +79,7 @@
             // 
             this.deuxPoints_txt.AutoSize = true;
             this.deuxPoints_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deuxPoints_txt.Location = new System.Drawing.Point(138, 84);
+            this.deuxPoints_txt.Location = new System.Drawing.Point(170, 80);
             this.deuxPoints_txt.Name = "deuxPoints_txt";
             this.deuxPoints_txt.Size = new System.Drawing.Size(0, 20);
             this.deuxPoints_txt.TabIndex = 9;
@@ -87,7 +87,7 @@
             // rep1_radiobtn
             // 
             this.rep1_radiobtn.AutoSize = true;
-            this.rep1_radiobtn.Location = new System.Drawing.Point(115, 187);
+            this.rep1_radiobtn.Location = new System.Drawing.Point(53, 180);
             this.rep1_radiobtn.Name = "rep1_radiobtn";
             this.rep1_radiobtn.Size = new System.Drawing.Size(85, 17);
             this.rep1_radiobtn.TabIndex = 10;
@@ -98,7 +98,7 @@
             // rep2_radiobtn
             // 
             this.rep2_radiobtn.AutoSize = true;
-            this.rep2_radiobtn.Location = new System.Drawing.Point(115, 279);
+            this.rep2_radiobtn.Location = new System.Drawing.Point(53, 272);
             this.rep2_radiobtn.Name = "rep2_radiobtn";
             this.rep2_radiobtn.Size = new System.Drawing.Size(85, 17);
             this.rep2_radiobtn.TabIndex = 11;
@@ -109,7 +109,7 @@
             // rep3_radiobtn
             // 
             this.rep3_radiobtn.AutoSize = true;
-            this.rep3_radiobtn.Location = new System.Drawing.Point(115, 371);
+            this.rep3_radiobtn.Location = new System.Drawing.Point(53, 364);
             this.rep3_radiobtn.Name = "rep3_radiobtn";
             this.rep3_radiobtn.Size = new System.Drawing.Size(85, 17);
             this.rep3_radiobtn.TabIndex = 12;
@@ -120,7 +120,7 @@
             // rep4_radiobtn
             // 
             this.rep4_radiobtn.AutoSize = true;
-            this.rep4_radiobtn.Location = new System.Drawing.Point(115, 478);
+            this.rep4_radiobtn.Location = new System.Drawing.Point(53, 471);
             this.rep4_radiobtn.Name = "rep4_radiobtn";
             this.rep4_radiobtn.Size = new System.Drawing.Size(85, 17);
             this.rep4_radiobtn.TabIndex = 13;
@@ -154,7 +154,7 @@
             // question_enonce_lbl
             // 
             this.question_enonce_lbl.AutoSize = true;
-            this.question_enonce_lbl.Location = new System.Drawing.Point(178, 85);
+            this.question_enonce_lbl.Location = new System.Drawing.Point(228, 84);
             this.question_enonce_lbl.Name = "question_enonce_lbl";
             this.question_enonce_lbl.Size = new System.Drawing.Size(89, 13);
             this.question_enonce_lbl.TabIndex = 16;
@@ -164,7 +164,7 @@
             // 
             this.numQuestion_lbl.AutoSize = true;
             this.numQuestion_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numQuestion_lbl.Location = new System.Drawing.Point(111, 84);
+            this.numQuestion_lbl.Location = new System.Drawing.Point(143, 80);
             this.numQuestion_lbl.Name = "numQuestion_lbl";
             this.numQuestion_lbl.Size = new System.Drawing.Size(27, 20);
             this.numQuestion_lbl.TabIndex = 17;

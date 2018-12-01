@@ -46,7 +46,8 @@
 
   <Questions Id = "5">
     <Enonce>Quels sont les différentes catégories de capteurs ? </Enonce>
-    <Reponse1>Il en existe autant que d'information que l'on souhaite coder en fonction de la complexité de l'information dont on a besoin (informations proprioceptives, extérioceptives, capteurs passifs, actifs, caméra, LIDAR, puces RFID...)</Reponse1>
+    <Reponse1>Il en existe autant que d'information que l'on souhaite coder en fonction de la complexité de l'information dont on a besoin 
+    (informations proprioceptives, extérioceptives, capteurs passifs, actifs, caméra, LIDAR, puces RFID...)</Reponse1>
     <Reponse2>Visuels, sensoriels et GPS</Reponse2>
     <Reponse3>Internes au robot et passif</Reponse3>
     <Reponse4>Passif, actives, internes et externe au robot, qui peuvent donc envoyer et/ou recevoir des signaux</Reponse4>
@@ -79,11 +80,12 @@
 
   <Questions Id = "8">
     <Enonce>
-      Soit M une matrice d’adjacence de taille NxN remplie avec des « a », des « b » ou éventuellement avec des « 0 » en cas d’absence de relation. On considère le code ci-dessous :
+      Soit M une matrice d’adjacence de taille NxN remplie avec des « a », des « b » ou éventuellement avec des « 0 » en cas d’absence de relation. 
+      On considère le code ci-dessous :
       int cpt = 0 ;
       for (int i=0 ; i &lt; n ; i=""
-for="" (int="" j="0" ; j="" &lt; n ; j=""
-x=""
+      for="" (int="" j="0" ; j="" &lt; n ; j=""
+      x=""
     </Enonce>
     <Reponse1>if ((M[i,j] == "a") || (M[i,j]== "b")) cpt++ ;</Reponse1>
     <Reponse2>if ((M[i,j] != "0") &amp;&amp; (M[j,i] != M[i,j])) cpt++ ;</Reponse2>
@@ -247,18 +249,17 @@ x=""
   <Questions Id = "16">
     <Enonce>
       "On cherche a appliqué l'algorithme A* sur un jeu de taquin. Le but de ce jeu est de placer l'ensemble des chiffres de 1 à 9 dans l'ordre. On travaille sur un tableau 3x3.
-      On utilise le programme suivant :
-      if (posy > 0)
-      {
-      char[,] tab2 = new char[3, 3];
-      x
-      // MAJ de la position du ?
-      tab2[posx, posy] = tab2[posx, posy-1];
-      tab2[posx, posy-1] = '?';
-      // Ajout à listsucc
-      lsucc.Add(new NodeTaquin(GetStringFromTab(tab2)));
-      }
-      Que doit-on mettre à la place du ""x"" pour que l'algorithme trouve un successeur en haut  ?"
+      On utilise le programme suivant : Que doit-on mettre à la place du ""x"" pour que l'algorithme trouve un successeur en haut  ?"
+                                                            if (posy > 0)
+                                                            {
+                                                            char[,] tab2 = new char[3, 3];
+                                                            x
+                                                            // MAJ de la position du ?
+                                                            tab2[posx, posy] = tab2[posx, posy-1];
+                                                            tab2[posx, posy-1] = '?';
+                                                            // Ajout à listsucc
+                                                            lsucc.Add(new NodeTaquin(GetStringFromTab(tab2)));
+                                                            }
     </Enonce>
     <Reponse1>
       "for (int i = 1 ; i!=2,i++)
