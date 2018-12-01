@@ -230,6 +230,7 @@ namespace App
             foreach (GenericNode GNfils in GN.GetEnfants())
             {
                 TreeNode TNfils = new TreeNode(GNfils.ToString());
+                // TNfils.Text = "?";
                 TN.Nodes.Add(TNfils);
                 if (GNfils.GetEnfants().Count > 0) AjouteBranche(GNfils, TNfils); 
             }

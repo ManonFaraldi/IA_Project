@@ -206,7 +206,7 @@ namespace App
         }
 
 
-        //Calcul et affichage de l'arbre avec le meilleur chemin (bouton TreeViiew final) :
+        //Calcul et affichage de l'arbre avec le meilleur chemin (bouton TreeView final) :
         private void treeViewFinal_btn_Click(object sender, EventArgs e)
         {
             SearchTree g = new SearchTree();
