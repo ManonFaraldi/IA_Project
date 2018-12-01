@@ -22,7 +22,7 @@ namespace App
         private double Note { get; set; } //Note /20
         private int Total { get; set; } //Nb. total de points pour toutes les questions
         private int NbPts { get; set; } //Nb. points accumulés pour les q°) répondues jusqu'à présent
-
+        public static string NoteValue;
         public QuestionForm()
         {
             
