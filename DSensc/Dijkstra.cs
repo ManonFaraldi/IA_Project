@@ -25,7 +25,7 @@ namespace App
         public Dijkstra()
         {
             InitializeComponent();
-            enonce_lbl.Text = ("Remplir dans un premier les noeuds ouverts et les noeuds fermés en fonction /n de ce qui est données dans le tableau de gauche. Vérifier les noeuds au fur et à mesure. \n Vous pouvez aussi remplir les noeuds directement dans le 'TreeView' \n disponible. Remplissez tous les noeuds puis valider.");
+            enonce_lbl.Text = ("Remplir dans un premier les noeuds ouverts et les noeuds fermés en fonction /n de ce qui est données dans le tableau de gauche. \nVérifier les noeuds au fur et à mesure. Vous pouvez aussi remplir les noeuds\n  directement dans le 'TreeView' disponible. Remplissez tous les noeuds puis valider.");
             // Initialisation de la matrice : à revoir selon la taille du graph (pour être générique) !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             matrice = new double[nbnodes, nbnodes];
             for (int k = 0; k < nbnodes; k++)

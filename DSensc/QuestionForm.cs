@@ -20,9 +20,9 @@ namespace App
         private int NbQuestion { get; set; }   
         private RadioButton RadioBtnFalse { get; set; } //Réponse fausse sélectionnée
         private double Note { get; set; } //Note /20
-        private int Total { get; set; } //Nb. total de points pour toutes les questions
+        public int Total { get; private set; } //Nb. total de points pour toutes les questions
         private int NbPts { get; set; } //Nb. points accumulés pour les q°) répondues jusqu'à présent
-        public static int NoteValue;
+        public static double NoteValue;
         public QuestionForm()
         {
             
@@ -247,12 +247,13 @@ namespace App
 
         private void AccesDijkstra_btn_Click(object sender, EventArgs e)
         {
+            NoteValue = Note;
             Dijkstra djikstra = new Dijkstra();
             if (djikstra.ShowDialog() == DialogResult.OK)
             {
 
             }
-            NoteValue = Total;
+            
         }
 
         private void QuestionForm_Load(object sender, EventArgs e)

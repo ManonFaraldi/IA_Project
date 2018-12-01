@@ -106,7 +106,6 @@
             this.total_lbl.Size = new System.Drawing.Size(44, 20);
             this.total_lbl.TabIndex = 6;
             this.total_lbl.Text = "Total";
-            
             // 
             // label1
             // 

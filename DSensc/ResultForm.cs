@@ -16,26 +16,23 @@ namespace DSensc
         public ResultForm()
         {
             InitializeComponent();
-
+            int note1 = Convert.ToInt32(QuestionForm.NoteValue);
+            note1_lbl.Text = Convert.ToString(note1);
+            int note2 = Convert.ToInt32(Dijkstra.NoteValue);
+            note2_lbl.Text = Convert.ToString(note2);
+            noteFinal_lbl.Text = (CalculerMean(note1, note2)).ToString();
         }
 
         private void close_btn_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-       
+
         private int CalculerMean(int note1, int note2)
         {
             int moyenne = (note1 + note2) / 2;
             return moyenne;
         }
-
-        private void ResultForm_Load(object sender, EventArgs e)
-        {
-            int note1 = Convert.ToInt32(QuestionForm.NoteValue);
-            int note2 = Convert.ToInt32(Dijkstra.NoteValue);
-            noteFinal_lbl.Text = (CalculerMean(note1, note2)).ToString();
-
-        }
     }
 }
+
