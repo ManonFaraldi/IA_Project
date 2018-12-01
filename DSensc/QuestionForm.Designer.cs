@@ -233,7 +233,7 @@
             // 
             this.AccesDijkstra_btn.BackColor = System.Drawing.Color.LimeGreen;
             this.AccesDijkstra_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.AccesDijkstra_btn.Location = new System.Drawing.Point(426, 298);
+            this.AccesDijkstra_btn.Location = new System.Drawing.Point(427, 292);
             this.AccesDijkstra_btn.Name = "AccesDijkstra_btn";
             this.AccesDijkstra_btn.Size = new System.Drawing.Size(134, 36);
             this.AccesDijkstra_btn.TabIndex = 24;
@@ -246,7 +246,7 @@
             this.appreciation_txt.AutoSize = true;
             this.appreciation_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.appreciation_txt.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.appreciation_txt.Location = new System.Drawing.Point(435, 261);
+            this.appreciation_txt.Location = new System.Drawing.Point(390, 254);
             this.appreciation_txt.Name = "appreciation_txt";
             this.appreciation_txt.Size = new System.Drawing.Size(108, 20);
             this.appreciation_txt.TabIndex = 18;

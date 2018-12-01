@@ -231,7 +231,7 @@
             this.treeViewVide_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.treeViewVide_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeViewVide_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.treeViewVide_btn.Location = new System.Drawing.Point(807, 377);
+            this.treeViewVide_btn.Location = new System.Drawing.Point(809, 377);
             this.treeViewVide_btn.Name = "treeViewVide_btn";
             this.treeViewVide_btn.Size = new System.Drawing.Size(172, 43);
             this.treeViewVide_btn.TabIndex = 38;
