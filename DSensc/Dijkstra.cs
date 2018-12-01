@@ -111,6 +111,26 @@ namespace App
             // Fermeture du StreamReader (obligatoire) 
             monStreamReader.Close();
 
+
+
+
+
+            /*
+            //Créer et afficher un treeView vide qui est répondu à A* :
+            SearchTree gVide = new SearchTree();
+            Node2 N0Vide = new Node2();
+            N0Vide.numero = numinitial;
+            // Recherche du meilleur chemin à partir de ce noeud initial et final :
+            List<GenericNode> solutionVide = gVide.RechercheSolutionAEtoile(N0Vide);
+
+            gVide.GetSearchTreeVide(treeView_toComplete2);
+            */
+
+
+
+
+
+
             //Cacher les boutons et lbl nécessaires :
             suivant_btn.Hide();
             treeViewFinal_btn.Hide();
@@ -330,7 +350,7 @@ namespace App
             reponse.Add(N3);
 
             //On récupère la liste de saisie de l'utilisateur
-            List<TreeNode> reponseUser = CallRecursive(treeView_toComplete);
+            List<TreeNode> reponseUser = CallRecursive(treeView_toComplete2);
             int erreur = VerifierRéponsesTree(reponse, reponseUser);
         }
 
@@ -418,6 +438,18 @@ namespace App
             if (result.ShowDialog() == DialogResult.OK)
             {
             }
+        }
+
+        private void treeViewVide_Click(object sender, EventArgs e)
+        {
+            //Créer et afficher un treeView vide qui est répondu à A* :
+            SearchTree gVide = new SearchTree();
+            Node2 N0Vide = new Node2();
+            N0Vide.numero = numinitial;
+            // Recherche du meilleur chemin à partir de ce noeud initial et final :
+            List<GenericNode> solutionVide = gVide.RechercheSolutionAEtoile(N0Vide);
+
+            gVide.GetSearchTreeVide(treeView_toComplete2);
         }
     }
 }
