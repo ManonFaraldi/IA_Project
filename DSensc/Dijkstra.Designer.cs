@@ -172,7 +172,7 @@
             // enonce_lbl
             // 
             this.enonce_lbl.AutoSize = true;
-            this.enonce_lbl.BackColor = System.Drawing.Color.Turquoise;
+            this.enonce_lbl.BackColor = System.Drawing.SystemColors.ControlText;
             this.enonce_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enonce_lbl.ForeColor = System.Drawing.Color.Red;
             this.enonce_lbl.Location = new System.Drawing.Point(24, 65);
