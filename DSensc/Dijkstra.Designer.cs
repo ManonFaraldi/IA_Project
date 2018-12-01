@@ -62,7 +62,7 @@
             this.TestIA_txt.AutoSize = true;
             this.TestIA_txt.Cursor = System.Windows.Forms.Cursors.Default;
             this.TestIA_txt.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestIA_txt.Location = new System.Drawing.Point(300, 9);
+            this.TestIA_txt.Location = new System.Drawing.Point(531, 9);
             this.TestIA_txt.Name = "TestIA_txt";
             this.TestIA_txt.Size = new System.Drawing.Size(145, 42);
             this.TestIA_txt.TabIndex = 11;

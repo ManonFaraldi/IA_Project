@@ -280,11 +280,11 @@ namespace App
         private void menuItem1_Click(object sender, EventArgs e, MouseEventArgs m)
         {
 
-            TreeNode mySelectedNode = treeView_toComplete.GetNodeAt(m.X, m.Y);
+            TreeNode mySelectedNode = treeView_toComplete2.GetNodeAt(m.X, m.Y);
             if (mySelectedNode != null && mySelectedNode.Parent != null)
             {
-                treeView_toComplete.SelectedNode = mySelectedNode;
-                treeView_toComplete.LabelEdit = true;
+                treeView_toComplete2.SelectedNode = mySelectedNode;
+                treeView_toComplete2.LabelEdit = true;
                 if (!mySelectedNode.IsEditing)
                 {
                     mySelectedNode.BeginEdit();

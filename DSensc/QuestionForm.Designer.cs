@@ -233,7 +233,7 @@
             // 
             this.AccesDijkstra_btn.BackColor = System.Drawing.Color.LimeGreen;
             this.AccesDijkstra_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.AccesDijkstra_btn.Location = new System.Drawing.Point(425, 301);
+            this.AccesDijkstra_btn.Location = new System.Drawing.Point(426, 298);
             this.AccesDijkstra_btn.Name = "AccesDijkstra_btn";
             this.AccesDijkstra_btn.Size = new System.Drawing.Size(134, 36);
             this.AccesDijkstra_btn.TabIndex = 24;
