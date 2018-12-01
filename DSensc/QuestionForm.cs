@@ -22,7 +22,7 @@ namespace App
         private double Note { get; set; } //Note /20
         private int Total { get; set; } //Nb. total de points pour toutes les questions
         private int NbPts { get; set; } //Nb. points accumulés pour les q°) répondues jusqu'à présent
-        public static string NoteValue;
+        public static int NoteValue;
         public QuestionForm()
         {
             
@@ -58,6 +58,7 @@ namespace App
             rep3_radiobtn.Text = questions[NbQuestion].Reponse3;
             rep4_radiobtn.Text = questions[NbQuestion].Reponse4;
             Total += questions[NbQuestion].NbPoint;
+
             if (questions[NbQuestion].Image != "")
               {
                   string pathImage = "..\\..\\..\\Donnees\\Images\\" +  questions[NbQuestion].Image;
@@ -139,11 +140,6 @@ namespace App
                 //CalcNote(NbQuestion);
                 note_lbl.Text = Convert.ToString(Note);
             }
-        }
-
-        private void quitter_btn_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         public static void TriQuestion<T>(IList<T> list) //Trier les questions dans un ordre aléatoire
@@ -256,6 +252,7 @@ namespace App
             {
 
             }
+            NoteValue = Total;
         }
 
         private void QuestionForm_Load(object sender, EventArgs e)

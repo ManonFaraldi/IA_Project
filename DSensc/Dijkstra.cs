@@ -21,7 +21,7 @@ namespace App
         static public int numinitial = 0;
         static public int numfinal = 6;
         protected int nbValider; //Le nb. de clics sur "Valider" correspond au nb. d'étapes où l'on doit écrire les ouverts et les fermés
-        public static string NoteValue;
+        public static int NoteValue;
         public Dijkstra()
         {
             InitializeComponent();
