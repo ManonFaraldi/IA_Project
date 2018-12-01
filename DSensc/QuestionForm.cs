@@ -44,10 +44,6 @@ namespace App
             Note = 0;
             NbPts = 0;
             Total = 0;
-            /*foreach (Questions q in questions)
-            {
-                Total += q.NbPoint; //exam sur 26 points au total
-            }*/
 
             //Affichage de la 1ère question :
             NbQuestion = 0;            
