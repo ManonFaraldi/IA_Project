@@ -35,7 +35,6 @@
             this.note1_lbl = new System.Windows.Forms.Label();
             this.note2_lbl = new System.Windows.Forms.Label();
             this.total_lbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.noteFinal_lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -107,15 +106,6 @@
             this.total_lbl.TabIndex = 6;
             this.total_lbl.Text = "Total";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(133, 135);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Note_Part2";
-            // 
             // noteFinal_lbl
             // 
             this.noteFinal_lbl.AutoSize = true;
@@ -131,7 +121,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(326, 282);
             this.Controls.Add(this.noteFinal_lbl);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.total_lbl);
             this.Controls.Add(this.note2_lbl);
             this.Controls.Add(this.note1_lbl);
@@ -155,7 +144,6 @@
         private System.Windows.Forms.Label note1_lbl;
         private System.Windows.Forms.Label note2_lbl;
         private System.Windows.Forms.Label total_lbl;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label noteFinal_lbl;
     }
 }

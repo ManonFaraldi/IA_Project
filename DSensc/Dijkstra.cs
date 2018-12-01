@@ -21,7 +21,11 @@ namespace App
         static public int numinitial = 0;
         static public int numfinal = 6;
         protected int nbValider; //Le nb. de clics sur "Valider" correspond au nb. d'étapes où l'on doit écrire les ouverts et les fermés
-        public static int NoteValue;
+        protected double Note1;
+        protected double Note2;
+        protected double Note;
+        public static double NoteValue;
+        private bool Erreur = false;
         public Dijkstra()
         {
             InitializeComponent();
@@ -166,6 +170,7 @@ namespace App
                 correctionFermes_lbl.Show();
                 correctionFermes_lbl.Text = g.ListeFermes[nbValider];
                 correctionFermes_lbl.ForeColor = Color.Green;
+                Erreur = true;
             }
             //Comparer la liste des ouverts du user avec celui qui est correct :
             correct = VérifListe(g.ListeOuverts, ouvertsUser, nbValider);
@@ -180,6 +185,7 @@ namespace App
                 correctionOuverts_lbl.Show();
                 correctionOuverts_lbl.Text = g.ListeOuverts[nbValider];
                 correctionOuverts_lbl.ForeColor = Color.Green;
+                Erreur = true;
             }
 
             nbValider++;
@@ -224,6 +230,14 @@ namespace App
                 correctionOuverts_lbl.Hide();
                 suivant_btn.Hide();
                 valider_btn.Show();
+            }
+            if (Erreur == true)
+            {
+                Note1 = 0;
+            }
+            else
+            {
+                Note1 = 2;
             }
         }
 
@@ -354,7 +368,14 @@ namespace App
             //On récupère la liste de saisie de l'utilisateur
             List<TreeNode> reponseUser = CallRecursive(treeView_toComplete2);
             int erreur = VerifierRéponsesTree(reponse, reponseUser);
-
+            if (erreur != 0)
+            {
+                Note2 = 0;
+            }
+            else
+            {
+                Note2 = 1;
+            }
             result_btn.Show();
         }
 
@@ -375,19 +396,11 @@ namespace App
         private List<TreeNode> CallRecursive(TreeView treeView)
         {
             List<TreeNode> tnList = new List<TreeNode>(); //Liste avec TOUS les noeuds de l'arbre
-            //List<TreeNode> sousListe = new List<TreeNode>(); //Liste avec tous les sous-noeuds d'1 collection
-            // Print each node recursively.  
             TreeNodeCollection collecNodes = treeView.Nodes;//collecNodes = TOUTES les collections
             foreach (TreeNode collecN in collecNodes) //collecN = 1 seule collection parmie toutes les collections
             {
                 Recursive(collecN, tnList);
-                //tnList = Recursive(collecN);
-                /*tnList.Add(collecN);
-                foreach (TreeNode test in tnList)
-                {
-                    tnList = Recursive(collecN);
-                    tnList.Add(test);
-                }*/
+            
             }
 
             return tnList;
@@ -416,14 +429,6 @@ namespace App
             return erreur;
         }
 
-        private void result_btn_Click(object sender, EventArgs e)
-        {
-            ResultForm result = new ResultForm();
-            if (result.ShowDialog() == DialogResult.OK)
-            {
-            }
-        }
-
         private void treeViewVide_Click(object sender, EventArgs e)
         {
             //Créer et afficher un treeView vide qui est répondu à A* :
@@ -437,6 +442,21 @@ namespace App
 
             verifTree_btn.Show();
             treeViewVide_btn.Hide();
+        }
+        public void CalcNote(double note1, double note2)
+        {
+            double noteCalc = (note1 * 20) / 2 + (note2 * 20);
+            Note = Math.Round(noteCalc, 2);
+        }
+
+        private void result_btn_Click(object sender, EventArgs e)
+        {
+            CalcNote(Note1, Note2);
+            NoteValue = Note;
+            ResultForm result = new ResultForm();
+            if (result.ShowDialog() == DialogResult.OK)
+            {
+            }
         }
     }
 }
