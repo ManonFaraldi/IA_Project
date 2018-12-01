@@ -134,6 +134,8 @@ namespace App
             //Cacher les boutons et lbl nécessaires :
             suivant_btn.Hide();
             treeViewFinal_btn.Hide();
+            verifTree_btn.Hide();
+            result_btn.Hide();
             correctionFermes_lbl.Hide();
             correctionOuverts_lbl.Hide();
         }
@@ -352,6 +354,8 @@ namespace App
             //On récupère la liste de saisie de l'utilisateur
             List<TreeNode> reponseUser = CallRecursive(treeView_toComplete2);
             int erreur = VerifierRéponsesTree(reponse, reponseUser);
+
+            result_btn.Show();
         }
 
 
@@ -397,26 +401,6 @@ namespace App
             int i = 0;
             foreach (TreeNode tn1 in TN_user)
             {
-                /*
-                for(int i = 0; i < TN_juste.Count; i++)
-                {
-                    
-                    if (tn1.Text != TN_juste[i].Text)
-                    {
-                        tn1.BackColor = Color.Red;
-                        erreur++;
-                    }
-                    else if ( tn1.Text == TN_juste[i].Text)
-                    {
-                        tn1.BackColor = Color.LimeGreen;
-                    }
-                    else
-                    {
-
-                    }
-                }*/
-
-
                 if (tn1.Text != TN_juste[i].Text)
                 {
                     tn1.BackColor = Color.Red;
@@ -450,6 +434,9 @@ namespace App
             List<GenericNode> solutionVide = gVide.RechercheSolutionAEtoile(N0Vide);
 
             gVide.GetSearchTreeVide(treeView_toComplete2);
+
+            verifTree_btn.Show();
+            treeViewVide_btn.Hide();
         }
     }
 }

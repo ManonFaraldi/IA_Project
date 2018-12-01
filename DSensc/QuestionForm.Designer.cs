@@ -218,11 +218,13 @@
             // 
             // resultats_panel
             // 
+            this.resultats_panel.Controls.Add(this.AccesDijkstra_btn);
             this.resultats_panel.Controls.Add(this.appreciation_txt);
             this.resultats_panel.Controls.Add(this.sur20Final_lbl);
             this.resultats_panel.Controls.Add(this.noteFinale_lbl);
             this.resultats_panel.Controls.Add(this.label1);
-            this.resultats_panel.Location = new System.Drawing.Point(424, 130);
+            this.resultats_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.resultats_panel.Location = new System.Drawing.Point(0, 0);
             this.resultats_panel.Name = "resultats_panel";
             this.resultats_panel.Size = new System.Drawing.Size(1074, 646);
             this.resultats_panel.TabIndex = 22;
@@ -231,7 +233,7 @@
             // 
             this.AccesDijkstra_btn.BackColor = System.Drawing.Color.LimeGreen;
             this.AccesDijkstra_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.AccesDijkstra_btn.Location = new System.Drawing.Point(76, 524);
+            this.AccesDijkstra_btn.Location = new System.Drawing.Point(425, 301);
             this.AccesDijkstra_btn.Name = "AccesDijkstra_btn";
             this.AccesDijkstra_btn.Size = new System.Drawing.Size(134, 36);
             this.AccesDijkstra_btn.TabIndex = 24;
@@ -300,7 +302,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1074, 646);
-            this.Controls.Add(this.AccesDijkstra_btn);
             this.Controls.Add(this.resultats_panel);
             this.Controls.Add(this.sur20_lbl);
             this.Controls.Add(this.note_lbl);

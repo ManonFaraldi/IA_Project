@@ -28,19 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("??");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("??");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
-            treeNode9});
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
-            treeNode10});
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
-            treeNode11});
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("??");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("??", new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode12,
-            treeNode13});
             this.listBoxgraphe = new System.Windows.Forms.ListBox();
             this.TestIA_txt = new System.Windows.Forms.Label();
             this.F_txtBox = new System.Windows.Forms.TextBox();
@@ -55,7 +42,6 @@
             this.enonce_lbl = new System.Windows.Forms.Label();
             this.correctionFermes_lbl = new System.Windows.Forms.Label();
             this.correctionOuverts_lbl = new System.Windows.Forms.Label();
-            this.treeView_toComplete = new System.Windows.Forms.TreeView();
             this.verifTree_btn = new System.Windows.Forms.Button();
             this.result_btn = new System.Windows.Forms.Button();
             this.treeView_toComplete2 = new System.Windows.Forms.TreeView();
@@ -120,7 +106,7 @@
             this.valider_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.valider_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valider_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.valider_btn.Location = new System.Drawing.Point(307, 315);
+            this.valider_btn.Location = new System.Drawing.Point(307, 290);
             this.valider_btn.Name = "valider_btn";
             this.valider_btn.Size = new System.Drawing.Size(82, 43);
             this.valider_btn.TabIndex = 20;
@@ -134,7 +120,7 @@
             this.suivant_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.suivant_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.suivant_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.suivant_btn.Location = new System.Drawing.Point(307, 315);
+            this.suivant_btn.Location = new System.Drawing.Point(307, 290);
             this.suivant_btn.Name = "suivant_btn";
             this.suivant_btn.Size = new System.Drawing.Size(82, 43);
             this.suivant_btn.TabIndex = 21;
@@ -148,7 +134,7 @@
             this.treeViewFinal_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.treeViewFinal_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeViewFinal_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.treeViewFinal_btn.Location = new System.Drawing.Point(285, 315);
+            this.treeViewFinal_btn.Location = new System.Drawing.Point(285, 290);
             this.treeViewFinal_btn.Name = "treeViewFinal_btn";
             this.treeViewFinal_btn.Size = new System.Drawing.Size(128, 43);
             this.treeViewFinal_btn.TabIndex = 22;
@@ -203,44 +189,13 @@
             this.correctionOuverts_lbl.TabIndex = 27;
             this.correctionOuverts_lbl.Text = "Correction des ouverts";
             // 
-            // treeView_toComplete
-            // 
-            this.treeView_toComplete.LabelEdit = true;
-            this.treeView_toComplete.Location = new System.Drawing.Point(775, 125);
-            this.treeView_toComplete.Name = "treeView_toComplete";
-            treeNode8.Name = "Nœud1";
-            treeNode8.Tag = "N1";
-            treeNode8.Text = "??";
-            treeNode9.Name = "Nœud6";
-            treeNode9.Tag = "N6";
-            treeNode9.Text = "??";
-            treeNode10.Name = "Nœud5";
-            treeNode10.Tag = "N5";
-            treeNode10.Text = "??";
-            treeNode11.Name = "Nœud4";
-            treeNode11.Tag = "N4";
-            treeNode11.Text = "??";
-            treeNode12.Name = "Nœud2";
-            treeNode12.Tag = "N2";
-            treeNode12.Text = "??";
-            treeNode13.Name = "Nœud3";
-            treeNode13.Tag = "N3";
-            treeNode13.Text = "??";
-            treeNode14.Name = "Nœud0";
-            treeNode14.Tag = "N0";
-            treeNode14.Text = "??";
-            this.treeView_toComplete.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode14});
-            this.treeView_toComplete.Size = new System.Drawing.Size(215, 238);
-            this.treeView_toComplete.TabIndex = 33;
-            // 
             // verifTree_btn
             // 
             this.verifTree_btn.BackColor = System.Drawing.Color.LimeGreen;
             this.verifTree_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.verifTree_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.verifTree_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.verifTree_btn.Location = new System.Drawing.Point(818, 398);
+            this.verifTree_btn.Location = new System.Drawing.Point(832, 377);
             this.verifTree_btn.Name = "verifTree_btn";
             this.verifTree_btn.Size = new System.Drawing.Size(128, 43);
             this.verifTree_btn.TabIndex = 34;
@@ -254,7 +209,7 @@
             this.result_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.result_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.result_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.result_btn.Location = new System.Drawing.Point(285, 515);
+            this.result_btn.Location = new System.Drawing.Point(1079, 219);
             this.result_btn.Name = "result_btn";
             this.result_btn.Size = new System.Drawing.Size(128, 43);
             this.result_btn.TabIndex = 36;
@@ -265,9 +220,9 @@
             // treeView_toComplete2
             // 
             this.treeView_toComplete2.LabelEdit = true;
-            this.treeView_toComplete2.Location = new System.Drawing.Point(1024, 32);
+            this.treeView_toComplete2.Location = new System.Drawing.Point(780, 125);
             this.treeView_toComplete2.Name = "treeView_toComplete2";
-            this.treeView_toComplete2.Size = new System.Drawing.Size(253, 331);
+            this.treeView_toComplete2.Size = new System.Drawing.Size(215, 238);
             this.treeView_toComplete2.TabIndex = 37;
             // 
             // treeViewVide_btn
@@ -276,7 +231,7 @@
             this.treeViewVide_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.treeViewVide_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeViewVide_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.treeViewVide_btn.Location = new System.Drawing.Point(1072, 398);
+            this.treeViewVide_btn.Location = new System.Drawing.Point(807, 377);
             this.treeViewVide_btn.Name = "treeViewVide_btn";
             this.treeViewVide_btn.Size = new System.Drawing.Size(172, 43);
             this.treeViewVide_btn.TabIndex = 38;
@@ -294,7 +249,6 @@
             this.Controls.Add(this.treeView_toComplete2);
             this.Controls.Add(this.result_btn);
             this.Controls.Add(this.verifTree_btn);
-            this.Controls.Add(this.treeView_toComplete);
             this.Controls.Add(this.correctionOuverts_lbl);
             this.Controls.Add(this.correctionFermes_lbl);
             this.Controls.Add(this.enonce_lbl);
@@ -332,7 +286,6 @@
         private System.Windows.Forms.Label enonce_lbl;
         private System.Windows.Forms.Label correctionFermes_lbl;
         private System.Windows.Forms.Label correctionOuverts_lbl;
-        private System.Windows.Forms.TreeView treeView_toComplete;
         private System.Windows.Forms.Button verifTree_btn;
         private System.Windows.Forms.Button result_btn;
         private System.Windows.Forms.TreeView treeView_toComplete2;
