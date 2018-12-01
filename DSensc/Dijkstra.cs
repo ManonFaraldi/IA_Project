@@ -24,7 +24,7 @@ namespace App
         public Dijkstra()
         {
             InitializeComponent();
-            enonce_lbl.Text = ("Remplir dans un premier les noeuds ouverts et les noeuds fermés en fonction /n de ce qui est données dans le tableau de gauche. Vérifier les noeuds au fur et à mesure. \n Vous pouvez aussi remplir les noeuds directement dans le 'TreeView' \n disponible. Remplissez tous les noeuds puis valider.");
+
             // Initialisation de la matrice : à revoir selon la taille du graph (pour être générique) !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             matrice = new double[nbnodes, nbnodes];
             for (int k = 0; k < nbnodes; k++)
@@ -115,7 +115,6 @@ namespace App
             treeViewFinal_btn.Hide();
             correctionFermes_lbl.Hide();
             correctionOuverts_lbl.Hide();
-            
         }
 
 
@@ -206,7 +205,7 @@ namespace App
         }
 
 
-        //Calcul et affichage de l'arbre avec le meilleur chemin (bouton Valider) :
+        //Calcul et affichage de l'arbre avec le meilleur chemin (bouton TreeViiew final) :
         private void treeViewFinal_btn_Click(object sender, EventArgs e)
         {
             SearchTree g = new SearchTree();
@@ -253,8 +252,8 @@ namespace App
             return correct;
         }
 
-        //Permet de compléter l'arbre à la main
 
+        //Permet de compléter l'arbre à la main
         /* Get the tree node under the mouse pointer and 
         save it in the mySelectedNode variable. */
         private void menuItem1_Click(object sender, EventArgs e, MouseEventArgs m)
@@ -277,6 +276,7 @@ namespace App
             }
         }
 
+        //Restreindre les caractères posibles du user quand il remplit l'arbre vide à la main
         private void treeView_toComplete_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
             if (e.Label != null)
@@ -311,7 +311,7 @@ namespace App
             }
         }
 
-        //Une fois que l'utilisateur a compléter le treeview 
+        //Une fois que l'utilisateur a complété le treeview :
         private void verifTree_btn_Click(object sender, EventArgs e)
         {
 
@@ -340,40 +340,40 @@ namespace App
 
 
         //Renvoie chaque noeud d'1 collection :
-        private List<TreeNode> Recursive(TreeNode collecNode)
+        private void Recursive(TreeNode collecNode, List<TreeNode> tnList)
         {
-            List<TreeNode> listeNoeuds1Collec = new List<TreeNode>(); //tous les noeuds d'1 seule collection !!!
-            //System.Diagnostics.Debug.WriteLine(collecNode.Text);
-            // MessageBox.Show(collecNode.Text);
-            TreeNode n = new TreeNode();
-              
+            //List<TreeNode> listeNoeuds1Collec = new List<TreeNode>(); //tous les noeuds d'1 seule collection !!!
+            System.Diagnostics.Debug.WriteLine(collecNode.Text);
+            MessageBox.Show(collecNode.Text);
+            //TreeNode n = new TreeNode();
+            tnList.Add(collecNode);  
             foreach (TreeNode tn in collecNode.Nodes) //tn = vrai noeud unique
             {
-                listeNoeuds1Collec.Add(tn);
-                Recursive(tn);
+                //listeNoeuds1Collec.Add(tn);
+                Recursive(tn, tnList);
 
             }
-            return listeNoeuds1Collec;
+            //return listeNoeuds1Collec;
         }
 
-        // Call the procedure using the TreeView.  
+        // Call the procedure using the TreeView.  Utiliser la fonction recursive pour un TreeView et non un TreeNode
         //Affiche les noeuds pour toutes les collections (CAD pour l'arbre entier) :
         private List<TreeNode> CallRecursive(TreeView treeView)
         {
             List<TreeNode> tnList = new List<TreeNode>(); //Liste avec TOUS les noeuds de l'arbre
-            List<TreeNode> sousListe = new List<TreeNode>(); //Liste avec tous les sous-noeuds d'1 collection
+            //List<TreeNode> sousListe = new List<TreeNode>(); //Liste avec tous les sous-noeuds d'1 collection
             // Print each node recursively.  
             TreeNodeCollection collecNodes = treeView.Nodes;//collecNodes = TOUTES les collections
             foreach (TreeNode collecN in collecNodes) //collecN = 1 seule collection parmie toutes les collections
             {
-                
-                tnList = Recursive(collecN);
-                tnList.Add(collecN);
+                Recursive(collecN, tnList);
+                //tnList = Recursive(collecN);
+                /*tnList.Add(collecN);
                 foreach (TreeNode test in tnList)
                 {
                     tnList = Recursive(collecN);
                     tnList.Add(test);
-                }
+                }*/
             }
 
             return tnList;
@@ -404,10 +404,8 @@ namespace App
             return erreur;
         }
 
-        private void result_btn_Click(object sender, EventArgs e)
-        {
 
-        }
+
     }
 }
 
