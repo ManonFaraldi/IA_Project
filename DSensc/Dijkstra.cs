@@ -327,11 +327,10 @@ namespace App
             reponse.Add(N0);
             reponse.Add(N1);
             reponse.Add(N2);
-            reponse.Add(N3);
             reponse.Add(N4);
             reponse.Add(N5);
             reponse.Add(N6);
-
+            reponse.Add(N3);
 
             //On récupère la liste de saisie de l'utilisateur
             List<TreeNode> reponseUser = CallRecursive(treeView_toComplete);
@@ -343,8 +342,8 @@ namespace App
         private void Recursive(TreeNode collecNode, List<TreeNode> tnList)
         {
             //List<TreeNode> listeNoeuds1Collec = new List<TreeNode>(); //tous les noeuds d'1 seule collection !!!
-            System.Diagnostics.Debug.WriteLine(collecNode.Text);
-            MessageBox.Show(collecNode.Text);
+            /*System.Diagnostics.Debug.WriteLine(collecNode.Text);
+            MessageBox.Show(collecNode.Text);*/
             //TreeNode n = new TreeNode();
             tnList.Add(collecNode);  
             foreach (TreeNode tn in collecNode.Nodes) //tn = vrai noeud unique
@@ -379,13 +378,18 @@ namespace App
             return tnList;
 
         }
+
+        //Vérifier que chaque noeud écrit dans l'arbre par le user est bon :
         private int VerifierRéponsesTree(List<TreeNode> TN_juste, List<TreeNode> TN_user)
         {
             int erreur =0;
+            int i = 0;
             foreach (TreeNode tn1 in TN_user)
             {
-                for(int i =0; i < TN_juste.Count; i++)
+                /*
+                for(int i = 0; i < TN_juste.Count; i++)
                 {
+                    
                     if (tn1.Text != TN_juste[i].Text)
                     {
                         tn1.BackColor = Color.Red;
@@ -399,8 +403,21 @@ namespace App
                     {
 
                     }
+                }*/
+
+
+                if (tn1.Text != TN_juste[i].Text)
+                {
+                    tn1.BackColor = Color.Red;
+                    erreur++;
                 }
+                else
+                {
+                    tn1.BackColor = Color.LimeGreen;
+                }
+                i++;
             }
+
             return erreur;
         }
 

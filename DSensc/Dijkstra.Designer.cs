@@ -58,7 +58,6 @@
             this.treeView_toComplete = new System.Windows.Forms.TreeView();
             this.verifTree_btn = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.result_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxgraphe
@@ -74,10 +73,10 @@
             // 
             this.TestIA_txt.AutoSize = true;
             this.TestIA_txt.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TestIA_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestIA_txt.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TestIA_txt.Location = new System.Drawing.Point(300, 9);
             this.TestIA_txt.Name = "TestIA_txt";
-            this.TestIA_txt.Size = new System.Drawing.Size(107, 33);
+            this.TestIA_txt.Size = new System.Drawing.Size(145, 42);
             this.TestIA_txt.TabIndex = 11;
             this.TestIA_txt.Text = "Test IA";
             // 
@@ -117,7 +116,7 @@
             // 
             this.valider_btn.BackColor = System.Drawing.Color.LimeGreen;
             this.valider_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.valider_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valider_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valider_btn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.valider_btn.Location = new System.Drawing.Point(307, 300);
             this.valider_btn.Name = "valider_btn";
@@ -131,7 +130,7 @@
             // 
             this.suivant_btn.BackColor = System.Drawing.Color.LimeGreen;
             this.suivant_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.suivant_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suivant_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.suivant_btn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.suivant_btn.Location = new System.Drawing.Point(307, 300);
             this.suivant_btn.Name = "suivant_btn";
@@ -145,7 +144,7 @@
             // 
             this.treeViewFinal_btn.BackColor = System.Drawing.Color.LimeGreen;
             this.treeViewFinal_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.treeViewFinal_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeViewFinal_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeViewFinal_btn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.treeViewFinal_btn.Location = new System.Drawing.Point(285, 300);
             this.treeViewFinal_btn.Name = "treeViewFinal_btn";
@@ -173,14 +172,14 @@
             // enonce_lbl
             // 
             this.enonce_lbl.AutoSize = true;
-            this.enonce_lbl.BackColor = System.Drawing.Color.Transparent;
-            this.enonce_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.enonce_lbl.ForeColor = System.Drawing.Color.Black;
+            this.enonce_lbl.BackColor = System.Drawing.SystemColors.ControlText;
+            this.enonce_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enonce_lbl.ForeColor = System.Drawing.Color.Red;
             this.enonce_lbl.Location = new System.Drawing.Point(24, 65);
             this.enonce_lbl.Name = "enonce_lbl";
-            this.enonce_lbl.Size = new System.Drawing.Size(44, 13);
+            this.enonce_lbl.Size = new System.Drawing.Size(282, 25);
             this.enonce_lbl.TabIndex = 25;
-            this.enonce_lbl.Text = "Enonce";
+            this.enonce_lbl.Text = "Enoncé !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
             // 
             // correctionFermes_lbl
             // 
@@ -237,7 +236,7 @@
             // 
             this.verifTree_btn.BackColor = System.Drawing.Color.LimeGreen;
             this.verifTree_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.verifTree_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.verifTree_btn.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.verifTree_btn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.verifTree_btn.Location = new System.Drawing.Point(818, 383);
             this.verifTree_btn.Name = "verifTree_btn";
@@ -255,26 +254,12 @@
             this.listBox2.Size = new System.Drawing.Size(215, 134);
             this.listBox2.TabIndex = 35;
             // 
-            // result_btn
-            // 
-            this.result_btn.BackColor = System.Drawing.Color.LimeGreen;
-            this.result_btn.Enabled = false;
-            this.result_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.result_btn.Location = new System.Drawing.Point(285, 394);
-            this.result_btn.Name = "result_btn";
-            this.result_btn.Size = new System.Drawing.Size(128, 32);
-            this.result_btn.TabIndex = 36;
-            this.result_btn.Text = "Voir résultats";
-            this.result_btn.UseVisualStyleBackColor = false;
-            this.result_btn.Click += new System.EventHandler(this.result_btn_Click);
-            // 
             // Dijkstra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1072, 725);
-            this.Controls.Add(this.result_btn);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.verifTree_btn);
             this.Controls.Add(this.treeView_toComplete);
@@ -318,6 +303,5 @@
         private System.Windows.Forms.TreeView treeView_toComplete;
         private System.Windows.Forms.Button verifTree_btn;
         private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Button result_btn;
     }
 }
